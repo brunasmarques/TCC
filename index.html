@@ -6,7 +6,6 @@
 
         <link rel="stylesheet" href="style.css" />
 
-        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -19,7 +18,10 @@
     </head>
 
     <body>
-        <!-- ================= MENU ================= -->
+        <!-- =====================================================
+         LOGO
+    ====================================================== -->
+
         <div class="logo">
             <img
                 class="logoIcon"
@@ -29,10 +31,19 @@
 
             <span>INVICTA</span>
         </div>
+
+        <!-- =====================================================
+         MENU
+    ====================================================== -->
+
         <nav class="menu">
-            <!-- LOGO -->
+            <!-- BOTÃO BURGER -->
+            <button class="menuBurger" type="button" aria-label="Abrir menu">
+                <img src="images/MenuBurguer.png" alt="" />
+            </button>
 
             <!-- PESQUISA -->
+
             <div class="pesquisa">
                 <img class="serchIcon" src="images/SERCH.png" alt="Pesquisar" />
 
@@ -43,31 +54,37 @@
 
             <a href="index.html" class="item-menu">
                 <img src="images/HOME.png" alt="Home" />
+
                 <span>Home</span>
             </a>
 
             <a href="./pages/manual.html" class="item-menu">
                 <img src="images/LISTA.png" alt="Manual" />
+
                 <span>Manual</span>
             </a>
 
             <a href="./pages/produto.html" class="item-menu">
                 <img src="images/MANUAL.png" alt="Produto" />
+
                 <span>Produto</span>
             </a>
 
             <a href="./pages/equipe.html" class="item-menu">
                 <img src="images/EQUIPE.png" alt="Equipe" />
+
                 <span>Equipe</span>
             </a>
 
             <a href="./pages/referencias.html" class="item-menu">
                 <img src="images/REFERENCIAS.png" alt="Referências" />
+
                 <span>Referências</span>
             </a>
 
             <a href="./pages/game.html" class="item-menu">
                 <img src="images/GAME.png" alt="Game" />
+
                 <span>Game</span>
             </a>
 
@@ -78,6 +95,7 @@
 
                 <div class="dados-usuario">
                     <h4>Geovanna Oliveira</h4>
+
                     <p>geovanna@email.com</p>
                 </div>
             </div>
@@ -95,10 +113,14 @@
             </a>
         </nav>
 
-        <!-- ================= CONTEÚDO ================= -->
+        <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
 
-        <div id="page">
-            <!-- HERO -->
+        <main id="page">
+            <!-- =================================================
+             HERO
+        ================================================== -->
 
             <section class="hero">
                 <div class="hero-conteudo">
@@ -135,7 +157,9 @@
                 </div>
             </section>
 
-            <!-- ================= DIFERENCIAIS ================= -->
+            <!-- =================================================
+             DIFERENCIAIS
+        ================================================== -->
 
             <section class="politicas">
                 <div class="diferencial">
@@ -168,7 +192,9 @@
                 </div>
             </section>
 
-            <!-- ================= CARDS ================= -->
+            <!-- =================================================
+             CARDS
+        ================================================== -->
 
             <section class="cards">
                 <div class="card">
@@ -217,7 +243,8 @@
                     </h3>
                 </div>
             </section>
-        </div>
+        </main>
+
         <script src="script.js"></script>
     </body>
 </html>

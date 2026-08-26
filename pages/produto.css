@@ -1,9 +1,17 @@
-/* ---------- CSS DO MENU ---------- */
+@import "../colors.css";
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
 
 * {
+
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
+
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -12,236 +20,503 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #030044, #0B0E16, #04031D);
-  color: #fff;
+
+  background: linear-gradient(
+      135deg,
+      var(--cor-fundo-1),
+      var(--cor-fundo-2),
+      var(--cor-fundo-3)
+  );
+
+  color: var(--cor-texto);
+
   position: relative;
+
   min-height: 100vh;
 }
 
-/* ---------- ANIMAÇÕES ---------- */
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(2rem); }
-  to   { opacity: 1; transform: translateY(0); }
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(2rem);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
 }
 
-/* ---------- IMAGENS ---------- */
+
+/* =========================================================
+   IMAGENS
+========================================================= */
 
 img {
+
   max-width: 100%;
+
   display: block;
 }
 
-/* ---------- MENU ---------- */
+
+/* =========================================================
+   MENU
+========================================================= */
 
 .menu {
+
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 4.6875rem;
   height: 100vh;
-  text-decoration: none;
 
-  background: #05032A;
+  background: var(--cor-menu);
 
   display: flex;
+
   flex-direction: column;
 
-  padding: 1.25rem 0.9375rem;
+  padding:
+    1.25rem
+    0.9375rem;
 
   overflow: hidden;
-  transition: .35s ease;
 
-  border-radius: 0 1.25rem 1.25rem 0;
+  transition:
+    width .35s ease;
+
+  border-radius:
+    0
+    1.25rem
+    1.25rem
+    0;
+
   z-index: 999;
 }
 
 .menu:hover {
+
   width: 16.25rem;
 }
 
-/* ---------- LOGO ---------- */
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
+
   display: flex;
+
   align-items: center;
-  gap: 0.9375rem;
+
+  gap: .9375rem;
+
   margin-bottom: 2.5rem;
+
+  flex-shrink: 0;
 }
 
 .logo img {
+
   width: 2.5rem;
+  height: 2.5rem;
+
+  object-fit: contain;
 }
 
 .logo span {
+
   font-size: 2rem;
+
   font-weight: 700;
+
   white-space: nowrap;
 
   opacity: 0;
+
   transition: .3s;
 }
 
 .menu:hover .logo span {
+
   opacity: 1;
 }
 
-/* ---------- PESQUISA ---------- */
+
+/* =========================================================
+   PESQUISA
+========================================================= */
 
 .pesquisa {
+
   display: flex;
+
   align-items: center;
-  gap: 0.9375rem;
 
-  background: #1C1A46;
-  border-radius: 0.625rem;
+  gap: .9375rem;
 
-  padding: 0.75rem;
+  width: 100%;
+
+  background: var(--cor-elemento);
+
+  border-radius: .625rem;
+
+  padding: .75rem;
+
   margin-bottom: 1.5625rem;
+
+  flex-shrink: 0;
 }
 
 .pesquisa img {
+
   width: 1.625rem;
+  height: 1.625rem;
+
+  object-fit: contain;
 }
 
 .pesquisa span {
+
   white-space: nowrap;
+
   opacity: 0;
+
   transition: .3s;
 }
 
 .menu:hover .pesquisa span {
+
   opacity: 1;
 }
 
-/* ---------- ITENS ---------- */
-/* ---------- ITENS ---------- */
+
+/* =========================================================
+   ITENS DO MENU
+========================================================= */
 
 .item-menu {
+
   display: flex;
+
   align-items: center;
+
   gap: 1.125rem;
 
   width: 100%;
 
-  padding: 0.75rem;
-  margin-bottom: 0.5rem;
+  padding: .75rem;
 
-  border-radius: 0.625rem;
+  margin-bottom: .5rem;
+
+  border-radius: .625rem;
 
   cursor: pointer;
+
   transition: .3s ease;
 
   text-decoration: none;
-  color: #fff;
+
+  color: var(--cor-texto);
+  
+  flex-shrink: 0;
 }
 
 .item-menu:hover {
-  background: #1C1A46;
+
+  background: var(--cor-elemento);
 }
 
 .item-menu img {
+
   width: 1.75rem;
   height: 1.75rem;
+
   object-fit: contain;
+
   flex-shrink: 0;
 }
 
 .item-menu span {
+
   white-space: nowrap;
+
   opacity: 0;
+
   transition: .3s ease;
+
   font-size: 1rem;
+
   font-weight: 500;
 }
 
 .menu:hover .item-menu span {
+
   opacity: 1;
 }
 
-/* ---------- USUÁRIO ---------- */
+
+/* =========================================================
+   USUÁRIO
+========================================================= */
 
 .usuario {
+
   margin-top: auto;
+
   margin-bottom: 20px;
 
   display: flex;
+
   align-items: center;
-  gap: 0.9375rem;
 
-  background: #1C1A46;
-  padding: 0.75rem;
-  border-radius: 0.625rem;
-}
-
-.usuario img {
-  width: 2.1875rem;
-}
-
-.dados-usuario {
-  opacity: 0;
-  transition: .3s;
-  white-space: nowrap;
-}
-
-.menu:hover .dados-usuario {
-  opacity: 1;
-}
-
-.dados-usuario h4 {
-  font-size: .9rem;
-  margin: 0;
-}
-
-.dados-usuario p {
-  font-size: .7rem;
-  color: #bdbdbd;
-  margin: 0.25rem 0 0 0;
-}
-
-/* ---------- TEMA ---------- */
-
-.menu:hover .item-menu {
-  opacity: 1;
-}
-
-.item-menu{ 
-  display: flex;
-  align-items: center;
-  gap: 1.125rem;
+  gap: .9375rem;
 
   width: 100%;
 
-  padding: 0.75rem;
-  margin-bottom: 0.5rem;
+  background: var(--cor-elemento);
 
-  border-radius: 0.625rem;
+  padding: .75rem;
 
-  cursor: pointer;
-  transition: .3s ease;
+  border-radius: .625rem;
 
-  text-decoration: none;
-  color: #fff;
-}
-
-.item-menu:hover {
-  background: #1C1A46;
-}
-
-.item-menu img {
-  width: 2rem;
-  height: 1.75rem;
-  object-fit: contain;
   flex-shrink: 0;
 }
 
-.item-menu span {
-  white-space: nowrap;
+.usuario img {
+
+  width: 2.1875rem;
+  height: 2.1875rem;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+.dados-usuario {
+
   opacity: 0;
-  transition: .3s ease;
-  font-size: 1rem;
-  font-weight: 500;
+
+  max-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  transition:
+    opacity .3s ease,
+    max-width .3s ease;
+}
+
+.menu:hover .dados-usuario {
+
+  opacity: 1;
+
+  max-width: 180px;
+}
+
+.dados-usuario h4 {
+
+  font-size: .9rem;
+
+  font-weight: 600;
+
+  margin: 0;
+
+  color: var(--cor-07);
+}
+
+.dados-usuario p {
+
+  font-size: .7rem;
+
+  font-weight: 400;
+
+  color: var(--cor-07);
+
+  opacity: .6;
+
+  margin: .25rem 0 0 0;
 }
 /*-----------CONTEUDO INICIAL-----------*/
+
+#page {
+    max-width: 1300px;
+    margin-inline: auto;
+}
+
+h1 {
+  margin-left: 115px;
+  margin-top: 191px;
+  width: 709px;
+}
+
+.conteudoInicial p{
+  margin-top: 31px;
+  margin-left: 112px;
+  font-weight: 600;
+}
+
+.botoes {
+  display: flex;
+  gap: 1.5rem;
+
+  margin-top: 2.5rem;
+  padding-left: 2.5rem;
+
+  animation: fadeInUp 0.7s 0.2s ease both;
+}
+
+.botoes button {
+  width: 13.75rem;
+  height: 3.625rem;
+
+  border-radius: 2.1875rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+/* Botão*/
+
+.btn-primary {
+  margin-left: 75px;
+
+  background: var(--cor-destaque);
+  color: var(--cor-menu);
+
+  border: none;
+
+  box-shadow: 0 0 1.125rem rgba(73, 198, 229, 0.5);
+}
+
+.btn-primary:hover {
+  transform: translateY(-0.25rem);
+  background: var(--cor-destaque-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cor-07);
+
+  border: 2px solid var(--cor-14);;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-0.25rem);
+  background: var(--cor-01);
+}
+
+/*-------- filas cerébro --------*/
+
+.prototipoOfc{
+  margin-left: 619px;
+  margin-top: -187px;
+
+  width: 642px;
+  height: 620px;
+}
+
+.cerebroTitulo p{
+  color: var(--cor-14);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+
+.filaComponentesCerebro{
+  margin-left: 100px;
+}
+
+.componentesTitulo p{
+  color: var(--cor-14);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-top: 75px;
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+
+.componentes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+}
+
+/*-------- filas cerébro --------*/
+
+/* SENSOR - lado esquerdo */
+.filaSistema {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -375px;
+  margin-left: 60px;
+  width: 204px;
+  height: 140px;
+}
+
+/* ARDUINO - lado direito */
+.arduino {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  
+
+}
+
+.sistemaTitulo p{
+  color: var(--cor-14);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+
+.Sistema img{
+  margin-left: 100px;
+  margin-bottom: 150px;
+}
 
 

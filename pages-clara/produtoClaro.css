@@ -371,7 +371,7 @@ img {
 
   font-weight: 400;
 
-  color: #040140;
+  color: var(--cor-01);
 
   opacity: .6;
 
@@ -385,14 +385,14 @@ img {
 }
 
 h1 {
-  margin-left: 145px;
+  margin-left: 115px;
   margin-top: 191px;
   width: 709px;
 }
 
 .conteudoInicial p{
   margin-top: 31px;
-  margin-left: 142px;
+  margin-left: 112px;
   font-weight: 600;
 }
 
@@ -420,10 +420,10 @@ h1 {
   transition: 0.3s ease;
 }
 
-/* Botão principal */
+/* Botão*/
 
 .btn-primary {
-  margin-left: 99px;
+  margin-left: 75px;
 
   background: var(--cor-destaque);
   color: var(--cor-menu);
@@ -450,25 +450,88 @@ h1 {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/*--------PROTOTIPO--------*/
+/*-------- filas cerébro --------*/
 
 .prototipoOfc{
   margin-left: 419px;
-  margin-top: -225px;
+  margin-top: -230px;
 }
 
 .cerebroTitulo p{
-  color: #000;
+  color: var(--cor-01);
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 
-  margin-left: 70px;
+  margin-left: 100px;
   margin-bottom: 40px;
 }
 
 .filaComponentesCerebro{
-  margin-left: 135px;
+  margin-left: 100px;
 }
+
+.componentesTitulo p{
+  color: var(--cor-01);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-top: 75px;
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+
+.componentes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+}
+
+/*-------- filas cerébro --------*/
+
+/* SENSOR - lado esquerdo */
+.filaSistema {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -375px;
+  margin-left: 60px;
+  width: 204px;
+  height: 140px;
+}
+
+/* ARDUINO - lado direito */
+.arduino {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  
+}
+
+.sistemaTitulo p{
+  color: var(--cor-01);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+
+.Sistema img{
+  margin-left: 100px;
+  margin-bottom: 150px;
+}
+
+
