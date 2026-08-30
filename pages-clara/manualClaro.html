@@ -10,12 +10,18 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <!-- CSS -->
     <link
         rel="stylesheet"
-        href="/pages-clara/manualClaro.css"
+        href="./manualClaro.css"
     >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- GOOGLE FONTS -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
     <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
@@ -23,7 +29,7 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
@@ -31,13 +37,16 @@
 
 </head>
 
+
 <body>
 
+
     <!-- =====================================================
-         MENU
+         MENU DESKTOP
     ====================================================== -->
 
-    <div class="menu">
+    <aside class="menu">
+
 
         <!-- LOGO -->
 
@@ -46,7 +55,7 @@
             <img
                 class="logoIcon"
                 src="/imagesClaro/LOGOClaro.png"
-                alt="LOGO"
+                alt="Logo Invicta"
             >
 
             <span>INVICTA</span>
@@ -69,10 +78,10 @@
         </div>
 
 
-        <!-- LINKS -->
+        <!-- HOME -->
 
         <a
-            href="indexClaro.html"
+            href="/pages-clara/indexClaro.html"
             class="item-menu"
         >
 
@@ -86,9 +95,11 @@
         </a>
 
 
+        <!-- MANUAL -->
+
         <a
-            href="manualClaro.html"
-            class="item-menu"
+            href="/pages-clara/manualClaro.html"
+            class="item-menu ativo"
         >
 
             <img
@@ -101,8 +112,10 @@
         </a>
 
 
+        <!-- PRODUTO -->
+
         <a
-            href="produtoClaro.html"
+            href="/pages-clara/produtoClaro.html"
             class="item-menu"
         >
 
@@ -116,8 +129,10 @@
         </a>
 
 
+        <!-- EQUIPE -->
+
         <a
-            href="equipeClaro.html"
+            href="/pages-clara/equipeClaro.html"
             class="item-menu"
         >
 
@@ -131,8 +146,10 @@
         </a>
 
 
+        <!-- REFERÊNCIAS -->
+
         <a
-            href="referenciasClaro.html"
+            href="/pages-clara/referenciasClaro.html"
             class="item-menu"
         >
 
@@ -146,8 +163,10 @@
         </a>
 
 
+        <!-- GAME -->
+
         <a
-            href="gameClaro.html"
+            href="/pages-clara/gameClaro.html"
             class="item-menu"
         >
 
@@ -161,7 +180,9 @@
         </a>
 
 
-        <!-- USUÁRIO -->
+        <!-- =================================================
+             USUÁRIO
+        ================================================== -->
 
         <div class="usuario">
 
@@ -182,28 +203,273 @@
         </div>
 
 
-        <!-- MODO ESCURO -->
+        <!-- =================================================
+             MODO ESCURO
+        ================================================== -->
 
         <a
-            href="../pages/manual.html"
+            href="/pages/manual.html"
             class="item-menu modo-escuro"
         >
 
             <img
                 class="tema-iconify"
                 src="/imagesClaro/ModoEscuro.png"
-                alt="Ícone de lua e sol"
+                alt="Modo Escuro"
             >
 
             <span>Modo Escuro</span>
 
         </a>
 
-    </div>
+
+    </aside>
+
 
 
     <!-- =====================================================
-         CONTEÚDO
+         CABEÇALHO MOBILE
+    ====================================================== -->
+
+    <header class="mobile-header">
+
+
+        <div class="mobile-logo">
+
+            <img
+                src="/imagesClaro/LOGOClaro.png"
+                alt="Logo Invicta"
+            >
+
+            <span>INVICTA</span>
+
+        </div>
+
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            type="button"
+            aria-label="Abrir menu"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         FUNDO DO MENU MOBILE
+    ====================================================== -->
+
+    <div
+        class="mobile-overlay"
+        id="mobileOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         MENU MOBILE
+    ====================================================== -->
+
+    <aside
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+
+        <!-- TOPO -->
+
+        <div class="mobile-menu-top">
+
+            <div class="mobile-menu-logo">
+
+                <img
+                    src="/imagesClaro/LOGOClaro.png"
+                    alt="Logo Invicta"
+                >
+
+                <span>INVICTA</span>
+
+            </div>
+
+
+            <button
+                class="mobile-close"
+                id="mobileClose"
+                type="button"
+                aria-label="Fechar menu"
+            >
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- PESQUISA -->
+
+        <div class="mobile-search">
+
+            <img
+                src="/imagesClaro/PESQUISAClaro.png"
+                alt="Pesquisar"
+            >
+
+            <span>Pesquisar</span>
+
+        </div>
+
+
+        <!-- LINKS -->
+
+        <nav class="mobile-nav">
+
+
+            <a
+                href="/pages-clara/indexClaro.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="/imagesClaro/HOMEClaro.png"
+                    alt="Home"
+                >
+
+                <span>Home</span>
+
+            </a>
+
+
+            <a
+                href="/pages-clara/manualClaro.html"
+                class="mobile-nav-item ativo"
+            >
+
+                <img
+                    src="/imagesClaro/MANUALClaro.png"
+                    alt="Manual"
+                >
+
+                <span>Manual</span>
+
+            </a>
+
+
+            <a
+                href="/pages-clara/produtoClaro.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="/imagesClaro/PRODUTOClaro.png"
+                    alt="Produto"
+                >
+
+                <span>Produto</span>
+
+            </a>
+
+
+            <a
+                href="/pages-clara/equipeClaro.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="/imagesClaro/EQUIPEClaro.png"
+                    alt="Equipe"
+                >
+
+                <span>Equipe</span>
+
+            </a>
+
+
+            <a
+                href="/pages-clara/referenciasClaro.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="/imagesClaro/REFERENCIASClaro.png"
+                    alt="Referências"
+                >
+
+                <span>Referências</span>
+
+            </a>
+
+
+            <a
+                href="/pages-clara/gameClaro.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="/imagesClaro/GAMEClaro.png"
+                    alt="Game"
+                >
+
+                <span>Game</span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- USUÁRIO -->
+
+        <div class="mobile-user">
+
+            <img
+                src="/imagesClaro/SECAO-USUARIOClaro.png"
+                alt="Usuário"
+            >
+
+            <div>
+
+                <h4>Geovanna Oliveira</h4>
+
+                <p>geovanna@email.com</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MODO ESCURO -->
+
+        <a
+            href="/pages/manual.html"
+            class="mobile-theme"
+        >
+
+            <img
+                src="/imagesClaro/ModoEscuro.png"
+                alt="Modo Escuro"
+            >
+
+            <span>Modo Escuro</span>
+
+        </a>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
     ====================================================== -->
 
     <main id="page">
@@ -211,30 +477,35 @@
 
         <!-- TÍTULO -->
 
-        <div class="h1">
+        <section class="h1">
 
-            <h1>Manual de Funcionamento</h1>
+            <h1>
+                Manual de Funcionamento
+            </h1>
 
-        </div>
+        </section>
 
 
-        <!-- IMAGEM DO MANUAL -->
+        <!-- MANUAL -->
 
-        <div class="manual">
+        <section class="manual">
 
             <img
                 src="/imagesClaro/MANUALref.png"
                 alt="Manual de funcionamento do projeto"
             >
 
-        </div>
+        </section>
 
 
         <!-- VÍDEO -->
 
         <section class="video">
 
-            <h2>Vídeo Demonstrativo</h2>
+            <h2>
+                Vídeo Demonstrativo
+            </h2>
+
 
             <div class="video-container">
 
@@ -252,6 +523,13 @@
 
 
     </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./manualClaro.js"></script>
+
 
 </body>
 
