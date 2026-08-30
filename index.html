@@ -1,250 +1,641 @@
 <!doctype html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="stylesheet" href="style.css">
 
-        <title>Home - SIMCE</title>
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-    <body>
-        <!-- =====================================================
-         LOGO
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <title>Home - SIMCE</title>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MENU DESKTOP
     ====================================================== -->
 
+    <aside class="menu">
+
+        <!-- LOGO -->
+
         <div class="logo">
+
             <img
                 class="logoIcon"
                 src="images/LOGO (1).png"
                 alt="Logo Invicta"
-            />
+            >
 
             <span>INVICTA</span>
+
         </div>
 
-        <!-- =====================================================
-         MENU
+
+        <!-- PESQUISA -->
+
+        <div class="pesquisa">
+
+            <img
+                class="serchIcon"
+                src="images/SERCH.png"
+                alt="Pesquisar"
+            >
+
+            <span>Pesquisar</span>
+
+        </div>
+
+
+        <!-- HOME -->
+
+        <a
+            href="index.html"
+            class="item-menu ativo"
+        >
+
+            <img
+                src="images/HOME.png"
+                alt="Home"
+            >
+
+            <span>Home</span>
+
+        </a>
+
+
+        <!-- MANUAL -->
+
+        <a
+            href="./pages/manual.html"
+            class="item-menu"
+        >
+
+            <img
+                src="images/LISTA.png"
+                alt="Manual"
+            >
+
+            <span>Manual</span>
+
+        </a>
+
+
+        <!-- PRODUTO -->
+
+        <a
+            href="./pages/produto.html"
+            class="item-menu"
+        >
+
+            <img
+                src="images/MANUAL.png"
+                alt="Produto"
+            >
+
+            <span>Produto</span>
+
+        </a>
+
+
+        <!-- EQUIPE -->
+
+        <a
+            href="./pages/equipe.html"
+            class="item-menu"
+        >
+
+            <img
+                src="images/EQUIPE.png"
+                alt="Equipe"
+            >
+
+            <span>Equipe</span>
+
+        </a>
+
+
+        <!-- REFERÊNCIAS -->
+
+        <a
+            href="./pages/referencias.html"
+            class="item-menu"
+        >
+
+            <img
+                src="images/REFERENCIAS.png"
+                alt="Referências"
+            >
+
+            <span>Referências</span>
+
+        </a>
+
+
+        <!-- GAME -->
+
+        <a
+            href="./pages/game.html"
+            class="item-menu"
+        >
+
+            <img
+                src="images/GAME.png"
+                alt="Game"
+            >
+
+            <span>Game</span>
+
+        </a>
+
+
+        <!-- USUÁRIO -->
+
+        <div class="usuario">
+
+            <img
+                class="userIcon"
+                src="images/USUÁRIO.png"
+                alt="Usuário"
+            >
+
+            <div class="dados-usuario">
+
+                <h4>Geovanna Oliveira</h4>
+
+                <p>geovanna@email.com</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MODO CLARO -->
+
+        <a
+            href="pages-clara/indexClaro.html"
+            class="item-menu modo-claro"
+        >
+
+            <img
+                class="tema-iconify"
+                src="images/Tema.png"
+                alt="Modo Claro"
+            >
+
+            <span>Modo Claro</span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CABEÇALHO MOBILE
     ====================================================== -->
 
-        <nav class="menu">
-            <!-- BOTÃO BURGER -->
-            <button class="menuBurger" type="button" aria-label="Abrir menu">
-                <img src="images/MenuBurguer.png" alt="" />
+    <header class="mobile-header">
+
+        <div class="mobile-logo">
+
+            <img
+                src="images/LOGO (1).png"
+                alt="Logo Invicta"
+            >
+
+            <span>INVICTA</span>
+
+        </div>
+
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         OVERLAY
+    ====================================================== -->
+
+    <div
+        class="mobile-overlay"
+        id="mobileOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         MENU MOBILE
+    ====================================================== -->
+
+    <aside
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+        <!-- TOPO -->
+
+        <div class="mobile-menu-top">
+
+            <div class="mobile-menu-logo">
+
+                <img
+                    src="images/LOGO (1).png"
+                    alt="Logo Invicta"
+                >
+
+                <span>INVICTA</span>
+
+            </div>
+
+
+            <button
+                class="mobile-close"
+                id="mobileClose"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                ×
             </button>
 
-            <!-- PESQUISA -->
+        </div>
 
-            <div class="pesquisa">
-                <img class="serchIcon" src="images/SERCH.png" alt="Pesquisar" />
 
-                <span>Pesquisar</span>
-            </div>
+        <!-- PESQUISA -->
 
-            <!-- LINKS -->
+        <div class="mobile-search">
 
-            <a href="index.html" class="item-menu">
-                <img src="images/HOME.png" alt="Home" />
+            <img
+                src="images/SERCH.png"
+                alt="Pesquisar"
+            >
+
+            <span>Pesquisar</span>
+
+        </div>
+
+
+        <!-- LINKS -->
+
+        <nav class="mobile-nav">
+
+            <a
+                href="index.html"
+                class="mobile-nav-item ativo"
+            >
+
+                <img
+                    src="images/HOME.png"
+                    alt="Home"
+                >
 
                 <span>Home</span>
+
             </a>
 
-            <a href="./pages/manual.html" class="item-menu">
-                <img src="images/LISTA.png" alt="Manual" />
+
+            <a
+                href="./pages/manual.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="images/LISTA.png"
+                    alt="Manual"
+                >
 
                 <span>Manual</span>
+
             </a>
 
-            <a href="./pages/produto.html" class="item-menu">
-                <img src="images/MANUAL.png" alt="Produto" />
+
+            <a
+                href="./pages/produto.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="images/MANUAL.png"
+                    alt="Produto"
+                >
 
                 <span>Produto</span>
+
             </a>
 
-            <a href="./pages/equipe.html" class="item-menu">
-                <img src="images/EQUIPE.png" alt="Equipe" />
+
+            <a
+                href="./pages/equipe.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="images/EQUIPE.png"
+                    alt="Equipe"
+                >
 
                 <span>Equipe</span>
+
             </a>
 
-            <a href="./pages/referencias.html" class="item-menu">
-                <img src="images/REFERENCIAS.png" alt="Referências" />
+
+            <a
+                href="./pages/referencias.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="images/REFERENCIAS.png"
+                    alt="Referências"
+                >
 
                 <span>Referências</span>
+
             </a>
 
-            <a href="./pages/game.html" class="item-menu">
-                <img src="images/GAME.png" alt="Game" />
+
+            <a
+                href="./pages/game.html"
+                class="mobile-nav-item"
+            >
+
+                <img
+                    src="images/GAME.png"
+                    alt="Game"
+                >
 
                 <span>Game</span>
+
             </a>
 
-            <!-- USUÁRIO -->
-
-            <div class="usuario">
-                <img class="userIcon" src="images/USUÁRIO.png" alt="Usuário" />
-
-                <div class="dados-usuario">
-                    <h4>Geovanna Oliveira</h4>
-
-                    <p>geovanna@email.com</p>
-                </div>
-            </div>
-
-            <!-- MODO CLARO -->
-
-            <a href="pages-clara/indexClaro.html" class="item-menu modo-claro">
-                <img
-                    class="tema-iconify"
-                    src="images/Tema.png"
-                    alt="Ícone de lua e sol"
-                />
-
-                <span>Modo Claro</span>
-            </a>
         </nav>
 
-        <!-- =====================================================
+
+        <!-- USUÁRIO -->
+
+        <div class="mobile-user">
+
+            <img
+                src="images/USUÁRIO.png"
+                alt="Usuário"
+            >
+
+            <div>
+
+                <h4>Geovanna Oliveira</h4>
+
+                <p>geovanna@email.com</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MODO CLARO -->
+
+        <a
+            href="pages-clara/indexClaro.html"
+            class="mobile-theme"
+        >
+
+            <img
+                src="images/Tema.png"
+                alt="Modo Claro"
+            >
+
+            <span>Modo Claro</span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =====================================================
          CONTEÚDO
     ====================================================== -->
 
-        <main id="page">
-            <!-- =================================================
+    <main id="page">
+
+
+        <!-- =================================================
              HERO
         ================================================== -->
 
-            <section class="hero">
-                <div class="hero-conteudo">
-                    <div class="conteudoInicial">
-                        <h1>
-                            Prevenindo Enchentes com
-                            <br />
-                            Tecnologia Inteligente
-                        </h1>
+        <section class="hero">
 
-                        <p>
-                            Sistema inteligente de monitoramento urbano capaz de
-                            detectar riscos de enchentes em tempo real por meio
-                            de sensores conectados.
-                        </p>
-                    </div>
+            <div class="hero-conteudo">
 
-                    <!-- BOTÕES -->
+                <div class="conteudoInicial">
 
-                    <div class="botoes">
-                        <button class="btn-primary">SABER MAIS</button>
+                    <h1>
+                        Prevenindo Enchentes com
+                        <br>
+                        Tecnologia Inteligente
+                    </h1>
 
-                        <button class="btn-secondary">VER PROTÓTIPO</button>
-                    </div>
+
+                    <p>
+                        Sistema inteligente de monitoramento urbano
+                        capaz de detectar riscos de enchentes em tempo
+                        real por meio de sensores conectados.
+                    </p>
+
                 </div>
 
-                <!-- PROTÓTIPO -->
 
-                <div class="prototipo">
-                    <img
-                        src="images/prototipo.png"
-                        alt="Protótipo do sistema SIMCE"
-                    />
+                <div class="botoes">
+
+                    <button
+                        class="btn-primary"
+                        type="button"
+                    >
+                        SABER MAIS
+                    </button>
+
+
+                    <button
+                        class="btn-secondary"
+                        type="button"
+                    >
+                        VER PROTÓTIPO
+                    </button>
+
                 </div>
-            </section>
 
-            <!-- =================================================
+            </div>
+
+
+            <!-- PROTÓTIPO -->
+
+            <div class="prototipo">
+
+                <img
+                    src="images/prototipo.png"
+                    alt="Protótipo do sistema SIMCE"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
              DIFERENCIAIS
         ================================================== -->
 
-            <section class="politicas">
-                <div class="diferencial">
-                    <h2>DIFERENCIAL</h2>
+        <section class="politicas">
 
-                    <p>
-                        Tecnologia IoT de baixo custo com monitoramento
-                        automatizado e alertas em tempo real via ESP32,
-                        superando métodos manuais.
-                    </p>
-                </div>
+            <div class="diferencial">
 
-                <div class="objetivo">
-                    <h2>OBJETIVO</h2>
+                <h2>DIFERENCIAL</h2>
 
-                    <p>
-                        Gestores públicos (Defesa Civil/Prefeituras) e moradores
-                        de áreas de risco em centros urbanos.
-                    </p>
-                </div>
+                <p>
+                    Tecnologia IoT de baixo custo com monitoramento
+                    automatizado e alertas em tempo real via ESP32,
+                    superando métodos manuais.
+                </p>
 
-                <div class="publico">
-                    <h2>PÚBLICO-ALVO</h2>
+            </div>
 
-                    <p>
-                        Antecipar riscos e emitir alertas preventivos para
-                        salvar vidas e reduzir prejuízos materiais causados por
-                        enchentes.
-                    </p>
-                </div>
-            </section>
 
-            <!-- =================================================
+            <div class="objetivo">
+
+                <h2>OBJETIVO</h2>
+
+                <p>
+                    Gestores públicos (Defesa Civil/Prefeituras)
+                    e moradores de áreas de risco em centros urbanos.
+                </p>
+
+            </div>
+
+
+            <div class="publico">
+
+                <h2>PÚBLICO-ALVO</h2>
+
+                <p>
+                    Antecipar riscos e emitir alertas preventivos
+                    para salvar vidas e reduzir prejuízos materiais
+                    causados por enchentes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
              CARDS
         ================================================== -->
 
-            <section class="cards">
-                <div class="card">
-                    <img src="images/ALERTA.png" alt="Alerta automático" />
+        <section class="cards">
 
-                    <h3>
-                        ALERTAS
-                        <br />
-                        AUTOMÁTICOS
-                    </h3>
-                </div>
+            <div class="card">
 
-                <div class="card">
-                    <img
-                        src="images/MON.TEMPO.png"
-                        alt="Monitoramento em tempo real"
-                    />
+                <img
+                    src="images/ALERTA.png"
+                    alt="Alerta automático"
+                >
 
-                    <h3>
-                        MONITORAMENTO EM
-                        <br />
-                        TEMPO REAL
-                    </h3>
-                </div>
+                <h3>
+                    ALERTAS
+                    <br>
+                    AUTOMÁTICOS
+                </h3>
 
-                <div class="card">
-                    <img src="images/PRECO.png" alt="Preço acessível" />
+            </div>
 
-                    <h3>
-                        PREÇO
-                        <br />
-                        ACESSÍVEL
-                    </h3>
-                </div>
 
-                <div class="card">
-                    <img
-                        src="images/CID.INTELIGENTE.png"
-                        alt="Cidade inteligente"
-                    />
+            <div class="card">
 
-                    <h3>
-                        CIDADES
-                        <br />
-                        INTELIGENTES
-                    </h3>
-                </div>
-            </section>
-        </main>
+                <img
+                    src="images/MON.TEMPO.png"
+                    alt="Monitoramento em tempo real"
+                >
 
-        <script src="script.js"></script>
-    </body>
+                <h3>
+                    MONITORAMENTO EM
+                    <br>
+                    TEMPO REAL
+                </h3>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="images/PRECO.png"
+                    alt="Preço acessível"
+                >
+
+                <h3>
+                    PREÇO
+                    <br>
+                    ACESSÍVEL
+                </h3>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="images/CID.INTELIGENTE.png"
+                    alt="Cidade inteligente"
+                >
+
+                <h3>
+                    CIDADES
+                    <br>
+                    INTELIGENTES
+                </h3>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
 </html>

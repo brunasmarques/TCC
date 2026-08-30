@@ -1,57 +1,338 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menu = document.querySelector(".menu");
-    const menuBurger = document.querySelector(".menuBurger");
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (!menu || !menuBurger) {
-        console.error("ERRO: .menu ou .menuBurger não encontrado.");
-        return;
+    /* =====================================================
+       ANIMAÇÃO DE ENTRADA
+    ====================================================== */
+
+    document.body.classList.add("entrando");
+
+
+    /* =====================================================
+       ELEMENTOS
+    ====================================================== */
+
+    const menuButton =
+        document.getElementById("mobileMenuButton");
+
+    const menu =
+        document.getElementById("mobileMenu");
+
+    const closeButton =
+        document.getElementById("mobileClose");
+
+    const overlay =
+        document.getElementById("mobileOverlay");
+
+
+    /* =====================================================
+       ABRIR MENU
+    ====================================================== */
+
+    function abrirMenu() {
+
+        if (!menu || !overlay || !menuButton) {
+            return;
+        }
+
+
+        menu.classList.add("active");
+
+        overlay.classList.add("active");
+
+        menuButton.classList.add("active");
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Fechar menu"
+        );
+
+
+        document.body.style.overflow = "hidden";
     }
 
-    /* =====================================================
-       ABRIR / FECHAR MENU
-    ===================================================== */
-
-    menuBurger.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-
-        menu.classList.toggle("menu-aberto");
-
-        console.log(
-            menu.classList.contains("menu-aberto")
-                ? "MENU ABERTO"
-                : "MENU FECHADO",
-        );
-    });
 
     /* =====================================================
-       CLICAR FORA → FECHAR
-    ===================================================== */
+       FECHAR MENU
+    ====================================================== */
 
-    document.addEventListener("click", (event) => {
-        if (!menu.contains(event.target)) {
-            menu.classList.remove("menu-aberto");
+    function fecharMenu() {
+
+        if (!menu || !overlay || !menuButton) {
+            return;
         }
-    });
+
+
+        menu.classList.remove("active");
+
+        overlay.classList.remove("active");
+
+        menuButton.classList.remove("active");
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Abrir menu"
+        );
+
+
+        document.body.style.overflow = "";
+    }
+
 
     /* =====================================================
-       CLIQUES DENTRO DO MENU
-       NÃO FECHAM O MENU
-    ===================================================== */
+       BOTÃO HAMBURGER
+    ====================================================== */
 
-    menu.addEventListener("click", (event) => {
-        event.stopPropagation();
+    if (menuButton) {
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    menu.classList.contains("active")
+                ) {
+
+                    fecharMenu();
+
+                } else {
+
+                    abrirMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       BOTÃO X
+    ====================================================== */
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            fecharMenu
+        );
+
+    }
+
+
+    /* =====================================================
+       CLICAR FORA
+    ====================================================== */
+
+    if (overlay) {
+
+        overlay.addEventListener(
+            "click",
+            fecharMenu
+        );
+
+    }
+
+
+    /* =====================================================
+       LINKS MOBILE
+    ====================================================== */
+
+    const links =
+        document.querySelectorAll(
+            ".mobile-nav-item"
+        );
+
+
+    links.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                fecharMenu();
+
+            }
+        );
+
     });
+
 
     /* =====================================================
        MODO CLARO
-    ===================================================== */
+    ====================================================== */
 
-    const botaoTema = document.querySelector(".modo-claro");
+    const modoClaro =
+        document.querySelector(".modo-claro");
 
-    if (botaoTema) {
-        botaoTema.addEventListener("click", () => {
-            window.location.href = "pages-clara/indexClaro.html";
-        });
+    const modoClaroMobile =
+        document.querySelector(".mobile-theme");
+
+
+    function mudarParaModoClaro(event) {
+
+        event.preventDefault();
+
+        fecharMenu();
+
+        document.body.classList.remove(
+            "entrando"
+        );
+
+        document.body.classList.add(
+            "saindo"
+        );
+
+
+        setTimeout(function () {
+
+            window.location.href =
+                "pages-clara/indexClaro.html";
+
+        }, 500);
+
     }
+
+
+    if (modoClaro) {
+
+        modoClaro.addEventListener(
+            "click",
+            mudarParaModoClaro
+        );
+
+    }
+
+
+    if (modoClaroMobile) {
+
+        modoClaroMobile.addEventListener(
+            "click",
+            mudarParaModoClaro
+        );
+
+    }
+
+
+    /* =====================================================
+       SABER MAIS
+    ====================================================== */
+
+    const saberMais =
+        document.querySelector(".btn-primary");
+
+
+    if (saberMais) {
+
+        saberMais.addEventListener(
+            "click",
+            function () {
+
+                const politicas =
+                    document.querySelector(".politicas");
+
+
+                if (politicas) {
+
+                    politicas.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       VER PROTÓTIPO
+    ====================================================== */
+
+    const verPrototipo =
+        document.querySelector(".btn-secondary");
+
+
+    if (verPrototipo) {
+
+        verPrototipo.addEventListener(
+            "click",
+            function () {
+
+                const prototipo =
+                    document.querySelector(".prototipo");
+
+
+                if (prototipo) {
+
+                    prototipo.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESC fecha o menu
+    ====================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                menu &&
+                menu.classList.contains("active")
+            ) {
+
+                fecharMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       REDIMENSIONAMENTO
+    ====================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (
+                window.innerWidth > 600 &&
+                menu
+            ) {
+
+                fecharMenu();
+
+            }
+
+        }
+    );
+
 });
