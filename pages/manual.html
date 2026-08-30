@@ -1,144 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
 
-    <link rel="stylesheet" href="/pages/manual.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"
-    >
+        <!-- CSS DA PÁGINA -->
+        <link rel="stylesheet" href="./manual.css" />
 
-    <title>Manual de Funcionamento</title>
-</head>
+        <!-- GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-<body>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <div class="menu">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
 
-        <!-- LOGO -->
-        <div class="logo">
-            <img
-                class="logoIcon"
-                src="/images/LOGO (1).png"
-                alt="LOGO"
-            >
-            <span>INVICTA</span>
-        </div>
+        <title>Manual de Funcionamento</title>
+    </head>
 
-        <!-- PESQUISA -->
-        <div class="pesquisa">
-            <img
-                class="serchIcon"
-                src="/images/SERCH.png"
-                alt="Pesquisar"
-            >
-            <span>Pesquisar</span>
-        </div>
+    <body>
+        <!-- =====================================================
+         MENU DESKTOP
+    ====================================================== -->
 
-        <!-- MENU -->
-        <a href="../index.html" class="item-menu">
-            <img src="/images/HOME.png" alt="Home">
-            <span>Home</span>
-        </a>
+        <aside class="menu">
+            <!-- LOGO -->
 
-        <a href="manual.html" class="item-menu">
-            <img src="/images/LISTA.png" alt="Manual">
-            <span>Manual</span>
-        </a>
+            <div class="logo">
+                <img
+                    class="logoIcon"
+                    src="/images/LOGO (1).png"
+                    alt="Logo Invicta"
+                />
 
-        <a href="produto.html" class="item-menu">
-            <img src="/images/MANUAL.png" alt="Produto">
-            <span>Produto</span>
-        </a>
-
-        <a href="equipe.html" class="item-menu">
-            <img src="/images/EQUIPE.png" alt="Equipe">
-            <span>Equipe</span>
-        </a>
-
-        <a href="referencias.html" class="item-menu">
-            <img src="/images/REFERENCIAS.png" alt="Referências">
-            <span>Referências</span>
-        </a>
-
-        <a href="game.html" class="item-menu">
-            <img src="/images/GAME.png" alt="Game">
-            <span>Game</span>
-        </a>
-
-        <!-- USUÁRIO -->
-        <div class="usuario">
-            <img
-                class="userIcon"
-                src="/images/USUÁRIO.png"
-                alt="Usuário"
-            >
-
-            <div class="dados-usuario">
-                <h4>Geovanna Oliveira</h4>
-                <p>geovanna@email.com</p>
-            </div>
-        </div>
-
-        <!-- MODO CLARO -->
-        <a
-            href="/pages-clara/manualClaro.html"
-            class="item-menu modo-claro"
-        >
-            <img
-                class="tema-iconify"
-                src="/images/Tema.png"
-                alt="Ícone de lua e sol"
-            >
-            <span>Modo Claro</span>
-        </a>
-
-    </div>
-
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main id="page">
-
-        <!-- TÍTULO -->
-        <div class="h1">
-            <h1>Manual de Funcionamento</h1>
-        </div>
-
-
-        <!-- IMAGEM DO MANUAL -->
-        <div class="manual">
-            <img
-                src="/images/MANUAL(P2).png"
-                alt="Manual de funcionamento do projeto"
-            >
-        </div>
-
-
-        <!-- VÍDEO -->
-        <section class="video">
-
-            <h2>Vídeo Demonstrativo</h2>
-
-            <div class="video-container">
-
-                <iframe
-                    src="https://www.youtube.com/embed/OODsdBu-YHQ?si=AuJnR03rpGpwlJAh"
-                    title="Vídeo Demonstrativo do Projeto"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                ></iframe>
-
+                <span>INVICTA</span>
             </div>
 
-        </section>
+            <!-- PESQUISA -->
 
-    </main>
+            <div class="pesquisa">
+                <img
+                    class="serchIcon"
+                    src="/images/SERCH.png"
+                    alt="Pesquisar"
+                />
 
-</body>
+                <span>Pesquisar</span>
+            </div>
+
+            <!-- HOME -->
+
+            <a href="/index.html" class="item-menu">
+                <img src="/images/HOME.png" alt="Home" />
+
+                <span>Home</span>
+            </a>
+
+            <!-- MANUAL -->
+
+            <a href="/pages/manual.html" class="item-menu ativo">
+                <img src="/images/LISTA.png" alt="Manual" />
+
+                <span>Manual</span>
+            </a>
+
+            <!-- PRODUTO -->
+
+            <a href="/pages/produto.html" class="item-menu">
+                <img src="/images/MANUAL.png" alt="Produto" />
+
+                <span>Produto</span>
+            </a>
+
+            <!-- EQUIPE -->
+
+            <a href="/pages/equipe.html" class="item-menu">
+                <img src="/images/EQUIPE.png" alt="Equipe" />
+
+                <span>Equipe</span>
+            </a>
+
+            <!-- REFERÊNCIAS -->
+
+            <a href="/pages/referencias.html" class="item-menu">
+                <img src="/images/REFERENCIAS.png" alt="Referências" />
+
+                <span>Referências</span>
+            </a>
+
+            <!-- GAME -->
+
+            <a href="/pages/game.html" class="item-menu">
+                <img src="/images/GAME.png" alt="Game" />
+
+                <span>Game</span>
+            </a>
+
+            <!-- =================================================
+             USUÁRIO
+        ================================================== -->
+
+            <div class="usuario">
+                <img class="userIcon" src="/images/USUÁRIO.png" alt="Usuário" />
+
+                <div class="dados-usuario">
+                    <h4>Geovanna Oliveira</h4>
+
+                    <p>geovanna@email.com</p>
+                </div>
+            </div>
+
+            <!-- =================================================
+             MODO CLARO
+        ================================================== -->
+
+            <a
+                href="/pages-clara/manualClaro.html"
+                class="item-menu modo-claro"
+            >
+                <img
+                    class="tema-iconify"
+                    src="/images/Tema.png"
+                    alt="Modo Claro"
+                />
+
+                <span>Modo Claro</span>
+            </a>
+        </aside>
+
+        <!-- =====================================================
+         CABEÇALHO MOBILE
+    ====================================================== -->
+
+        <header class="mobile-header">
+            <div class="mobile-logo">
+                <img src="/images/LOGO (1).png" alt="Logo Invicta" />
+
+                <span>INVICTA</span>
+            </div>
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Abrir menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- =====================================================
+         MENU MOBILE
+    ====================================================== -->
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <aside class="mobile-menu" id="mobileMenu">
+            <!-- TOPO -->
+
+            <div class="mobile-menu-top">
+                <div class="mobile-menu-logo">
+                    <img src="/images/LOGO (1).png" alt="Logo Invicta" />
+
+                    <span>INVICTA</span>
+                </div>
+
+                <button
+                    class="mobile-close"
+                    id="mobileClose"
+                    type="button"
+                    aria-label="Fechar menu"
+                >
+                    ×
+                </button>
+            </div>
+
+            <!-- PESQUISA -->
+
+            <div class="mobile-search">
+                <img src="/images/SERCH.png" alt="Pesquisar" />
+
+                <span>Pesquisar</span>
+            </div>
+
+            <!-- LINKS -->
+
+            <nav class="mobile-nav">
+                <a href="/index.html" class="mobile-nav-item">
+                    <img src="/images/HOME.png" alt="Home" />
+
+                    <span>Home</span>
+                </a>
+
+                <a href="/pages/manual.html" class="mobile-nav-item ativo">
+                    <img src="/images/LISTA.png" alt="Manual" />
+
+                    <span>Manual</span>
+                </a>
+
+                <a href="/pages/produto.html" class="mobile-nav-item">
+                    <img src="/images/MANUAL.png" alt="Produto" />
+
+                    <span>Produto</span>
+                </a>
+
+                <a href="/pages/equipe.html" class="mobile-nav-item">
+                    <img src="/images/EQUIPE.png" alt="Equipe" />
+
+                    <span>Equipe</span>
+                </a>
+
+                <a href="/pages/referencias.html" class="mobile-nav-item">
+                    <img src="/images/REFERENCIAS.png" alt="Referências" />
+
+                    <span>Referências</span>
+                </a>
+
+                <a href="/pages/game.html" class="mobile-nav-item">
+                    <img src="/images/GAME.png" alt="Game" />
+
+                    <span>Game</span>
+                </a>
+            </nav>
+
+            <!-- USUÁRIO -->
+
+            <div class="mobile-user">
+                <img src="/images/USUÁRIO.png" alt="Usuário" />
+
+                <div>
+                    <h4>Geovanna Oliveira</h4>
+
+                    <p>geovanna@email.com</p>
+                </div>
+            </div>
+
+            <!-- MODO CLARO -->
+
+            <a href="/pages-clara/manualClaro.html" class="mobile-theme">
+                <img src="/images/Tema.png" alt="Modo Claro" />
+
+                <span>Modo Claro</span>
+            </a>
+        </aside>
+
+        <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+        <main id="page">
+            <!-- TÍTULO -->
+
+            <section class="h1">
+                <h1>Manual de Funcionamento</h1>
+            </section>
+
+            <!-- =================================================
+             IMAGEM DO MANUAL
+        ================================================== -->
+
+            <section class="manual">
+                <img
+                    src="/images/MANUAL(P2).png"
+                    alt="Manual de funcionamento do projeto"
+                />
+            </section>
+
+            <!-- =================================================
+             VÍDEO
+        ================================================== -->
+
+            <section class="video">
+                <h2>Vídeo Demonstrativo</h2>
+
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/OODsdBu-YHQ?si=AuJnR03rpGpwlJAh"
+                        title="Vídeo Demonstrativo do Projeto"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </section>
+        </main>
+
+        <!-- JAVASCRIPT -->
+
+        <script src="./manual.js"></script>
+    </body>
 </html>

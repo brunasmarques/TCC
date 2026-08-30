@@ -1,32 +1,43 @@
-@import "../colors.css";
-
 /* =========================================================
-   CONFIGURAÇÕES GERAIS
+   RESET
 ========================================================= */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
+
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
+
 body {
-  background: linear-gradient(
-    135deg,
-    var(--cor-fundo-1),
-    var(--cor-fundo-2),
-    var(--cor-fundo-3)
-  );
+    min-height: 100vh;
 
-  color: var(--cor-texto);
+    background:
+        linear-gradient(
+            180deg,
+            #04031D 0%,
+            #0B0E16 55%,
+            #04031D 100%
+        );
 
-  position: relative;
-  min-height: 100vh;
+    color: #FFFFFF;
+
+    overflow-x: hidden;
+
+    transition: opacity 0.5s ease;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 
@@ -36,306 +47,365 @@ body {
 
 @keyframes fadeInUp {
 
-  from {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+body.entrando {
+    animation: fadeInUp 0.5s ease both;
+}
+
+
+body.saindo {
     opacity: 0;
-    transform: translateY(2rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
 }
 
 
 /* =========================================================
-   IMAGENS
-========================================================= */
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-
-/* =========================================================
-   MENU LATERAL
+   MENU DESKTOP
 ========================================================= */
 
 .menu {
 
-  position: fixed;
+    position: fixed;
 
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 
-  width: 4.6875rem;
-  height: 100vh;
+    width: 75px;
+    height: 100vh;
 
-  background: var(--cor-menu);
+    background: #05032A;
 
-  display: flex;
-  flex-direction: column;
+    padding: 20px 14px;
 
-  padding: 1.25rem 0.9375rem;
+    display: flex;
+    flex-direction: column;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  transition: .35s ease;
+    border-radius: 0 18px 18px 0;
 
-  border-radius: 0 1.25rem 1.25rem 0;
+    z-index: 1000;
 
-  z-index: 999;
+    transition: width 0.35s ease;
+
 }
 
+
 .menu:hover {
-  width: 16.25rem;
+    width: 260px;
 }
 
 
 /* =========================================================
-   LOGO
+   LOGO DESKTOP
 ========================================================= */
 
 .logo {
 
-  display: flex;
-  align-items: center;
+    display: flex;
 
-  gap: 0.9375rem;
+    align-items: center;
 
-  margin-bottom: 2.5rem;
+    gap: 15px;
 
-  flex-shrink: 0;
+    margin-bottom: 35px;
+
+    flex-shrink: 0;
+
 }
 
-.logo img {
 
-  width: 2.5rem;
-  height: 2.5rem;
+.logoIcon {
 
-  object-fit: contain;
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
 }
+
 
 .logo span {
 
-  font-size: 2rem;
-  font-weight: 700;
+    color: #FFFFFF;
 
-  white-space: nowrap;
+    font-size: 25px;
 
-  opacity: 0;
+    font-weight: 700;
 
-  transition: .3s;
+    letter-spacing: 1.5px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
 }
 
+
 .menu:hover .logo span {
-  opacity: 1;
+    opacity: 1;
 }
 
 
 /* =========================================================
-   PESQUISA
+   PESQUISA DESKTOP
 ========================================================= */
 
 .pesquisa {
 
-  display: flex;
-  align-items: center;
+    display: flex;
 
-  gap: 0.9375rem;
+    align-items: center;
 
-  width: 100%;
+    gap: 15px;
 
-  background: var(--cor-elemento);
+    width: 100%;
 
-  border-radius: 0.625rem;
+    padding: 11px;
 
-  padding: 0.75rem;
+    margin-bottom: 25px;
 
-  margin-bottom: 1.5625rem;
+    background: #1C1A46;
 
-  flex-shrink: 0;
+    border-radius: 10px;
+
+    flex-shrink: 0;
+
 }
 
-.pesquisa img {
 
-  width: 1.625rem;
-  height: 1.625rem;
+.serchIcon {
 
-  object-fit: contain;
+    width: 27px;
+    height: 27px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
 }
+
 
 .pesquisa span {
 
-  white-space: nowrap;
+    color: #FFFFFF;
 
-  opacity: 0;
+    font-size: 14px;
 
-  transition: .3s;
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
 }
 
+
 .menu:hover .pesquisa span {
-  opacity: 1;
+    opacity: 1;
 }
 
 
 /* =========================================================
-   ITENS DO MENU
+   LINKS DESKTOP
 ========================================================= */
 
 .item-menu {
 
-  display: flex;
-  align-items: center;
+    width: 100%;
 
-  gap: 1.125rem;
+    display: flex;
 
-  width: 100%;
+    align-items: center;
 
-  padding: 0.75rem;
+    gap: 17px;
 
-  margin-bottom: 0.5rem;
+    padding: 12px;
 
-  border-radius: 0.625rem;
+    margin-bottom: 7px;
 
-  cursor: pointer;
+    border-radius: 10px;
 
-  transition: .3s ease;
+    text-decoration: none;
 
-  text-decoration: none;
+    color: #FFFFFF;
 
-  color: var(--cor-texto);
+    transition: background 0.25s ease;
 
-  flex-shrink: 0;
+    flex-shrink: 0;
+
 }
+
 
 .item-menu:hover {
-  background: var(--cor-elemento);
+
+    background: #1C1A46;
+
 }
+
+
+.item-menu.ativo {
+
+    background: rgba(77, 215, 229, 0.12);
+
+}
+
 
 .item-menu img {
 
-  width: 1.75rem;
-  height: 1.75rem;
+    width: 27px;
+    height: 27px;
 
-  object-fit: contain;
+    object-fit: contain;
 
-  flex-shrink: 0;
+    flex-shrink: 0;
+
 }
+
 
 .item-menu span {
 
-  white-space: nowrap;
+    font-size: 15px;
 
-  opacity: 0;
+    font-weight: 500;
 
-  transition: .3s ease;
+    white-space: nowrap;
 
-  font-size: 1rem;
-  font-weight: 500;
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
 }
 
+
 .menu:hover .item-menu span {
-  opacity: 1;
+    opacity: 1;
 }
 
 
 /* =========================================================
-   USUÁRIO
+   USUÁRIO DESKTOP
 ========================================================= */
 
 .usuario {
 
-  margin-top: auto;
+    display: flex;
 
-  margin-bottom: 20px;
+    align-items: center;
 
-  display: flex;
-  align-items: center;
+    gap: 13px;
 
-  gap: 0.9375rem;
+    width: 100%;
 
-  width: 100%;
+    padding: 11px;
 
-  background: var(--cor-elemento);
+    margin-top: auto;
+    margin-bottom: 18px;
 
-  padding: 0.75rem;
+    background: #1C1A46;
 
-  border-radius: 0.625rem;
+    border-radius: 10px;
 
-  flex-shrink: 0;
+    flex-shrink: 0;
+
 }
 
-.usuario img {
 
-  width: 2.1875rem;
-  height: 2.1875rem;
+.userIcon {
 
-  object-fit: contain;
+    width: 37px;
+    height: 37px;
 
-  flex-shrink: 0;
+    object-fit: contain;
+
+    flex-shrink: 0;
+
 }
+
 
 .dados-usuario {
 
-  opacity: 0;
+    overflow: hidden;
 
-  max-width: 0;
+    white-space: nowrap;
 
-  overflow: hidden;
+    opacity: 0;
 
-  white-space: nowrap;
+    transition: opacity 0.3s ease;
 
-  transition:
-    opacity .3s ease,
-    max-width .3s ease;
 }
+
 
 .menu:hover .dados-usuario {
-
-  opacity: 1;
-
-  max-width: 180px;
+    opacity: 1;
 }
+
 
 .dados-usuario h4 {
 
-  font-size: .9rem;
+    color: #FFFFFF;
 
-  font-weight: 600;
+    font-size: 13px;
 
-  margin: 0;
+    font-weight: 600;
 
-  color: var(--cor-texto);
 }
+
 
 .dados-usuario p {
 
-  font-size: .7rem;
+    color: #A7ABB0;
 
-  font-weight: 400;
+    font-size: 10px;
 
-  color: var(--cor-texto-terciario);
+    margin-top: 4px;
 
-  margin: .25rem 0 0 0;
 }
 
 
 /* =========================================================
-   CONTEÚDO PRINCIPAL
+   BOTÃO MOBILE
+========================================================= */
+
+.mobile-header,
+.mobile-menu,
+.mobile-overlay {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO DESKTOP
 ========================================================= */
 
 #page {
 
-  width: 100%;
+    width: 100%;
 
-  min-height: 100vh;
+    min-height: 100vh;
 
-  padding-top: 2.5rem;
+    padding-left: 75px;
 
-  padding-bottom: 5rem;
+    padding-top: 35px;
+
+    padding-bottom: 70px;
 
 }
 
@@ -346,129 +416,835 @@ img {
 
 .h1 {
 
-  display: flex;
+    width: 100%;
 
-  align-items: center;
+    display: flex;
 
-  justify-content: center;
+    align-items: center;
 
-  margin-top: 2.5rem;
+    justify-content: center;
 
-  margin-bottom: 2rem;
+    text-align: center;
 
-  animation:
-    fadeInUp
-    .6s
-    ease
-    both;
+    margin-top: 30px;
+
+    margin-bottom: 35px;
+
+    padding: 0 30px;
+
+    animation:
+        fadeInUp
+        0.6s
+        ease
+        both;
+
 }
+
 
 .h1 h1 {
 
-  color: var(--cor-texto);
+    color: #FFFFFF;
 
-  font-size: 2.5rem;
+    font-size: 40px;
 
-  font-weight: 700;
+    font-weight: 700;
 
-  text-align: center;
+    line-height: 1.2;
+
 }
 
 
 /* =========================================================
-   MANUAL
+   MANUAL DESKTOP
 ========================================================= */
 
 .manual {
 
-  display: flex;
+    width: 100%;
 
-  align-items: center;
+    display: flex;
 
-  justify-content: center;
+    justify-content: center;
 
-  width: 100%;
+    align-items: center;
 
-  animation:
-    fadeInUp
-    .6s
-    .15s
-    ease
-    both;
+    padding: 0 35px;
+
+    animation:
+        fadeInUp
+        0.6s
+        0.15s
+        ease
+        both;
+
 }
+
 
 .manual img {
 
-  max-width: 100%;
+    width: auto;
 
-  width: auto;
+    max-width: 100%;
 
-  height: auto;
+    height: auto;
 
-  display: block;
+    object-fit: contain;
+
 }
 
 
 /* =========================================================
-   VÍDEO
+   VÍDEO DESKTOP
 ========================================================= */
 
 .video {
 
-  width: 100%;
+    width: 100%;
 
-  margin: 4rem auto;
+    margin: 65px auto 30px;
 
-  text-align: center;
+    padding: 0 30px;
 
-  animation:
-    fadeInUp
-    .6s
-    .3s
-    ease
-    both;
+    text-align: center;
+
+    animation:
+        fadeInUp
+        0.6s
+        0.3s
+        ease
+        both;
+
 }
+
 
 .video h2 {
 
-  color: var(--cor-texto);
+    color: #FFFFFF;
 
-  font-size: 2rem;
+    font-size: 30px;
 
-  font-weight: 600;
+    font-weight: 600;
 
-  margin-bottom: 2rem;
+    margin-bottom: 25px;
+
 }
+
 
 .video-container {
 
-  width: 100%;
+    width: 100%;
 
-  max-width: 900px;
+    max-width: 900px;
 
-  margin: 0 auto;
+    aspect-ratio: 16 / 9;
 
-  aspect-ratio: 16 / 9;
+    margin: 0 auto;
+
 }
+
 
 .video-container iframe {
 
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  border: none;
+    border: none;
 
-  border-radius: 1rem;
+    border-radius: 14px;
 
-  box-shadow:
-    0 0 20px var(--sombra-destaque);
+    box-shadow:
+        0 0 20px rgba(
+            77,
+            215,
+            229,
+            0.25
+        );
 
-  transition:
-    box-shadow .3s ease;
 }
 
-.video-container iframe:hover {
 
-  box-shadow:
-    0 0 35px var(--sombra-destaque);
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    body {
+
+        background:
+            linear-gradient(
+                180deg,
+                #04031D 0%,
+                #0B0E16 100%
+            );
+
+    }
+
+
+    /* -----------------------------------------------------
+       ESCONDE MENU DESKTOP
+    ----------------------------------------------------- */
+
+    .menu {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       CABEÇALHO
+    ----------------------------------------------------- */
+
+    .mobile-header {
+
+        width: 100%;
+        height: 68px;
+
+        padding: 0 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        background: #05032A;
+
+        border-bottom:
+            1px solid
+            rgba(
+                77,
+                215,
+                229,
+                0.2
+            );
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+
+    }
+
+
+    .mobile-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+    }
+
+
+    .mobile-logo img {
+
+        width: 36px;
+        height: 36px;
+
+        object-fit: contain;
+
+    }
+
+
+    .mobile-logo span {
+
+        color: #FFFFFF;
+
+        font-size: 19px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       HAMBURGER
+    ----------------------------------------------------- */
+
+    .mobile-menu-button {
+
+        width: 43px;
+        height: 43px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 5px;
+
+        border: none;
+
+        background: transparent;
+
+        cursor: pointer;
+
+    }
+
+
+    .mobile-menu-button span {
+
+        width: 25px;
+        height: 2px;
+
+        border-radius: 5px;
+
+        background: #4DD7E5;
+
+        transition: 0.3s;
+
+    }
+
+
+    /* -----------------------------------------------------
+       OVERLAY
+    ----------------------------------------------------- */
+
+    .mobile-overlay {
+
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(
+            0,
+            0,
+            0,
+            0.65
+        );
+
+        z-index: 1500;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease;
+
+    }
+
+
+    .mobile-overlay.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MENU MOBILE
+    ----------------------------------------------------- */
+
+    .mobile-menu {
+
+        display: block;
+
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+
+        width: 82%;
+        max-width: 330px;
+
+        height: 100vh;
+
+        padding: 20px;
+
+        background: #05032A;
+
+        z-index: 2000;
+
+        overflow-y: auto;
+
+        transition:
+            right 0.35s ease;
+
+        box-shadow:
+            -10px 0 30px
+            rgba(
+                0,
+                0,
+                0,
+                0.35
+            );
+
+    }
+
+
+    .mobile-menu.active {
+
+        right: 0;
+
+    }
+
+
+    /* -----------------------------------------------------
+       TOPO DO MENU
+    ----------------------------------------------------- */
+
+    .mobile-menu-top {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .mobile-menu-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+    }
+
+
+    .mobile-menu-logo img {
+
+        width: 36px;
+        height: 36px;
+
+        object-fit: contain;
+
+    }
+
+
+    .mobile-menu-logo span {
+
+        color: #FFFFFF;
+
+        font-size: 18px;
+
+        font-weight: 700;
+
+    }
+
+
+    .mobile-close {
+
+        border: none;
+
+        background: transparent;
+
+        color: #4DD7E5;
+
+        font-size: 34px;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PESQUISA MOBILE
+    ----------------------------------------------------- */
+
+    .mobile-search {
+
+        width: 100%;
+
+        height: 45px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 0 13px;
+
+        margin-bottom: 22px;
+
+        border-radius: 10px;
+
+        background: #1C1A46;
+
+    }
+
+
+    .mobile-search img {
+
+        width: 22px;
+        height: 22px;
+
+        object-fit: contain;
+
+    }
+
+
+    .mobile-search span {
+
+        color: #858A91;
+
+        font-size: 13px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       LINKS MOBILE
+    ----------------------------------------------------- */
+
+    .mobile-nav {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 7px;
+
+    }
+
+
+    .mobile-nav-item {
+
+        width: 100%;
+
+        min-height: 52px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 10px 13px;
+
+        border-radius: 11px;
+
+        color: #FFFFFF;
+
+        text-decoration: none;
+
+        transition:
+            background 0.2s ease;
+
+    }
+
+
+    .mobile-nav-item:active,
+    .mobile-nav-item.ativo {
+
+        background:
+            rgba(
+                77,
+                215,
+                229,
+                0.12
+            );
+
+    }
+
+
+    .mobile-nav-item img {
+
+        width: 25px;
+        height: 25px;
+
+        object-fit: contain;
+
+    }
+
+
+    .mobile-nav-item span {
+
+        font-size: 15px;
+
+        font-weight: 500;
+
+    }
+
+
+    /* -----------------------------------------------------
+       USUÁRIO MOBILE
+    ----------------------------------------------------- */
+
+    .mobile-user {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-top: 30px;
+
+        padding-top: 20px;
+
+        border-top:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                0.1
+            );
+
+    }
+
+
+    .mobile-user > img {
+
+        width: 45px;
+        height: 45px;
+
+        object-fit: contain;
+
+    }
+
+
+    .mobile-user h4 {
+
+        color: #FFFFFF;
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        margin-bottom: 4px;
+
+    }
+
+
+    .mobile-user p {
+
+        color: #A7ABB0;
+
+        font-size: 10px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MODO CLARO MOBILE
+    ----------------------------------------------------- */
+
+    .mobile-theme {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        margin-top: 22px;
+
+        padding: 11px 13px;
+
+        min-height: 50px;
+
+        border-radius: 11px;
+
+        color: #FFFFFF;
+
+        text-decoration: none;
+
+    }
+
+
+    .mobile-theme img {
+
+        width: 25px;
+        height: 25px;
+
+        object-fit: contain;
+
+    }
+
+
+    .mobile-theme span {
+
+        font-size: 15px;
+
+        font-weight: 500;
+
+    }
+
+
+    /* -----------------------------------------------------
+       CONTEÚDO MOBILE
+    ----------------------------------------------------- */
+
+    #page {
+
+        padding: 30px 0 50px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       TÍTULO MOBILE
+    ----------------------------------------------------- */
+
+    .h1 {
+
+        padding: 0 18px;
+
+        margin-top: 0;
+
+        margin-bottom: 28px;
+
+    }
+
+
+    .h1 h1 {
+
+        font-size: 27px;
+
+        line-height: 1.2;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MANUAL MOBILE
+    ----------------------------------------------------- */
+
+    .manual {
+
+        padding: 0 15px;
+
+        width: 100%;
+
+    }
+
+
+    .manual img {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: auto;
+
+    }
+
+
+    /* -----------------------------------------------------
+       VÍDEO MOBILE
+    ----------------------------------------------------- */
+
+    .video {
+
+        margin-top: 45px;
+
+        padding: 0 15px;
+
+    }
+
+
+    .video h2 {
+
+        font-size: 21px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .video-container {
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
+
+    .video-container iframe {
+
+        border-radius: 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+========================================================= */
+
+@media (max-width: 360px) {
+
+
+    .mobile-header {
+
+        padding: 0 14px;
+
+    }
+
+
+    .mobile-logo span {
+
+        font-size: 17px;
+
+    }
+
+
+    #page {
+
+        padding-top: 25px;
+
+    }
+
+
+    .h1 {
+
+        padding: 0 14px;
+
+    }
+
+
+    .h1 h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .manual {
+
+        padding: 0 12px;
+
+    }
+
+
+    .video {
+
+        padding: 0 12px;
+
+        margin-top: 38px;
+
+    }
+
+
+    .video h2 {
+
+        font-size: 19px;
+
+    }
+
 }
