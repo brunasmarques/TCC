@@ -1,143 +1,139 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
-       ELEMENTOS DO MENU
-    ===================================================== */
+   ANIMAÇÃO DE ENTRADA
+====================================================== */
 
-    const menu = document.querySelector(".menu");
-    const menuBurger = document.querySelector(".menuBurger");
+    document.body.classList.add("entrando");
 
-    if (!menu) {
-        console.error("ERRO: elemento .menu não encontrado.");
-        return;
+    /* =====================================================
+   ELEMENTOS DO MENU MOBILE
+====================================================== */
+
+    const menuButton = document.getElementById("mobileMenuButton");
+
+    const menu = document.getElementById("mobileMenu");
+
+    const closeButton = document.getElementById("mobileClose");
+
+    const overlay = document.getElementById("mobileOverlay");
+
+    /* =====================================================
+   ABRIR MENU
+====================================================== */
+
+    function abrirMenu() {
+        if (!menu || !overlay || !menuButton) {
+            return;
+        }
+
+        menu.classList.add("active");
+
+        overlay.classList.add("active");
+
+        menuButton.classList.add("active");
+
+        menuButton.setAttribute("aria-label", "Fechar menu");
+
+        menuButton.setAttribute("aria-expanded", "true");
+
+        document.body.style.overflow = "hidden";
     }
 
     /* =====================================================
-       ABRIR / FECHAR MENU MOBILE
-    ===================================================== */
+   FECHAR MENU
+====================================================== */
 
-    if (menuBurger) {
-        menuBurger.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+    function fecharMenu() {
+        if (!menu || !overlay || !menuButton) {
+            return;
+        }
 
-            menu.classList.toggle("menu-aberto");
+        menu.classList.remove("active");
 
-            const menuAberto = menu.classList.contains("menu-aberto");
+        overlay.classList.remove("active");
 
-            menuBurger.setAttribute(
-                "aria-expanded",
-                menuAberto ? "true" : "false",
-            );
+        menuButton.classList.remove("active");
 
-            console.log(menuAberto ? "MENU ABERTO" : "MENU FECHADO");
+        menuButton.setAttribute("aria-label", "Abrir menu");
+
+        menuButton.setAttribute("aria-expanded", "false");
+
+        document.body.style.overflow = "";
+    }
+
+    /* =====================================================
+   HAMBURGER
+====================================================== */
+
+    if (menuButton) {
+        menuButton.addEventListener("click", function () {
+            if (menu && menu.classList.contains("active")) {
+                fecharMenu();
+            } else {
+                abrirMenu();
+            }
         });
     }
 
     /* =====================================================
-       CLICAR FORA DO MENU
-       FECHA O MENU
-    ===================================================== */
+   BOTÃO X
+====================================================== */
 
-    document.addEventListener("click", (event) => {
-        if (!menu.contains(event.target)) {
-            menu.classList.remove("menu-aberto");
+    if (closeButton) {
+        closeButton.addEventListener("click", function () {
+            fecharMenu();
+        });
+    }
 
-            if (menuBurger) {
-                menuBurger.setAttribute("aria-expanded", "false");
-            }
-        }
+    /* =====================================================
+   CLICAR FORA DO MENU
+====================================================== */
+
+    if (overlay) {
+        overlay.addEventListener("click", function () {
+            fecharMenu();
+        });
+    }
+
+    /* =====================================================
+   FECHAR AO CLICAR NOS LINKS
+====================================================== */
+
+    const links = document.querySelectorAll(".mobile-nav-item");
+
+    links.forEach(function (link) {
+        link.addEventListener("click", function () {
+            fecharMenu();
+        });
     });
 
     /* =====================================================
-       CLIQUES DENTRO DO MENU
-       NÃO FECHAM AUTOMATICAMENTE
-    ===================================================== */
+   MODO ESCURO
+====================================================== */
 
-    menu.addEventListener("click", (event) => {
-        event.stopPropagation();
-    });
+    const modoEscuro = document.querySelector(".modo-escuro");
 
-    /* =====================================================
-       MODO ESCURO
+    const modoEscuroMobile = document.querySelector(".mobile-theme");
 
-       ESTA É A VERSÃO CLARA.
+    function mudarParaModoEscuro(event) {
+        event.preventDefault();
 
-       Ao clicar em "Modo Escuro",
-       o usuário volta para a página escura.
-    ===================================================== */
+        fecharMenu();
 
-    const botaoTema = document.querySelector(".modo-escuro");
+        document.body.classList.remove("entrando");
 
-    if (botaoTema) {
-        botaoTema.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+        document.body.classList.add("saindo");
 
-            /*
-             * Como o botão está dentro de
-             * pages-clara/indexClaro.html,
-             * precisamos voltar uma pasta.
-             */
-
+        setTimeout(function () {
             window.location.href = "../index.html";
-        });
+        }, 500);
     }
 
-    /* =====================================================
-       LINKS DO MENU
+    if (modoEscuro) {
+        modoEscuro.addEventListener("click", mudarParaModoEscuro);
+    }
 
-       No mobile, depois de clicar em um link,
-       o menu é fechado.
-    ===================================================== */
-
-    const linksMenu = document.querySelectorAll(".item-menu:not(.modo-escuro)");
-
-    linksMenu.forEach((link) => {
-        link.addEventListener("click", () => {
-            menu.classList.remove("menu-aberto");
-
-            if (menuBurger) {
-                menuBurger.setAttribute("aria-expanded", "false");
-            }
-        });
-    });
-
-    /* =====================================================
-       ESC PARA FECHAR O MENU
-
-       Melhora a acessibilidade no desktop/mobile.
-    ===================================================== */
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            menu.classList.remove("menu-aberto");
-
-            if (menuBurger) {
-                menuBurger.setAttribute("aria-expanded", "false");
-            }
-        }
-    });
-
-    /* =====================================================
-       IMPEDIR QUE O MENU MOBILE FIQUE ABERTO
-       AO REDIMENSIONAR PARA DESKTOP
-    ===================================================== */
-
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 600) {
-            menu.classList.remove("menu-aberto");
-
-            if (menuBurger) {
-                menuBurger.setAttribute("aria-expanded", "false");
-            }
-        }
-    });
-
-    /* =====================================================
-       INICIALIZAÇÃO
-    ===================================================== */
-
-    if (menuBurger) {
-        menuBurger.setAttribute("aria-expanded", "false");
+    if (modoEscuroMobile) {
+        modoEscuroMobile.addEventListener("click", mudarParaModoEscuro);
     }
 });
