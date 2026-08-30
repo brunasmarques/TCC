@@ -1,148 +1,387 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=, initial-scale=1.0" />
-        <link rel="stylesheet" href="produtoClaro.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <title>Produto - SIMCE</title>
-    </head>
 
-    <body> 
-         <div>
-         <div class="menu">
-             <div class="logo">
-                 <img
-                     class="logoIcon"
-                     src="../imagesClaro/LOGOClaro.png"
-                     alt="LOGO"
-                 />
-                 <span>INVICTA</span>
-             </div>
+  <!doctype html>
+  <html lang="pt-BR">
+      <head>
+          <meta charset="UTF-8" />
 
-             <div class="pesquisa">
-                 <img
-                     class="serchIcon"
-                     src="../imagesClaro/PESQUISAClaro.png"
-                     alt="Pesquisar"
-                 />
-                 <span>Pesquisar</span>
-             </div>
+          <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+          />
 
-             <a href="indexClaro.html" class="item-menu">
-                 <img src="../imagesClaro/HOMEClaro.png" alt="Home" />
-                 <span>Home</span>
-             </a>
+          <link rel="stylesheet" href="produtoClaro.css" />
 
-             <a href="manualClaro.html" class="item-menu">
-                 <img src="../imagesClaro/MANUALClaro.png" alt="Lista" />
-                 <span>Manual</span>
-             </a>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-             <a href="produtoClaro.html" class="item-menu">
-                 <img src="../imagesClaro/PRODUTOClaro.png" alt="Manual" />
-                 <span>Produto</span>
-             </a>
+          <link
+              href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+              rel="stylesheet"
+          />
 
-             <a href="equipeClaro.html" class="item-menu">
-                 <img src="../imagesClaro/EQUIPEClaro.png" alt="Equipe" />
-                 <span>Equipe</span>
-             </a>
+          <title>Produto - SIMCE</title>
+      </head>
 
-             <a href="referenciasClaro.html" class="item-menu">
-                 <img src="../imagesClaro/REFERENCIASClaro.png" alt="Referências" />
-                 <span>Referências</span>
-             </a>
-             <a href="gameClaro.html" class="item-menu">
-                 <img src="../imagesClaro/GAMEClaro.png" alt="Game" />
-                 <span>Game</span>
-             </a>
+      <body>
 
-             <div class="usuario">
-                 <img
-                     class="userIcon"
-                     src="../imagesClaro/SECAO-USUARIOClaro.png"
-                     alt="Usuário"
-                 />
+          <!-- =====================================================
+               OVERLAY MOBILE
+          ====================================================== -->
 
-                 <div class="dados-usuario">
-                     <h4>Geovanna Oliveira</h4>
-                     <p>geovanna@email.com</p>
-                 </div>
-             </div>
-             <a href="../pages/produto.html" class="item-menu modo-claro">
-                     <img 
-                         class="tema-iconify"
-                         src="/imagesClaro/ModoEscuro.png"
-                         alt="Icone de lua e sol"
-                     />
-                     <span>Modo Escuro</span>
-             </a>
-         </div>
-        <div id="page">
-            <div class="conteudoInicial">
-                <h1>PROTÓTIPO: TECNOLOGIA E COMPONENTES</h1>
-                <p>
-                    Apresenta, de forma moderna e organizada, todos os
-                    componentes utilizados no <br />desenvolvimento do sistema
-                    de monitoramento de enchentes. O painel separa os <br />
-                    materiais por categorias, facilitando a visualização das
-                    peças, sensores e sistemas <br />
-                    de alerta, além de destacar os custos e a proposta
-                    tecnológica do projeto.
-                </p>
-            </div>
+          <div class="menu-overlay" id="menuOverlay"></div>
 
-            <div class="botoes">
-                <button class="btn-primary">SABER MAIS</button>
-                <button class="btn-secondary">VER PROTÓTIPO</button>
-            </div>
 
-            <div class="prototipoOfc">
-                <img
-                    src="../imagesClaro/PROTOTIPO.png"
-                    alt=""
-                />
-            </div>
+          <!-- =====================================================
+               HEADER MOBILE
+          ====================================================== -->
 
-            <div class="cerebroTitulo">
-                <p>Cérebro</p>
-            </div>
+          <header class="mobile-header">
 
-            <div class="filaComponentesCerebro">
-                <img src="../imagesClaro/cerebroFila.png" alt="fila de componentes" />
-            </div>
+              <a href="indexClaro.html" class="mobile-logo">
+                  <img
+                      src="../imagesClaro/LOGOClaro.png"
+                      alt="Logo Invicta"
+                  />
+              </a>
 
-            <div class="componentesTitulo">
-                <p>Componentes</p>
-            </div>
+              <button
+                  class="menu-toggle"
+                  id="menuToggle"
+                  aria-label="Abrir menu"
+                  aria-expanded="false"
+              >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
 
-            <div class="componentes">
-                <div class="filaSistema">
-                    <img src="../imagesClaro/Sensor.png" alt="fila de componentes">
-                </div>
+          </header>
 
-                <div class="arduino">
-                    <img src="../imagesClaro/ARDUINOClaro.png" alt="arduino">
-                </div>
-            </div>
 
-            <div class="sistemaTitulo">
-                <p>Sistema</p>
+          <!-- =====================================================
+               MENU LATERAL
+          ====================================================== -->
 
-                <div class="Sistema">
-                <img
-                    src="../imagesClaro/Sistema.png"
-                    class="sistemaImg"
-                    alt="sistema"
-                />
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+          <nav class="menu" id="menu">
+
+              <!-- LOGO -->
+              <a href="indexClaro.html" class="logo">
+
+                  <img
+                      class="logoIcon"
+                      src="../imagesClaro/LOGOClaro.png"
+                      alt="Logo Invicta"
+                  />
+
+                  <span>INVICTA</span>
+
+              </a>
+
+
+              <!-- PESQUISA -->
+              <div class="pesquisa">
+
+                  <img
+                      class="serchIcon"
+                      src="../imagesClaro/PESQUISAClaro.png"
+                      alt="Pesquisar"
+                  />
+
+                  <span>Pesquisar</span>
+
+              </div>
+
+
+              <!-- HOME -->
+              <a
+                  href="indexClaro.html"
+                  class="item-menu"
+              >
+
+                  <img
+                      src="../imagesClaro/HOMEClaro.png"
+                      alt="Home"
+                  />
+
+                  <span>Home</span>
+
+              </a>
+
+
+              <!-- MANUAL -->
+              <a
+                  href="manualClaro.html"
+                  class="item-menu"
+              >
+
+                  <img
+                      src="../imagesClaro/MANUALClaro.png"
+                      alt="Manual"
+                  />
+
+                  <span>Manual</span>
+
+              </a>
+
+
+              <!-- PRODUTO -->
+              <a
+                  href="produtoClaro.html"
+                  class="item-menu ativo"
+              >
+
+                  <img
+                      src="../imagesClaro/PRODUTOClaro.png"
+                      alt="Produto"
+                  />
+
+                  <span>Produto</span>
+
+              </a>
+
+
+              <!-- EQUIPE -->
+              <a
+                  href="equipeClaro.html"
+                  class="item-menu"
+              >
+
+                  <img
+                      src="../imagesClaro/EQUIPEClaro.png"
+                      alt="Equipe"
+                  />
+
+                  <span>Equipe</span>
+
+              </a>
+
+
+              <!-- REFERÊNCIAS -->
+              <a
+                  href="referenciasClaro.html"
+                  class="item-menu"
+              >
+
+                  <img
+                      src="../imagesClaro/REFERENCIASClaro.png"
+                      alt="Referências"
+                  />
+
+                  <span>Referências</span>
+
+              </a>
+
+
+              <!-- GAME -->
+              <a
+                  href="gameClaro.html"
+                  class="item-menu"
+              >
+
+                  <img
+                      src="../imagesClaro/GAMEClaro.png"
+                      alt="Game"
+                  />
+
+                  <span>Game</span>
+
+              </a>
+
+
+              <!-- USUÁRIO -->
+              <div class="usuario">
+
+                  <img
+                      class="userIcon"
+                      src="../imagesClaro/SECAO-USUARIOClaro.png"
+                      alt="Usuário"
+                  />
+
+                  <div class="dados-usuario">
+
+                      <h4>Geovanna Oliveira</h4>
+
+                      <p>geovanna@email.com</p>
+
+                  </div>
+
+              </div>
+
+
+              <!-- MODO ESCURO -->
+              <a
+                  href="../pages/produto.html"
+                  class="item-menu modo-claro"
+              >
+
+                  <img
+                      class="tema-iconify"
+                      src="../imagesClaro/ModoEscuro.png"
+                      alt="Ícone de lua e sol"
+                  />
+
+                  <span>Modo Escuro</span>
+
+              </a>
+
+          </nav>
+
+
+          <!-- =====================================================
+               CONTEÚDO
+          ====================================================== -->
+
+          <main id="page">
+
+              <div class="conteudoInicial">
+
+                  <h1>
+                      PROTÓTIPO: TECNOLOGIA E COMPONENTES
+                  </h1>
+
+                  <p>
+                      Apresenta, de forma moderna e organizada, todos os
+                      componentes utilizados no <br />
+                      desenvolvimento do sistema
+                      de monitoramento de enchentes. O painel separa os <br />
+                      materiais por categorias, facilitando a visualização das
+                      peças, sensores e sistemas <br />
+                      de alerta, além de destacar os custos e a proposta
+                      tecnológica do projeto.
+                  </p>
+
+              </div>
+
+
+              <div class="botoes">
+
+                  <button class="btn-primary">
+                      SABER MAIS
+                  </button>
+
+                  <button class="btn-secondary">
+                      VER PROTÓTIPO
+                  </button>
+
+              </div>
+
+
+              <div class="prototipoOfc">
+
+                  <img
+                      src="../imagesClaro/PROTOTIPO.png"
+                      alt="Protótipo do sistema"
+                  />
+
+              </div>
+
+
+              <div class="cerebroTitulo">
+
+                  <p>Cérebro</p>
+
+              </div>
+
+
+              <div class="filaComponentesCerebro">
+
+                  <img
+                      src="../imagesClaro/cerebroFila.png"
+                      alt="Fila de componentes do cérebro"
+                  />
+
+              </div>
+
+
+              <div class="componentesTitulo">
+
+                  <p>Componentes</p>
+
+              </div>
+
+
+              <div class="carrossel-componentes">
+
+                  <button class="carrossel-btn anterior" id="componenteAnterior" aria-label="Componente anterior">
+                      &#10094;
+                  </button>
+
+                  <div class="carrossel-janela">
+
+                      <div class="carrossel-trilha" id="trilhaComponentes">
+
+                          <div class="slide-componente">
+                              <img
+                                  src="../imagesClaro/cerebroFila.png"
+                                  alt="Cérebro"
+                              />
+                          </div>
+
+                          <div class="slide-componente">
+                              <img
+                                  src="../imagesClaro/Sensor.png"
+                                  alt="Sensor"
+                              />
+                          </div>
+
+                          <div class="slide-componente">
+                              <img
+                                  src="../imagesClaro/ARDUINOClaro.png"
+                                  alt="Arduino"
+                              />
+                          </div>
+
+                          <div class="slide-componente">
+                              <img
+                                  src="../imagesClaro/Sistema.png"
+                                  alt="Sistema"
+                              />
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  <button class="carrossel-btn proximo" id="componenteProximo" aria-label="Próximo componente">
+                      &#10095;
+                  </button>
+
+              </div>
+
+              <div class="carrossel-indicadores" id="indicadoresComponentes">
+                  <button class="indicador ativo" aria-label="Cérebro"></button>
+                  <button class="indicador" aria-label="Sensor"></button>
+                  <button class="indicador" aria-label="Arduino"></button>
+                  <button class="indicador" aria-label="Sistema"></button>
+              </div>
+
+              </div>
+
+
+              <div class="sistemaTitulo">
+
+                  <p>Sistema</p>
+
+                  <div class="Sistema">
+
+                      <img
+                          src="../imagesClaro/Sistema.png"
+                          class="sistemaImg"
+                          alt="Sistema"
+                      />
+
+                  </div>
+
+              </div>
+
+          </main>
+
+
+          <!-- =====================================================
+               JAVASCRIPT
+          ====================================================== -->
+
+          <script src="produtoClaro.js"></script>
+
+      </body>
+  </ht
