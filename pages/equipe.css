@@ -377,41 +377,28 @@ button.modo-claro {
 
 .titulo {
     width: 100%;
-
     max-width: 788px;
-
     height: auto;
-
     margin: 0;
-
     color: var(--cor-texto);
-
     font-family: "Montserrat", sans-serif;
-
     font-size: clamp(2rem, 4vw, 3rem);
-
     font-style: normal;
-
     font-weight: 700;
-
     line-height: 1.2;
+     margin-top: 5rem;
 }
 
 .titulo h1,
 h1 {
     color: var(--cor-texto);
-
     font-family: "Montserrat", sans-serif;
-
     font-size: inherit;
-
     font-style: normal;
-
     font-weight: 700;
-
     line-height: 1.2;
+    margin-left: 10rem;
 
-    margin: 0;
 }
 
 
@@ -1130,198 +1117,762 @@ h3 {
        ABRE PELA DIREITA
     ===================================================== */
 
-    .menu.menu-aberto {
+    /* =========================================================
+       MENU DESKTOP
+    ========================================================= */
 
-        position: absolute !important;
+    .menu {
 
-        top: 0 !important;
+        position: fixed;
 
-        right: 0 !important;
+        top: 0;
+        left: 0;
 
-        left: auto !important;
+        width: 75px;
+        height: 100vh;
 
-        width: 18rem !important;
+        background: var(--cor-menu);
 
-        min-height: 100vh !important;
+        padding: 20px 14px;
 
-        height: auto !important;
+        display: flex;
+        flex-direction: column;
 
-        padding:
-            5rem
-            0.75rem
-            1rem !important;
+        overflow: hidden;
 
-        display: flex !important;
+        border-radius: 0 18px 18px 0;
 
-        flex-direction: column !important;
+        z-index: 1000;
 
-        align-items: stretch !important;
-
-        justify-content: flex-start !important;
-
-        background: var(--cor-menu) !important;
-
-        border-radius:
-            1.25rem
-            0
-            0
-            1.25rem !important;
-
-        overflow: hidden !important;
-
-        z-index: 10000 !important;
+        transition: width 0.35s ease;
     }
 
 
-    /* =====================================================
-       HOVER MENU ABERTO
-    ===================================================== */
-
-    .menu.menu-aberto:hover {
-
-        width: 18rem !important;
+    .menu:hover {
+        width: 260px;
     }
 
 
-    /* =====================================================
-       BURGER DENTRO DO MENU ABERTO
-    ===================================================== */
+    /* LOGO */
 
-    .menu.menu-aberto .menuBurger {
+    .logo {
 
-        position: absolute !important;
+        display: flex;
+        align-items: center;
 
-        top: 0.75rem !important;
+        gap: 15px;
 
-        right: 0.75rem !important;
+        margin-bottom: 35px;
 
-        width: 3rem !important;
-
-        height: 3rem !important;
-
-        display: flex !important;
-
-        align-items: center !important;
-
-        justify-content: center !important;
-
-        z-index: 10002 !important;
+        flex-shrink: 0;
     }
 
 
-    /* =====================================================
-       ITENS DO MENU ABERTO
-    ===================================================== */
+    .logoIcon {
 
-    .menu.menu-aberto .item-menu {
+        width: 42px;
+        height: 42px;
 
-        display: flex !important;
+        object-fit: contain;
 
-        align-items: center !important;
-
-        justify-content: flex-start !important;
-
-        width: 100% !important;
-
-        min-height: 3rem !important;
-
-        padding: 0.65rem 1rem !important;
-
-        margin:
-            0
-            0
-            0.4rem
-            0 !important;
-
-        gap: 0.9rem !important;
-
-        border-radius: 0.625rem !important;
-
-        text-decoration: none !important;
-
-        color: var(--cor-texto) !important;
-
-        flex-shrink: 0 !important;
+        flex-shrink: 0;
     }
 
 
-    .menu.menu-aberto .item-menu:hover {
+    .logo span {
 
-        background: var(--cor-elemento) !important;
+        color: var(--cor-texto);
+
+        font-size: 25px;
+
+        font-weight: 700;
+
+        letter-spacing: 1.5px;
+
+        white-space: nowrap;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
     }
 
 
-    .menu.menu-aberto .item-menu img {
-
-        width: 1.7rem !important;
-
-        height: 1.7rem !important;
-
-        object-fit: contain !important;
-
-        flex-shrink: 0 !important;
+    .menu:hover .logo span {
+        opacity: 1;
     }
 
 
-    .menu.menu-aberto .item-menu span {
+    /* PESQUISA */
 
-        display: block !important;
+    .pesquisa {
 
-        opacity: 1 !important;
+        display: flex;
+        align-items: center;
 
-        visibility: visible !important;
+        gap: 15px;
 
-        font-size: 0.9rem !important;
+        width: 100%;
 
-        font-weight: 600 !important;
+        padding: 11px;
 
-        white-space: nowrap !important;
+        margin-bottom: 25px;
+
+        background: var(--cor-elemento);
+
+        border-radius: 10px;
+
+        flex-shrink: 0;
     }
 
 
-    /* =====================================================
-       USUÁRIO
-    ===================================================== */
+    .pesquisa img {
 
-    .menu.menu-aberto .usuario {
+        width: 27px;
+        height: 27px;
 
-        display: flex !important;
+        object-fit: contain;
 
-        align-items: center !important;
-
-        width: 100% !important;
-
-        margin-top: 1rem !important;
-
-        margin-bottom: 0 !important;
-
-        padding: 0.75rem 1rem !important;
-
-        background: var(--cor-elemento) !important;
-
-        border-radius: 0.625rem !important;
-
-        flex-shrink: 0 !important;
+        flex-shrink: 0;
     }
 
 
-    .menu.menu-aberto .usuario img {
+    .pesquisa span {
 
-        width: 2rem !important;
+        color: var(--cor-texto);
 
-        height: 2rem !important;
+        font-size: 14px;
+
+        white-space: nowrap;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
     }
 
 
-    .menu.menu-aberto .dados-usuario {
+    .menu:hover .pesquisa span {
+        opacity: 1;
+    }
 
-        display: block !important;
 
-        opacity: 1 !important;
+    /* LINKS */
 
-        visibility: visible !important;
+    .item-menu {
 
-        white-space: nowrap !important;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        gap: 17px;
+
+        padding: 12px;
+
+        margin-bottom: 7px;
+
+        border-radius: 10px;
+
+        text-decoration: none;
+
+        color: var(--cor-texto);
+
+        transition: background 0.25s ease;
+
+        flex-shrink: 0;
+    }
+
+
+    .item-menu:hover {
+        background: var(--cor-elemento);
+    }
+
+
+    .item-menu.ativo {
+        background: rgba(77, 215, 229, 0.12);
+    }
+
+
+    .item-menu img {
+
+        width: 27px;
+        height: 27px;
+
+        object-fit: contain;
+
+        flex-shrink: 0;
+    }
+
+
+    .item-menu span {
+
+        font-size: 15px;
+
+        font-weight: 500;
+
+        white-space: nowrap;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
+    }
+
+
+    .menu:hover .item-menu span {
+        opacity: 1;
+    }
+
+
+    /* USUÁRIO */
+
+    .usuario {
+
+        display: flex;
+        align-items: center;
+
+        gap: 13px;
+
+        width: 100%;
+
+        padding: 11px;
+
+        margin-top: auto;
+        margin-bottom: 18px;
+
+        background: var(--cor-elemento);
+
+        border-radius: 10px;
+
+        flex-shrink: 0;
+    }
+
+
+    .userIcon {
+
+        width: 37px;
+        height: 37px;
+
+        object-fit: contain;
+
+        flex-shrink: 0;
+    }
+
+
+    .dados-usuario {
+
+        overflow: hidden;
+
+        white-space: nowrap;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
+    }
+
+
+    .menu:hover .dados-usuario {
+        opacity: 1;
+    }
+
+
+    .dados-usuario h4 {
+
+        color: var(--cor-texto);
+
+        font-size: 13px;
+
+        font-weight: 600;
+    }
+
+
+    .dados-usuario p {
+
+        color: var(--cor-texto-terciario);
+
+        font-size: 10px;
+
+        margin-top: 4px;
+    }
+
+
+    /* =========================================================
+       MOBILE ESCONDIDO NO DESKTOP
+    ========================================================= */
+
+    .mobile-header,
+    .mobile-menu,
+    .mobile-overlay {
+        display: none;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 600px) {
+
+        /* DESKTOP SOME */
+
+        .menu {
+            display: none;
+        }
+
+
+        /* HEADER */
+
+        .mobile-header {
+
+            display: flex;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            padding: 0 20px;
+
+            align-items: center;
+            justify-content: space-between;
+
+            background: var(--cor-menu);
+
+            z-index: 1100;
+        }
+
+
+        /* LOGO */
+
+        .mobile-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .mobile-logo img {
+
+            width: 38px;
+            height: 38px;
+
+            object-fit: contain;
+        }
+
+
+        .mobile-logo span {
+
+            color: var(--cor-texto);
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* HAMBURGER */
+
+        .mobile-menu-button {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 5px;
+
+            background: transparent;
+
+            border: none;
+
+            cursor: pointer;
+        }
+
+
+        .mobile-menu-button span {
+
+            display: block;
+
+            width: 25px;
+            height: 3px;
+
+            background: var(--cor-texto);
+
+            border-radius: 3px;
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
+
+
+        /* HAMBURGER → X */
+
+        .mobile-menu-button.active span:nth-child(1) {
+
+            transform:
+                translateY(8px)
+                rotate(45deg);
+        }
+
+
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+
+        .mobile-menu-button.active span:nth-child(3) {
+
+            transform:
+                translateY(-8px)
+                rotate(-45deg);
+        }
+
+
+        /* OVERLAY */
+
+        .mobile-overlay {
+
+            display: block;
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.55);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            z-index: 1200;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+
+        .mobile-overlay.active {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        /* MENU */
+
+        .mobile-menu {
+
+            display: flex;
+
+            flex-direction: column;
+
+            position: fixed;
+
+            top: 0;
+            right: 0;
+
+            width: 82%;
+
+            max-width: 350px;
+
+            height: 100vh;
+
+            padding: 20px;
+
+            background: var(--cor-menu);
+
+            z-index: 1300;
+
+            transform: translateX(100%);
+
+            transition:
+                transform 0.35s ease;
+
+            overflow-y: auto;
+        }
+
+
+        .mobile-menu.active {
+
+            transform: translateX(0);
+        }
+
+
+        /* TOPO */
+
+        .mobile-menu-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 30px;
+        }
+
+
+        .mobile-menu-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .mobile-menu-logo img {
+
+            width: 38px;
+            height: 38px;
+
+            object-fit: contain;
+        }
+
+
+        .mobile-menu-logo span {
+
+            color: var(--cor-texto);
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* X */
+
+        .mobile-close {
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--cor-texto);
+
+            font-size: 32px;
+
+            line-height: 1;
+
+            cursor: pointer;
+        }
+
+
+        /* PESQUISA */
+
+        .mobile-search {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 12px;
+
+            margin-bottom: 25px;
+
+            background: var(--cor-elemento);
+
+            border-radius: 10px;
+        }
+
+
+        .mobile-search img {
+
+            width: 25px;
+            height: 25px;
+
+            object-fit: contain;
+        }
+
+
+        .mobile-search span {
+
+            color: var(--cor-texto);
+
+            font-size: 14px;
+        }
+
+
+        /* LINKS */
+
+        .mobile-nav {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+
+        .mobile-nav-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            color: var(--cor-texto);
+
+            text-decoration: none;
+
+            transition:
+                background 0.25s ease;
+        }
+
+
+        .mobile-nav-item:hover {
+
+            background:
+                var(--cor-elemento);
+        }
+
+
+        .mobile-nav-item.ativo {
+
+            background:
+                rgba(77, 215, 229, 0.12);
+        }
+
+
+        .mobile-nav-item img {
+
+            width: 27px;
+            height: 27px;
+
+            object-fit: contain;
+        }
+
+
+        .mobile-nav-item span {
+
+            font-size: 15px;
+
+            font-weight: 500;
+        }
+
+
+        /* USUÁRIO */
+
+        .mobile-user {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            margin-top: auto;
+
+            margin-bottom: 18px;
+
+            padding: 11px;
+
+            background: var(--cor-elemento);
+
+            border-radius: 10px;
+        }
+
+
+        .mobile-user img {
+
+            width: 37px;
+            height: 37px;
+
+            object-fit: contain;
+        }
+
+
+        .mobile-user h4 {
+
+            color: var(--cor-texto);
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        .mobile-user p {
+
+            color: var(--cor-texto-terciario);
+
+            font-size: 10px;
+
+            margin-top: 4px;
+        }
+
+
+        /* MODO CLARO */
+
+        .mobile-theme {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            color: var(--cor-texto);
+
+            text-decoration: none;
+        }
+
+
+        .mobile-theme:hover {
+
+            background:
+                var(--cor-elemento);
+        }
+
+
+        .mobile-theme img {
+
+            width: 27px;
+            height: 27px;
+
+            object-fit: contain;
+        }
+
+
+        .mobile-theme span {
+
+            font-size: 15px;
+
+            font-weight: 500;
+        }
     }
 
 

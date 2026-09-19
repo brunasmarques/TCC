@@ -25,7 +25,9 @@
 
 <body>
 
-    <!-- ================= MENU ================= -->
+    <!-- =====================================================
+         MENU DESKTOP
+    ====================================================== -->
 
     <div class="menu">
 
@@ -40,7 +42,6 @@
             <span>INVICTA</span>
         </div>
 
-
         <!-- PESQUISA -->
         <div class="pesquisa">
             <img
@@ -52,13 +53,11 @@
             <span>Pesquisar</span>
         </div>
 
-
         <!-- HOME -->
         <a href="../index.html" class="item-menu">
             <img src="/images/HOME.png" alt="Home">
             <span>Home</span>
         </a>
-
 
         <!-- MANUAL -->
         <a href="manual.html" class="item-menu">
@@ -66,13 +65,11 @@
             <span>Manual</span>
         </a>
 
-
         <!-- PRODUTO -->
         <a href="produto.html" class="item-menu">
             <img src="/images/MANUAL.png" alt="Produto">
             <span>Produto</span>
         </a>
-
 
         <!-- EQUIPE -->
         <a href="equipe.html" class="item-menu">
@@ -80,9 +77,8 @@
             <span>Equipe</span>
         </a>
 
-
         <!-- REFERÊNCIAS -->
-        <a href="referencias.html" class="item-menu">
+        <a href="referencias.html" class="item-menu ativo">
             <img
                 src="/images/REFERENCIAS.png"
                 alt="Referências"
@@ -90,7 +86,6 @@
 
             <span>Referências</span>
         </a>
-
 
         <!-- GAME -->
         <a href="game.html" class="item-menu">
@@ -101,7 +96,6 @@
 
             <span>Game</span>
         </a>
-
 
         <!-- USUÁRIO -->
         <div class="usuario">
@@ -118,7 +112,6 @@
             </div>
 
         </div>
-
 
         <!-- MODO CLARO -->
         <a
@@ -138,79 +131,201 @@
 
     </div>
 
+    <!-- =====================================================
+         CABEÇALHO MOBILE
+    ====================================================== -->
 
-    <!-- ================= CONTEÚDO ================= -->
+    <header class="mobile-header">
 
-    <main>
+        <div class="mobile-logo">
+            <img src="/images/LOGO (1).png" alt="Logo Invicta">
 
-        <h1>REFERÊNCIAS</h1>
+            <span>INVICTA</span>
+        </div>
 
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            type="button"
+            aria-label="Abrir menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-        <!-- IMAGEM DAS REFERÊNCIAS -->
+    </header>
 
-        <div class="referencias-img">
+    <!-- =====================================================
+         MENU MOBILE
+    ====================================================== -->
 
-            <img
-                id="img-ref"
-                src="/images/Ref.png"
-                alt="Referências"
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <aside class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-top">
+
+            <div class="mobile-menu-logo">
+
+                <img src="/images/LOGO (1).png" alt="Logo Invicta">
+
+                <span>INVICTA</span>
+
+            </div>
+
+            <button
+                class="mobile-close"
+                id="mobileClose"
+                type="button"
+                aria-label="Fechar menu"
             >
-
-
-            <!-- BOTÕES -->
-
-            <button id="botao-1">
-                Ver mais
-            </button>
-
-            <button id="botao-2">
-                Ver mais
-            </button>
-
-            <button id="botao-3">
-                Ver mais
-            </button>
-
-            <button id="botao-4">
-                Ver mais
-            </button>
-
-            <button id="botao-5">
-                Ver mais
-            </button>
-
-            <button id="botao-6">
-                Ver mais
+                ×
             </button>
 
         </div>
 
+        <div class="mobile-search">
 
-        <!-- ================= INFORMAÇÕES ================= -->
+            <img src="/images/SERCH.png" alt="Pesquisar">
 
-        <div class="info">
+            <span>Pesquisar</span>
 
-            <h3>INFORMAÇÕES:</h3>
+        </div>
 
-            <div class="item-info">
+        <nav class="mobile-nav">
 
-                <i class="fa-solid fa-location-dot"></i>
-                <p>UNASP - SP</p>
+            <a href="../index.html" class="mobile-nav-item">
+                <img src="/images/HOME.png" alt="Home">
+                <span>Home</span>
+            </a>
 
+            <a href="manual.html" class="mobile-nav-item">
+                <img src="/images/LISTA.png" alt="Manual">
+                <span>Manual</span>
+            </a>
 
-                <i class="fa-solid fa-phone"></i>
-                <p>+55 (11) 94799-6812</p>
+            <a href="produto.html" class="mobile-nav-item">
+                <img src="/images/MANUAL.png" alt="Produto">
+                <span>Produto</span>
+            </a>
 
+            <a href="equipe.html" class="mobile-nav-item">
+                <img src="/images/EQUIPE.png" alt="Equipe">
+                <span>Equipe</span>
+            </a>
 
-                <i class="fa-solid fa-envelope"></i>
-                <p>invicta@gmail.com</p>
+            <a href="referencias.html" class="mobile-nav-item ativo">
+                <img src="/images/REFERENCIAS.png" alt="Referências">
+                <span>Referências</span>
+            </a>
+
+            <a href="game.html" class="mobile-nav-item">
+                <img src="/images/GAME.png" alt="Game">
+                <span>Game</span>
+            </a>
+
+        </nav>
+
+        <div class="mobile-user">
+
+            <img src="/images/USUÁRIO.png" alt="Usuário">
+
+            <div>
+
+                <h4>Geovanna Oliveira</h4>
+
+                <p>geovanna@email.com</p>
 
             </div>
 
         </div>
 
-    </main>
+        <a
+            href="/pages-clara/referenciasClaro.html"
+            class="mobile-theme"
+        >
 
-</body>
+            <img src="/images/Tema.png" alt="Modo Claro">
 
-</html>
+            <span>Modo Claro</span>
+
+        </a>
+
+    </aside>
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main id="page">
+                <h1>REFERÊNCIAS</h1>
+
+                <!-- IMAGEM DAS REFERÊNCIAS -->
+
+                <div class="referencias-img">
+
+                    <img
+                        id="img-ref"
+                        src="/images/Ref.png"
+                        alt="Referências"
+                    >
+
+                    <!-- BOTÕES -->
+
+                    <button id="botao-1">
+                        Ver mais
+                    </button>
+
+                    <button id="botao-2">
+                        Ver mais
+                    </button>
+
+                    <button id="botao-3">
+                        Ver mais
+                    </button>
+
+                    <button id="botao-4">
+                        Ver mais
+                    </button>
+
+                    <button id="botao-5">
+                        Ver mais
+                    </button>
+
+                    <button id="botao-6">
+                        Ver mais
+                    </button>
+
+                </div>
+
+                <!-- ================= INFORMAÇÕES ================= -->
+
+                <div class="info">
+
+                    <h3>INFORMAÇÕES:</h3>
+
+                    <div class="item-info">
+
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>UNASP - SP</p>
+
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+55 (11) 94799-6812</p>
+
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>invicta@gmail.com</p>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+            <!-- JAVASCRIPT -->
+
+            <script src="./referencias.js"></script>
+
+        </body>
+
+        </html>

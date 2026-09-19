@@ -1,20 +1,127 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Entrada suave da página
+    /* =====================================================
+       ANIMAÇÃO DE ENTRADA
+    ===================================================== */
+
     document.body.classList.add("entrando");
 
-    // Botão para mudar para o modo claro
-    const botaoTema = document.querySelector(".modo-claro");
+    /* =====================================================
+       ELEMENTOS DO MENU MOBILE
+    ===================================================== */
 
-    if (botaoTema) {
-        botaoTema.addEventListener("click", function () {
-            // Inicia a animação de saída
-            document.body.classList.remove("entrando");
-            document.body.classList.add("saindo");
+    const menuButton = document.getElementById("mobileMenuButton");
 
-            // Aguarda a animação terminar
-            setTimeout(function () {
-                window.location.assign("../pages-clara/referenciasClaro.html");
-            }, 500);
+    const menu = document.getElementById("mobileMenu");
+
+    const closeButton = document.getElementById("mobileClose");
+
+    const overlay = document.getElementById("mobileOverlay");
+
+    /* =====================================================
+       ABRIR MENU
+    ===================================================== */
+
+    function abrirMenu() {
+        if (!menu || !overlay) {
+            return;
+        }
+
+        menu.classList.add("active");
+
+        overlay.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+    /* =====================================================
+       FECHAR MENU
+    ===================================================== */
+
+    function fecharMenu() {
+        if (!menu || !overlay) {
+            return;
+        }
+
+        menu.classList.remove("active");
+
+        overlay.classList.remove("active");
+
+        document.body.style.overflow = "";
+    }
+
+    /* =====================================================
+       BOTÃO HAMBÚRGUER
+    ===================================================== */
+
+    if (menuButton) {
+        menuButton.addEventListener("click", function () {
+            if (menu.classList.contains("active")) {
+                fecharMenu();
+            } else {
+                abrirMenu();
+            }
         });
+    }
+
+    /* =====================================================
+       BOTÃO FECHAR
+    ===================================================== */
+
+    if (closeButton) {
+        closeButton.addEventListener("click", function () {
+            fecharMenu();
+        });
+    }
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+
+    if (overlay) {
+        overlay.addEventListener("click", function () {
+            fecharMenu();
+        });
+    }
+
+    /* =====================================================
+       FECHAR MENU AO CLICAR NOS LINKS
+    ===================================================== */
+
+    const links = document.querySelectorAll(".mobile-nav-item");
+
+    links.forEach(function (link) {
+        link.addEventListener("click", function () {
+            fecharMenu();
+        });
+    });
+
+    /* =====================================================
+       MODO CLARO
+    ===================================================== */
+
+    const modoClaro = document.querySelector(".modo-claro");
+
+    const modoClaroMobile = document.querySelector(".mobile-theme");
+
+    function mudarParaModoClaro(event) {
+        event.preventDefault();
+
+        fecharMenu();
+
+        document.body.classList.remove("entrando");
+
+        document.body.classList.add("saindo");
+
+        setTimeout(function () {
+            window.location.href = "/pages-clara/referenciasClaro.html";
+        }, 500);
+    }
+
+    if (modoClaro) {
+        modoClaro.addEventListener("click", mudarParaModoClaro);
+    }
+
+    if (modoClaroMobile) {
+        modoClaroMobile.addEventListener("click", mudarParaModoClaro);
     }
 });

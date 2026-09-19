@@ -791,582 +791,51 @@ body.saindo {
    MOBILE
 ========================================================= */
 
+
+/* =========================================================
+   AJUSTE MOBILE — CONTEÚDO INICIAL
+========================================================= */
+
 @media (max-width: 600px) {
 
-
-    /* =====================================================
-       BODY
-    ====================================================== */
-
-    body {
-
-        background:
-            linear-gradient(
-                180deg,
-                var(--cor-fundo-1) 0%,
-                var(--cor-fundo-2) 100%
-            );
-    }
-
-
-    /* =====================================================
-       MENU DESKTOP
-    ====================================================== */
-
-    .menu {
-        display: none;
-    }
-
-
-    /* =====================================================
-       CABEÇALHO
-    ====================================================== */
-
-    .mobile-header {
-
-        width: 100%;
-
-        height: 68px;
-
-        padding:
-            0 18px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        background:
-            var(--cor-menu);
-
-        border-bottom:
-            1px solid
-            rgba(77, 215, 229, 0.2);
-
-        position: sticky;
-
-        top: 0;
-
-        z-index: 1000;
-    }
-
-
-    .mobile-logo {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 9px;
-    }
-
-
-    .mobile-logo img {
-
-        width: 36px;
-        height: 36px;
-
-        object-fit: contain;
-    }
-
-
-    .mobile-logo span {
-
-        color:
-            var(--cor-texto);
-
-        font-size: 19px;
-
-        font-weight: 700;
-
-        letter-spacing: 1px;
-    }
-
-
-    /* =====================================================
-       HAMBURGER
-    ====================================================== */
-
-    .mobile-menu-button {
-
-        width: 43px;
-        height: 43px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: center;
-
-        align-items: center;
-
-        gap: 5px;
-
-        border: none;
-
-        background: transparent;
-
-        cursor: pointer;
-    }
-
-
-    .mobile-menu-button span {
-
-        width: 25px;
-
-        height: 2px;
-
-        border-radius: 5px;
-
-        background:
-            var(--cor-destaque);
-
-        transition:
-            transform 0.3s ease,
-            opacity 0.3s ease;
-    }
-
-
-    /* =====================================================
-       HAMBURGER VIRA X
-    ====================================================== */
-
-    .mobile-menu-button.active span:nth-child(1) {
-
-        transform:
-            translateY(7px)
-            rotate(45deg);
-    }
-
-
-    .mobile-menu-button.active span:nth-child(2) {
-
-        opacity: 0;
-    }
-
-
-    .mobile-menu-button.active span:nth-child(3) {
-
-        transform:
-            translateY(-7px)
-            rotate(-45deg);
-    }
-
-
-    /* =====================================================
-       OVERLAY
-    ====================================================== */
-
-    .mobile-overlay {
-
-        display: block;
-
-        position: fixed;
-
-        inset: 0;
-
-        background:
-            rgba(0, 0, 0, 0.65);
-
-        z-index: 1500;
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        transition:
-            opacity 0.3s ease;
-    }
-
-
-    .mobile-overlay.active {
-
-        opacity: 1;
-
-        visibility: visible;
-    }
-
-
-    /* =====================================================
-       MENU MOBILE
-    ====================================================== */
-
-    .mobile-menu {
-
-        display: block;
-
-        position: fixed;
-
-        top: 0;
-
-        right: -100%;
-
-        width: 82%;
-
-        max-width: 330px;
-
-        height: 100vh;
-
-        padding: 20px;
-
-        background:
-            var(--cor-menu);
-
-        z-index: 2000;
-
-        overflow-y: auto;
-
-        transition:
-            right 0.35s ease;
-
-        box-shadow:
-            -10px 0 30px
-            rgba(0, 0, 0, 0.35);
-    }
-
-
-    .mobile-menu.active {
-
-        right: 0;
-    }
-
-
-    /* =====================================================
-       TOPO DO MENU
-    ====================================================== */
-
-    .mobile-menu-top {
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        margin-bottom: 25px;
-    }
-
-
-    .mobile-menu-logo {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 9px;
-    }
-
-
-    .mobile-menu-logo img {
-
-        width: 36px;
-        height: 36px;
-
-        object-fit: contain;
-    }
-
-
-    .mobile-menu-logo span {
-
-        color:
-            var(--cor-texto);
-
-        font-size: 18px;
-
-        font-weight: 700;
-    }
-
-
-    .mobile-close {
-
-        border: none;
-
-        background: transparent;
-
-        color:
-            var(--cor-destaque);
-
-        font-size: 34px;
-
-        line-height: 1;
-
-        cursor: pointer;
-    }
-
-
-    /* =====================================================
-       PESQUISA MOBILE
-    ====================================================== */
-
-    .mobile-search {
-
-        width: 100%;
-
-        height: 45px;
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 10px;
-
-        padding:
-            0 13px;
-
-        margin-bottom: 22px;
-
-        border-radius: 10px;
-
-        background:
-            var(--cor-elemento);
-    }
-
-
-    .mobile-search img {
-
-        width: 22px;
-        height: 22px;
-
-        object-fit: contain;
-    }
-
-
-    .mobile-search span {
-
-        color:
-            var(--cor-texto-terciario);
-
-        font-size: 13px;
-    }
-
-
-    /* =====================================================
-       LINKS
-    ====================================================== */
-
-    .mobile-nav {
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 7px;
-    }
-
-
-    .mobile-nav-item {
-
-        width: 100%;
-
-        min-height: 52px;
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 14px;
-
-        padding:
-            10px 13px;
-
-        border-radius: 11px;
-
-        color:
-            var(--cor-texto);
-
-        text-decoration: none;
-
-        transition:
-            background 0.2s ease;
-    }
-
-
-    .mobile-nav-item:hover,
-    .mobile-nav-item.ativo {
-
-        background:
-            rgba(
-                77,
-                215,
-                229,
-                0.12
-            );
-    }
-
-
-    .mobile-nav-item img {
-
-        width: 25px;
-        height: 25px;
-
-        object-fit: contain;
-    }
-
-
-    .mobile-nav-item span {
-
-        font-size: 15px;
-
-        font-weight: 500;
-    }
-
-
-    /* =====================================================
-       USUÁRIO
-    ====================================================== */
-
-    .mobile-user {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 12px;
-
-        margin-top: 30px;
-
-        padding-top: 20px;
-
-        border-top:
-            1px solid
-            rgba(255, 255, 255, 0.1);
-    }
-
-
-    .mobile-user > img {
-
-        width: 45px;
-        height: 45px;
-
-        object-fit: contain;
-    }
-
-
-    .mobile-user h4 {
-
-        color:
-            var(--cor-texto);
-
-        font-size: 12px;
-
-        font-weight: 600;
-
-        margin-bottom: 4px;
-    }
-
-
-    .mobile-user p {
-
-        color:
-            var(--cor-texto-terciario);
-
-        font-size: 10px;
-    }
-
-
-    /* =====================================================
-       MODO CLARO
-    ====================================================== */
-
-    .mobile-theme {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 13px;
-
-        margin-top: 22px;
-
-        padding:
-            11px 13px;
-
-        min-height: 50px;
-
-        border-radius: 11px;
-
-        color:
-            var(--cor-texto);
-
-        text-decoration: none;
-    }
-
-
-    .mobile-theme img {
-
-        width: 25px;
-        height: 25px;
-
-        object-fit: contain;
-    }
-
-
-    .mobile-theme span {
-
-        font-size: 15px;
-
-        font-weight: 500;
-    }
-
-
-    /* =====================================================
-       PÁGINA
-    ====================================================== */
+    /*
+       O menu mobile continua no topo.
+       O conteúdo começa abaixo dele, sem ficar colado.
+    */
 
     #page {
-
         width: 100%;
-
         max-width: 100%;
-
         margin: 0;
-
         padding: 0;
-
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
-
-    /* =====================================================
-       HERO
-    ====================================================== */
+    /*
+       HERO / CONTEÚDO INICIAL
+    */
 
     .hero {
-
         width: 100%;
-
         min-height: auto;
 
         display: flex;
-
         flex-direction: column;
-
         align-items: flex-start;
-
         justify-content: flex-start;
 
-        padding:
-            45px
-            20px
-            40px;
+        padding: 55px 20px 40px;
 
         text-align: left;
     }
 
-
     .hero-conteudo {
-
         width: 100%;
-
         max-width: 100%;
     }
 
-
     .conteudoInicial {
-
         width: 100%;
-
         max-width: 100%;
 
         padding: 0;
@@ -1374,59 +843,49 @@ body.saindo {
         animation: none;
     }
 
-
     .conteudoInicial h1 {
+        width: 100%;
+
+        margin: 0;
 
         font-size: 29px;
-
         line-height: 1.2;
 
         text-align: left;
     }
 
-
     .conteudoInicial p {
-
         width: 100%;
 
-        margin-top: 16px;
+        margin: 16px 0 0;
 
         font-size: 15px;
-
         line-height: 1.6;
 
         text-align: left;
     }
 
-
-    /* =====================================================
+    /*
        BOTÕES
-    ====================================================== */
+    */
 
     .botoes {
-
         width: 100%;
 
         display: flex;
-
         flex-direction: column;
-
         align-items: flex-start;
 
         gap: 12px;
 
         margin-top: 28px;
-
         padding: 0;
 
         animation: none;
     }
 
-
     .botoes button {
-
         width: 100%;
-
         max-width: 320px;
 
         height: 53px;
@@ -1434,149 +893,110 @@ body.saindo {
         font-size: 14px;
     }
 
-
-    /* =====================================================
+    /*
        PROTÓTIPO
-    ====================================================== */
+    */
 
     .prototipo {
-
         width: 100%;
 
         margin-top: 40px;
 
         display: flex;
-
         justify-content: center;
 
         animation: none;
     }
 
-
     .prototipo img {
-
         width: 90%;
-
         max-width: 400px;
 
         margin: 0 auto;
     }
 
-
-    /* =====================================================
+    /*
        POLÍTICAS
-    ====================================================== */
+    */
 
     .politicas {
-
         width: 100%;
 
         display: flex;
-
         flex-direction: column;
-
         align-items: flex-start;
 
         gap: 40px;
 
-        margin:
-            15px 0 0;
+        margin: 15px 0 0;
 
-        padding:
-            0
-            20px
-            50px;
+        padding: 0 20px 50px;
 
         animation: none;
     }
-
 
     .diferencial,
     .objetivo,
     .publico {
-
         width: 100%;
-
         max-width: 450px;
     }
-
 
     .diferencial h2,
     .objetivo h2,
     .publico h2 {
-
         font-size: 19px;
-
         margin-bottom: 10px;
     }
-
 
     .diferencial p,
     .objetivo p,
     .publico p {
-
         font-size: 15px;
-
         line-height: 1.6;
     }
 
-
-    /* =====================================================
+    /*
        CARDS
-    ====================================================== */
+    */
 
     .cards {
-
         width: 100%;
 
         display: grid;
-
         grid-template-columns: 1fr;
 
         gap: 16px;
 
-        margin:
-            15px 0 0;
+        margin: 15px 0 0;
 
-        padding:
-            0
-            20px
-            70px;
+        padding: 0 20px 70px;
 
         animation: none;
     }
 
-
     .card {
-
         width: 100%;
-
         max-width: 450px;
 
         margin: 0 auto;
 
-        padding:
-            14px 12px;
+        padding: 14px 12px;
     }
 
-
     .card img {
-
         width: 42px;
         height: 42px;
     }
 
-
     .card h3 {
-
         font-size: 14px;
     }
-
 }
 
 
 /* =========================================================
-   CELULARES PEQUENOS
+   CELULARES MUITO PEQUENOS
 ========================================================= */
 
 @media (max-width: 360px) {
@@ -1585,34 +1005,26 @@ body.saindo {
         padding: 0 14px;
     }
 
-
     .mobile-logo span {
         font-size: 17px;
     }
 
-
     .hero {
-        padding:
-            35px
-            14px
-            30px;
+        padding: 45px 14px 30px;
     }
-
 
     .conteudoInicial h1 {
         font-size: 25px;
     }
 
-
     .conteudoInicial p {
         font-size: 14px;
     }
-
 
     .politicas,
     .cards {
         padding-left: 14px;
         padding-right: 14px;
     }
-
 }
+

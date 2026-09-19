@@ -111,62 +111,317 @@
             </a>
         </div>
 
-        <!-- =====================================================
-         CONTEÚDO PRINCIPAL
-    ====================================================== -->
+        <body>
+            <!-- =====================================================
+                 MENU DESKTOP
+            ====================================================== -->
 
-        <div id="page">
-            <div class="conteudo-game">
-                <!-- IMAGEM PRINCIPAL -->
-                <img id="img-simce" src="/images/IMGsimce.png" alt="SIMCE" />
+            <div class="menu">
 
-                <!-- TÍTULO -->
-                <h1 class="titulo">CONHEÇA NOSSO JOGO</h1>
+                <!-- LOGO -->
+                <div class="logo">
+                    <img
+                        class="logoIcon"
+                        src="/images/LOGO (1).png"
+                        alt="Logo INVICTA"
+                    />
 
-                <!-- DESCRIÇÃO -->
-                <p id="descricao">
-                    Em uma cidade destruída por tempestades e corrupção, o
-                    jogador precisa instalar sensores climáticos,
+                    <span>INVICTA</span>
+                </div>
 
-                    <br />
+                <!-- PESQUISA -->
+                <div class="pesquisa">
+                    <img
+                        class="serchIcon"
+                        src="/images/SERCH.png"
+                        alt="Pesquisar"
+                    />
 
-                    salvar moradores e impedir o colapso urbano antes da chegada
-                    da Tempestade Vermelha.
-                </p>
+                    <span>Pesquisar</span>
+                </div>
 
-                <!-- SUBTÍTULO -->
-                <h2 class="subtititulo">HISTÓRIA DE NOVA AURA:</h2>
+                <!-- HOME -->
+                <a href="../index.html" class="item-menu">
+                    <img src="/images/HOME.png" alt="Home" />
 
-                <!-- HISTÓRIA -->
-                <p class="descricao2">
-                    Nova Aurora é uma cidade destruída por enchentes causadas
-                    pelas mudanças climáticas. Enquanto a população tenta
-                    sobreviver, o jogador usa o sistema SIMCE para monitorar
-                    alagamentos, resgatar moradores e restaurar áreas afetadas.
+                    <span>Home</span>
+                </a>
 
-                    <br />
-                    <br />
+                <!-- MANUAL -->
+                <a href="manual.html" class="item-menu">
+                    <img src="/images/LISTA.png" alt="Manual" />
 
-                    Mas, durante as missões, ele descobre que alguém está
-                    sabotando os sistemas da cidade. Agora, além de enfrentar
-                    tempestades e enchentes, o jogador precisa descobrir a
-                    verdade antes da chegada da Tempestade Vermelha, a maior
-                    catástrofe já vista em Nova Aurora.
-                </p>
+                    <span>Manual</span>
+                </a>
 
-                <!-- VÍDEO -->
-                <video id="video-games" controls autoplay muted loop>
-                    <source src="imagens/VideoGames.mp4" type="video/mp4" />
+                <!-- PRODUTO -->
+                <a href="produto.html" class="item-menu">
+                    <img src="/images/MANUAL.png" alt="Produto" />
 
-                    Seu navegador não suporta vídeos.
-                </video>
+                    <span>Produto</span>
+                </a>
 
-                <!-- BOTÃO -->
-                <button type="button" class="botao-jogo">JOGAR AGORA</button>
+                <!-- EQUIPE -->
+                <a href="equipe.html" class="item-menu">
+                    <img src="/images/EQUIPE.png" alt="Equipe" />
+
+                    <span>Equipe</span>
+                </a>
+
+                <!-- REFERÊNCIAS -->
+                <a href="referencias.html" class="item-menu">
+                    <img src="/images/REFERENCIAS.png" alt="Referências" />
+
+                    <span>Referências</span>
+                </a>
+
+                <!-- GAME -->
+                <a href="game.html" class="item-menu ativo">
+                    <img src="/images/GAME.png" alt="Game" />
+
+                    <span>Game</span>
+                </a>
+
+                <!-- USUÁRIO -->
+                <div class="usuario">
+                    <img
+                        class="userIcon"
+                        src="/images/USUÁRIO.png"
+                        alt="Usuário"
+                    />
+
+                    <div class="dados-usuario">
+                        <h4>Geovanna Oliveira</h4>
+
+                        <p>geovanna@email.com</p>
+                    </div>
+                </div>
+
+                <!-- MODO CLARO -->
+                <a href="/pages-clara/gameClaro.html" class="item-menu modo-claro">
+                    <img
+                        class="tema-iconify"
+                        src="/images/Tema.png"
+                        alt="Ícone de lua e sol"
+                    />
+
+                    <span>Modo Claro</span>
+                </a>
+
             </div>
-        </div>
 
-        <!-- JAVASCRIPT -->
-        <script src="game.js"></script>
-    </body>
-</html>
+            <!-- =====================================================
+                 CABEÇALHO MOBILE
+            ====================================================== -->
+
+            <header class="mobile-header">
+
+                <div class="mobile-logo">
+                    <img src="/images/LOGO (1).png" alt="Logo Invicta" />
+
+                    <span>INVICTA</span>
+                </div>
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </header>
+
+            <!-- =====================================================
+                 MENU MOBILE
+            ====================================================== -->
+
+            <div class="mobile-overlay" id="mobileOverlay"></div>
+
+            <aside class="mobile-menu" id="mobileMenu">
+
+                <div class="mobile-menu-top">
+
+                    <div class="mobile-menu-logo">
+
+                        <img src="/images/LOGO (1).png" alt="Logo Invicta" />
+
+                        <span>INVICTA</span>
+
+                    </div>
+
+                    <button
+                        class="mobile-close"
+                        id="mobileClose"
+                        type="button"
+                        aria-label="Fechar menu"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <div class="mobile-search">
+
+                    <img src="/images/SERCH.png" alt="Pesquisar" />
+
+                    <span>Pesquisar</span>
+
+                </div>
+
+                <nav class="mobile-nav">
+
+                    <a href="../index.html" class="mobile-nav-item">
+                        <img src="/images/HOME.png" alt="Home" />
+                        <span>Home</span>
+                    </a>
+
+                    <a href="manual.html" class="mobile-nav-item">
+                        <img src="/images/LISTA.png" alt="Manual" />
+                        <span>Manual</span>
+                    </a>
+
+                    <a href="produto.html" class="mobile-nav-item">
+                        <img src="/images/MANUAL.png" alt="Produto" />
+                        <span>Produto</span>
+                    </a>
+
+                    <a href="equipe.html" class="mobile-nav-item">
+                        <img src="/images/EQUIPE.png" alt="Equipe" />
+                        <span>Equipe</span>
+                    </a>
+
+                    <a href="referencias.html" class="mobile-nav-item">
+                        <img src="/images/REFERENCIAS.png" alt="Referências" />
+                        <span>Referências</span>
+                    </a>
+
+                    <a href="game.html" class="mobile-nav-item ativo">
+                        <img src="/images/GAME.png" alt="Game" />
+                        <span>Game</span>
+                    </a>
+
+                </nav>
+
+                <div class="mobile-user">
+
+                    <img src="/images/USUÁRIO.png" alt="Usuário" />
+
+                    <div>
+
+                        <h4>Geovanna Oliveira</h4>
+
+                        <p>geovanna@email.com</p>
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="/pages-clara/gameClaro.html"
+                    class="mobile-theme"
+                >
+
+                    <img src="/images/Tema.png" alt="Modo Claro" />
+
+                    <span>Modo Claro</span>
+
+                </a>
+
+            </aside>
+
+            <!-- =====================================================
+                 CONTEÚDO PRINCIPAL
+            ====================================================== -->
+
+            <main id="page">
+                            <div class="conteudo-game">
+
+                                <!-- IMAGEM PRINCIPAL -->
+                                <img
+                                    id="img-simce"
+                                    src="/images/IMGsimce.png"
+                                    alt="SIMCE"
+                                />
+
+                                <!-- TÍTULO -->
+                                <h1 class="titulo">
+                                    CONHEÇA NOSSO JOGO
+                                </h1>
+
+                                <!-- DESCRIÇÃO -->
+                                <p id="descricao">
+
+                                    Em uma cidade destruída por tempestades e corrupção, o jogador
+                                    precisa instalar sensores climáticos,
+
+                                    <br>
+
+                                    salvar moradores e impedir o colapso urbano antes da chegada
+                                    da Tempestade Vermelha.
+
+                                </p>
+
+                                <!-- SUBTÍTULO -->
+                                <h2 class="subtititulo">
+                                    HISTÓRIA DE NOVA AURA:
+                                </h2>
+
+                                <!-- HISTÓRIA -->
+                                <p class="descricao2">
+
+                                    Nova Aurora é uma cidade destruída por enchentes causadas
+                                    pelas mudanças climáticas. Enquanto a população tenta
+                                    sobreviver, o jogador usa o sistema SIMCE para monitorar
+                                    alagamentos, resgatar moradores e restaurar áreas afetadas.
+
+                                    <br><br>
+
+                                    Mas, durante as missões, ele descobre que alguém está
+                                    sabotando os sistemas da cidade. Agora, além de enfrentar
+                                    tempestades e enchentes, o jogador precisa descobrir a
+                                    verdade antes da chegada da Tempestade Vermelha, a maior
+                                    catástrofe já vista em Nova Aurora.
+
+                                </p>
+
+                                <!-- VÍDEO -->
+                                <video
+                                    id="video-games"
+                                    controls
+                                    autoplay
+                                    muted
+                                    loop
+                                >
+
+                                    <source
+                                        src="imagens/VideoGames.mp4"
+                                        type="video/mp4"
+                                    >
+
+                                    Seu navegador não suporta vídeos.
+
+                                </video>
+
+                                <!-- BOTÃO -->
+                                <button
+                                    type="button"
+                                    class="botao-jogo"
+                                >
+                                    JOGAR AGORA
+                                </button>
+
+                            </div>
+
+                        </main>
+
+                        <!-- JAVASCRIPT -->
+
+                        <script src="./game.js"></script>
+
+                    </body>
+
+                </html>

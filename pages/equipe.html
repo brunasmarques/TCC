@@ -19,100 +19,339 @@
             rel="stylesheet"
         />
 
-        <title>Nossa Equipe</title>
-    </head>
+            <title>Home - SIMCE</title>
+        </head>
 
-    <body>
-        <div id="page">
+
+        <body>
+
             <!-- =====================================================
-                 MENU
+                 MENU DESKTOP
             ====================================================== -->
-            <!-- LOGO -->
-            <div class="logo">
-                <img
-                    class="logoIcon"
-                    src="/images/LOGO (1).png"
-                    alt="Logo Invicta"
-                />
+            <!-- MENU DESKTOP -->
+            <aside class="menu">
 
-                <span>INVICTA</span>
-            </div>
-            <div class="menu">
-                <!-- PESQUISA -->
+                <div class="logo">
+                    <img
+                        class="logoIcon"
+                        src="../images/LOGO (1).png"
+                        alt="Logo Invicta"
+                    >
+
+                    <span>INVICTA</span>
+                </div>
+
+
                 <div class="pesquisa">
+
                     <img
                         class="serchIcon"
-                        src="/images/SERCH.png"
+                        src="../images/SERCH.png"
                         alt="Pesquisar"
-                    />
+                    >
 
                     <span>Pesquisar</span>
+
                 </div>
 
-                <!-- LINKS DO MENU -->
 
-                <a href="../index.html" class="item-menu">
-                    <img src="/images/HOME.png" alt="Home" />
+                <a href="index.html" class="item-menu ativo">
+
+                    <img
+                        src="../images/HOME.png"
+                        alt="Home"
+                    >
+
                     <span>Home</span>
+
                 </a>
 
-                <a href="manual.html" class="item-menu">
-                    <img src="/images/LISTA.png" alt="Manual" />
+
+                <a href="./pages/manual.html" class="item-menu">
+
+                    <img
+                        src="../images/LISTA.png"
+                        alt="Manual"
+                    >
+
                     <span>Manual</span>
+
                 </a>
 
-                <a href="produto.html" class="item-menu">
-                    <img src="/images/MANUAL.png" alt="Produto" />
+
+                <a href="./pages/produto.html" class="item-menu">
+
+                    <img
+                        src="../images/MANUAL.png"
+                        alt="Produto"
+                    >
+
                     <span>Produto</span>
+
                 </a>
 
-                <a href="equipe.html" class="item-menu">
-                    <img src="/images/EQUIPE.png" alt="Equipe" />
+
+                <a href="./pages/equipe.html" class="item-menu">
+
+                    <img
+                        src="../images/EQUIPE.png"
+                        alt="Equipe"
+                    >
+
                     <span>Equipe</span>
+
                 </a>
 
-                <a href="referencias.html" class="item-menu">
-                    <img src="/images/REFERENCIAS.png" alt="Referências" />
+
+                <a href="./pages/referencias.html" class="item-menu">
+
+                    <img
+                        src="../images/REFERENCIAS.png"
+                        alt="Referências"
+                    >
+
                     <span>Referências</span>
+
                 </a>
 
-                <a href="game.html" class="item-menu">
-                    <img src="/images/GAME.png" alt="Game" />
+
+                <a href="./pages/game.html" class="item-menu">
+
+                    <img
+                        src="../images/GAME.png"
+                        alt="Game"
+                    >
+
                     <span>Game</span>
+
                 </a>
 
-                <!-- =================================================
-                     USUÁRIO
-                ================================================== -->
 
                 <div class="usuario">
+
                     <img
                         class="userIcon"
-                        src="/images/USUÁRIO.png"
+                        src="../images/USUÁRIO.png"
                         alt="Usuário"
-                    />
+                    >
 
                     <div class="dados-usuario">
+
                         <h4>Geovanna Oliveira</h4>
+
                         <p>geovanna@email.com</p>
+
                     </div>
+
                 </div>
 
-                <!-- =================================================
-                     BOTÃO MODO CLARO
-                ================================================== -->
 
-                <button type="button" class="item-menu modo-claro">
+                <a
+                    href="pages-clara/indexClaro.html"
+                    class="item-menu modo-claro"
+                >
+
                     <img
-                        class="tema-iconify"
                         src="../images/Tema.png"
-                        alt="Ícone de lua e sol"
-                    />
+                        alt="Modo Claro"
+                    >
 
                     <span>Modo Claro</span>
-                </button>
-            </div>
 
+                </a>
+
+            </aside>
+
+
+            <!-- HEADER MOBILE -->
+            <header class="mobile-header">
+
+                <div class="mobile-logo">
+
+                    <img
+                        src="../images/LOGO (1).png"
+                        alt="Logo Invicta"
+                    >
+
+                    <span>INVICTA</span>
+
+                </div>
+
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </header>
+
+
+            <!-- OVERLAY -->
+            <div
+                class="mobile-overlay"
+                id="mobileOverlay"
+            ></div>
+
+
+            <!-- MENU MOBILE -->
+            <aside
+                class="mobile-menu"
+                id="mobileMenu"
+            >
+
+                <div class="mobile-menu-top">
+
+                    <div class="mobile-menu-logo">
+
+                        
+
+                        <span>INVICTA</span>
+
+                    </div>
+
+
+                    <button
+                        class="mobile-close"
+                        id="mobileClose"
+                        type="button"
+                        aria-label="Fechar menu"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div class="mobile-search">
+
+                    <img
+                        src="../images/SERCH.png"
+                        alt="Pesquisar"
+                    >
+
+                    <span>Pesquisar</span>
+
+                </div>
+
+
+                <nav class="mobile-nav">
+
+                    <a href="index.html" class="mobile-nav-item ativo">
+
+                        <img
+                            src="../images/HOME.png"
+                            alt="Home"
+                        >
+
+                        <span>Home</span>
+
+                    </a>
+
+
+                    <a href="./pages/manual.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/LISTA.png"
+                            alt="Manual"
+                        >
+
+                        <span>Manual</span>
+
+                    </a>
+
+
+                    <a href="./pages/produto.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/MANUAL.png"
+                            alt="Produto"
+                        >
+
+                        <span>Produto</span>
+
+                    </a>
+
+
+                    <a href="./pages/equipe.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/EQUIPE.png"
+                            alt="Equipe"
+                        >
+
+                        <span>Equipe</span>
+
+                    </a>
+
+
+                    <a href="./pages/referencias.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/REFERENCIAS.png"
+                            alt="Referências"
+                        >
+
+                        <span>Referências</span>
+
+                    </a>
+
+
+                    <a href="./pages/game.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/GAME.png"
+                            alt="Game"
+                        >
+
+                        <span>Game</span>
+
+                    </a>
+
+                </nav>
+
+
+                <div class="mobile-user">
+
+                    <img
+                        src="../images/USUÁRIO.png"
+                        alt="Usuário"
+                    >
+
+                    <div>
+
+                        <h4>Geovanna Oliveira</h4>
+
+                        <p>geovanna@email.com</p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="pages-clara/indexClaro.html"
+                    class="mobile-theme"
+                >
+
+                    <img
+                        src="../images/Tema.png"
+                        alt="Modo Claro"
+                    >
+
+                    <span>Modo Claro</span>
+
+                </a>
+
+            </aside>
             <!-- =====================================================
                  TÍTULO
             ====================================================== -->
