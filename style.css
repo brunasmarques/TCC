@@ -1,6 +1,5 @@
 @import "./colors.css";
 
-
 /* =========================================================
    RESET
 ========================================================= */
@@ -12,24 +11,22 @@
     font-family: "Montserrat", sans-serif;
 }
 
-
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
-
 
 body {
 
     min-height: 100vh;
 
     background:
-        linear-gradient(
-            135deg,
-            var(--cor-fundo-1),
-            var(--cor-fundo-2),
-            var(--cor-fundo-3)
-        );
+    linear-gradient(
+        180deg,
+        #04031D 0%,
+        #0B0E16 55%,
+        #04031D 100%
+    );
 
     color: var(--cor-texto);
 
@@ -37,7 +34,6 @@ body {
 
     transition: opacity 0.5s ease;
 }
-
 
 img {
     display: block;
@@ -63,7 +59,6 @@ img {
 
 }
 
-
 @keyframes fadeInLeft {
 
     from {
@@ -77,7 +72,6 @@ img {
     }
 
 }
-
 
 @keyframes fadeInRight {
 
@@ -93,11 +87,9 @@ img {
 
 }
 
-
 body.entrando {
     animation: fadeInUp 0.5s ease both;
 }
-
 
 body.saindo {
     opacity: 0;
@@ -134,7 +126,6 @@ body.saindo {
     transition: width 0.35s ease;
 }
 
-
 .menu:hover {
     width: 260px;
 }
@@ -157,7 +148,6 @@ body.saindo {
     flex-shrink: 0;
 }
 
-
 .logoIcon {
 
     width: 42px;
@@ -167,7 +157,6 @@ body.saindo {
 
     flex-shrink: 0;
 }
-
 
 .logo span {
 
@@ -185,7 +174,6 @@ body.saindo {
 
     transition: opacity 0.3s ease;
 }
-
 
 .menu:hover .logo span {
     opacity: 1;
@@ -217,7 +205,6 @@ body.saindo {
     flex-shrink: 0;
 }
 
-
 .pesquisa img {
 
     width: 27px;
@@ -227,7 +214,6 @@ body.saindo {
 
     flex-shrink: 0;
 }
-
 
 .pesquisa span {
 
@@ -241,7 +227,6 @@ body.saindo {
 
     transition: opacity 0.3s ease;
 }
-
 
 .menu:hover .pesquisa span {
     opacity: 1;
@@ -272,26 +257,24 @@ body.saindo {
 
     color: var(--cor-texto);
 
-    transition:
-        background 0.25s ease;
+    transition: background 0.25s ease;
 
     flex-shrink: 0;
-}
 
+    border: none;
+
+    cursor: pointer;
+}
 
 .item-menu:hover {
 
-    background:
-        var(--cor-elemento);
+    background: var(--cor-elemento);
 }
-
 
 .item-menu.ativo {
 
-    background:
-        rgba(77, 215, 229, 0.12);
+    background: rgba(77, 215, 229, 0.12);
 }
-
 
 .item-menu img {
 
@@ -302,7 +285,6 @@ body.saindo {
 
     flex-shrink: 0;
 }
-
 
 .item-menu span {
 
@@ -316,7 +298,6 @@ body.saindo {
 
     transition: opacity 0.3s ease;
 }
-
 
 .menu:hover .item-menu span {
     opacity: 1;
@@ -350,7 +331,6 @@ body.saindo {
     flex-shrink: 0;
 }
 
-
 .userIcon {
 
     width: 37px;
@@ -360,7 +340,6 @@ body.saindo {
 
     flex-shrink: 0;
 }
-
 
 .dados-usuario {
 
@@ -373,11 +352,9 @@ body.saindo {
     transition: opacity 0.3s ease;
 }
 
-
 .menu:hover .dados-usuario {
     opacity: 1;
 }
-
 
 .dados-usuario h4 {
 
@@ -387,7 +364,6 @@ body.saindo {
 
     font-weight: 600;
 }
-
 
 .dados-usuario p {
 
@@ -403,63 +379,11 @@ body.saindo {
    MOBILE
 ========================================================= */
 
-.mobile-header{
-    display:none;
-}
+.mobile-header,
+.mobile-menu,
+.mobile-overlay {
 
-.mobile-menu{
-
-    position:fixed;
-    top:0;
-    right:-320px;
-
-    width:280px;
-    height:100vh;
-
-    background:var(--cor-menu);
-
-    padding:20px;
-
-    z-index:2000;
-
-    transition:right .35s ease;
-
-    display:flex;
-    flex-direction:column;
-}
-
-.mobile-menu.ativo{
-    right:0;
-}
-
-.mobile-overlay{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,.45);
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:.3s;
-
-    z-index:1500;
-}
-
-.mobile-header{
-    display:flex;
-}
-
-.mobile-overlay.ativo{
-
-    opacity:1;
-    visibility:visible;
+    display: none;
 }
 
 
@@ -506,12 +430,10 @@ body.saindo {
         70px;
 }
 
-
 .hero-conteudo {
 
     width: 50%;
 }
-
 
 .conteudoInicial {
 
@@ -526,7 +448,6 @@ body.saindo {
         both;
 }
 
-
 .conteudoInicial h1 {
 
     font-size: 40px;
@@ -538,7 +459,6 @@ body.saindo {
     color: var(--cor-texto);
 }
 
-
 .conteudoInicial p {
 
     margin-top: 25px;
@@ -548,13 +468,7 @@ body.saindo {
     line-height: 1.7;
 
     color: var(--cor-texto-secundario);
-    
-    padding: 0 35px;
-    
-    text-align: justify;
-    }
 }
-
 
 /* =========================================================
    BOTÕES
@@ -578,7 +492,6 @@ body.saindo {
         both;
 }
 
-
 .botoes button {
 
     width: 220px;
@@ -596,7 +509,6 @@ body.saindo {
     transition: 0.3s ease;
 }
 
-
 .btn-primary {
 
     background:
@@ -612,7 +524,6 @@ body.saindo {
         var(--sombra-destaque);
 }
 
-
 .btn-primary:hover {
 
     transform:
@@ -621,7 +532,6 @@ body.saindo {
     background:
         var(--cor-destaque-hover);
 }
-
 
 .btn-secondary {
 
@@ -634,7 +544,6 @@ body.saindo {
         2px solid
         var(--cor-texto);
 }
-
 
 .btn-secondary:hover {
 
@@ -667,7 +576,6 @@ body.saindo {
         ease
         both;
 }
-
 
 .prototipo img {
 
@@ -713,14 +621,12 @@ body.saindo {
         both;
 }
 
-
 .diferencial,
 .objetivo,
 .publico {
 
     width: 300px;
 }
-
 
 .diferencial h2,
 .objetivo h2,
@@ -736,7 +642,6 @@ body.saindo {
     margin-bottom: 18px;
 }
 
-
 .diferencial p,
 .objetivo p,
 .publico p {
@@ -748,8 +653,6 @@ body.saindo {
 
     line-height: 1.6;
 }
-
-
 /* =========================================================
    CARDS
 ========================================================= */
@@ -779,7 +682,6 @@ body.saindo {
         both;
 }
 
-
 .card {
 
     display: flex;
@@ -805,7 +707,6 @@ body.saindo {
         box-shadow 0.25s ease;
 }
 
-
 .card:hover {
 
     transform:
@@ -819,7 +720,6 @@ body.saindo {
         var(--sombra-card);
 }
 
-
 .card img {
 
     width: 45px;
@@ -827,7 +727,6 @@ body.saindo {
 
     object-fit: contain;
 }
-
 
 .card h3 {
 
@@ -848,306 +747,652 @@ body.saindo {
    MOBILE
 ========================================================= */
 
-
-/* =========================================================
-   AJUSTE MOBILE — CONTEÚDO INICIAL
-========================================================= */
-
 @media (max-width: 600px) {
-    /* =====================================================
-       ESCONDE MENU DESKTOP
-    ===================================================== */
 
-    .menu{
-        display:none;
+    html,
+    body {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        overflow-x: hidden !important;
     }
 
+
     /* =====================================================
-       HEADER
-    ===================================================== */
+       MENU DESKTOP
+    ====================================================== */
 
-    .mobile-header{
+    .menu {
 
-        display:flex;
-
-        width:100%;
-        height:68px;
-
-        padding:0 18px;
-
-        align-items:center;
-        justify-content:space-between;
-
-        background:var(--cor-menu);
-
-        position:sticky;
-        top:0;
-
-        z-index:1000;
-
+        display: none !important;
     }
 
-    
+
+    /* =====================================================
+       CABEÇALHO
+    ====================================================== */
+
+    .mobile-header {
+
+        width: 100%;
+
+        height: 68px;
+
+        padding: 0 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        background: var(--cor-menu);
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+    }
+
 
     /* =====================================================
        LOGO
-    ===================================================== */
+    ====================================================== */
 
-    .mobile-logo{
+    .mobile-logo {
 
-        display:flex;
-        align-items:center;
-        gap:10px;
+        display: flex;
 
+        align-items: center;
+
+        gap: 9px;
     }
 
-    .mobile-logo img{
+    .mobile-logo img {
 
-        width:36px;
-        height:36px;
+        width: 36px;
 
+        height: 36px;
+
+        object-fit: contain;
     }
 
-    .mobile-logo span{
+    .mobile-logo span {
 
-        color:var(--cor-texto);
-        font-size:20px;
-        font-weight:700;
+        color: var(--cor-texto);
 
+        font-size: 19px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
     }
+
 
     /* =====================================================
-       HAMBÚRGUER
-    ===================================================== */
+       HAMBURGER
+    ====================================================== */
 
-    .mobile-menu-button{
+    .mobile-menu-button {
 
-        display:flex;
+        width: 43px;
 
-        flex-direction:column;
-
-        justify-content:center;
-
-        gap:5px;
-
-        width:42px;
-        height:42px;
-
-        border:none;
-
-        background:transparent;
-
-        cursor:pointer;
-
-    }
-
-    .mobile-menu-button span{
-
-        width:24px;
-        height:2px;
-
-        background:var(--cor-texto);
-
-        border-radius:20px;
-
-    }
-    
-
-    /*
-       O menu mobile continua no topo.
-       O conteúdo começa abaixo dele, sem ficar colado.
-    */
-
-    #page {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    
-
-    /*
-       HERO / CONTEÚDO INICIAL
-    */
-
-    .hero {
-        width: 100%;
-        min-height: auto;
+        height: 43px;
 
         display: flex;
+
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
 
-        padding: 55px 20px 40px;
+        justify-content: center;
 
-        text-align: left;
+        align-items: center;
+
+        gap: 5px;
+
+        border: none;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        position: relative;
+
+        z-index: 2100;
     }
 
-    .hero-conteudo {
-        width: 100%;
-        max-width: 100%;
+    .mobile-menu-button span {
+
+        width: 25px;
+
+        height: 2px;
+
+        border-radius: 5px;
+
+        background: var(--cor-texto);
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
     }
 
-    .conteudoInicial {
-        width: 100%;
-        max-width: 100%;
+    .mobile-menu-button.active span:nth-child(1) {
+
+        transform:
+            translateY(7px)
+            rotate(45deg);
+    }
+
+    .mobile-menu-button.active span:nth-child(2) {
+
+        opacity: 0;
+    }
+
+    .mobile-menu-button.active span:nth-child(3) {
+
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ====================================================== */
+
+    .mobile-overlay {
+
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        background:
+            rgba(0, 0, 0, 0.35);
+
+        z-index: 1500;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .mobile-overlay.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+
+    /* =====================================================
+       MENU MOBILE
+    ====================================================== */
+
+    .mobile-menu {
+
+        display: block;
+
+        position: fixed;
+
+        top: 0;
+
+        right: -100%;
+
+        width: 82%;
+
+        max-width: 330px;
+
+        height: 100vh;
+
+        padding: 20px;
+
+        background: var(--cor-menu);
+
+        z-index: 2000;
+
+        overflow-y: auto;
+
+        transition: right 0.35s ease;
+
+        box-shadow:
+            -10px 0 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .mobile-menu.active {
+
+        right: 0;
+    }
+}
+    /* =====================================================
+       TOPO DO MENU
+    ====================================================== */
+
+    .mobile-menu-top {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-bottom: 25px;
+    }
+
+    .mobile-menu-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+    }
+
+    .mobile-menu-logo img {
+
+        width: 36px;
+
+        height: 36px;
+
+        object-fit: contain;
+    }
+
+    .mobile-menu-logo span {
+
+        color: var(--cor-texto);
+
+        font-size: 18px;
+
+        font-weight: 700;
+    }
+
+
+    /* =====================================================
+       FECHAR
+    ====================================================== */
+
+    .mobile-close {
+
+        border: none;
+
+        background: transparent;
+
+        color: var(--cor-texto);
+
+        font-size: 34px;
+
+        line-height: 1;
+
+        cursor: pointer;
 
         padding: 0;
-
-        animation: none;
     }
 
-    .conteudoInicial h1 {
+
+    /* =====================================================
+       PESQUISA
+    ====================================================== */
+
+    .mobile-search {
+
         width: 100%;
 
-        margin: 0;
+        height: 45px;
 
-        font-size: 20px;
-        line-height: 1.2;
+        display: flex;
 
-        text-align: left;
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 0 13px;
+
+        margin-bottom: 22px;
+
+        border-radius: 10px;
+
+        background: var(--cor-elemento);
     }
 
-    .conteudoInicial p {
+    .mobile-search img {
+
+        width: 22px;
+
+        height: 22px;
+
+        object-fit: contain;
+    }
+
+    .mobile-search span {
+
+        color: var(--cor-texto-terciario);
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       NAVEGAÇÃO
+    ====================================================== */
+
+    .mobile-nav {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+    .mobile-nav-item {
+
         width: 100%;
 
-        margin: 16px 0 0;
+        min-height: 52px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 10px 13px;
+
+        border-radius: 11px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
+
+        transition: background .2s ease;
+    }
+
+    .mobile-nav-item:hover,
+    .mobile-nav-item.ativo,
+    .mobile-nav-item:active {
+
+        background: var(--cor-elemento);
+    }
+
+    .mobile-nav-item img {
+
+        width: 25px;
+
+        height: 25px;
+
+        object-fit: contain;
+    }
+
+    .mobile-nav-item span {
 
         font-size: 15px;
-        line-height: 1.6;
 
-        text-align: left;
+        font-weight: 500;
     }
 
-    /*
-       BOTÕES
-    */
 
-    .botoes {
-        width: 100%;
+    /* =====================================================
+       USUÁRIO
+    ====================================================== */
+
+    .mobile-user {
 
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+
+        align-items: center;
 
         gap: 12px;
 
-        margin-top: 28px;
-        padding: 0;
+        margin-top: 30px;
 
-        animation: none;
+        padding-top: 20px;
+
+        border-top: 1px solid var(--cor-borda);
+    }
+
+    .mobile-user>img {
+
+        width: 45px;
+
+        height: 45px;
+
+        object-fit: contain;
+    }
+
+    .mobile-user h4 {
+
+        color: var(--cor-texto);
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        margin-bottom: 4px;
+    }
+
+    .mobile-user p {
+
+        color: var(--cor-texto-terciario);
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       MODO ESCURO
+    ====================================================== */
+
+    .mobile-theme {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        margin-top: 22px;
+
+        padding: 11px 13px;
+
+        min-height: 50px;
+
+        border-radius: 11px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
+    }
+
+    .mobile-theme img {
+
+        width: 25px;
+
+        height: 25px;
+
+        object-fit: contain;
+    }
+
+    .mobile-theme span {
+
+        font-size: 15px;
+
+        font-weight: 500;
+    }
+
+
+    /* =====================================================
+       CONTEÚDO
+    ====================================================== */
+
+    #page {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 0 50px !important;
+    }
+
+    .hero {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+
+        justify-content: flex-start !important;
+
+        padding: 55px 20px 40px !important;
+    }
+
+    .hero-conteudo {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+    }
+
+    .conteudoInicial {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        padding: 0 !important;
+
+        animation: none !important;
+    }
+
+    .conteudoInicial h1 {
+
+        font-size: 29px !important;
+
+        line-height: 1.2 !important;
+    }
+
+    .conteudoInicial p {
+
+        margin-top: 16px !important;
+
+        font-size: 15px !important;
+
+        line-height: 1.6 !important;
+    }
+
+    .botoes {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+
+        gap: 12px !important;
+
+        margin-top: 28px !important;
+
+        padding: 0 !important;
+
+        animation: none !important;
     }
 
     .botoes button {
-        width: 100%;
-        max-width: 320px;
 
-        height: 53px;
+        width: 100% !important;
 
-        font-size: 14px;
+        max-width: 320px !important;
+
+        height: 53px !important;
+
+        font-size: 14px !important;
     }
 
-    /*
-       PROTÓTIPO
-    */
-
     .prototipo {
-        width: 100%;
 
-        margin-top: 40px;
+        width: 100% !important;
 
-        display: flex;
-        justify-content: center;
+        margin-top: 40px !important;
 
-        animation: none;
+        animation: none !important;
     }
 
     .prototipo img {
-        width: 90%;
-        max-width: 400px;
 
-        margin: 0 auto;
+        width: 90% !important;
+
+        max-width: 400px !important;
+
+        margin: 0 auto !important;
     }
 
-    /*
-       POLÍTICAS
-    */
-
     .politicas {
-        width: 100%;
 
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100% !important;
 
-        gap: 40px;
+        display: flex !important;
 
-        margin: 15px 0 0;
+        flex-direction: column !important;
 
-        padding: 0 20px 50px;
+        align-items: flex-start !important;
 
-        animation: none;
+        gap: 40px !important;
+
+        margin: 15px 0 0 !important;
+
+        padding: 0 20px 50px !important;
+
+        animation: none !important;
     }
 
     .diferencial,
     .objetivo,
     .publico {
-        width: 100%;
-        max-width: 450px;
-    }
 
-    .diferencial h2,
-    .objetivo h2,
-    .publico h2 {
-        font-size: 15px;
-        margin-bottom: 10px;
-    }
+        width: 100% !important;
 
-    .diferencial p,
-    .objetivo p,
-    .publico p {
-        font-size: 15px;
-        line-height: 1.6;
+        max-width: 450px !important;
     }
-
-    /*
-       CARDS
-    */
 
     .cards {
-        width: 100%;
 
-        display: grid;
-        grid-template-columns: 1fr;
+        width: 100% !important;
 
-        gap: 16px;
+        grid-template-columns: 1fr !important;
 
-        margin: 15px 0 0;
+        gap: 16px !important;
 
-        padding: 0 20px 70px;
+        margin: 15px 0 0 !important;
 
-        animation: none;
+        padding: 0 20px 70px !important;
+
+        animation: none !important;
     }
 
     .card {
-        width: 100%;
-        max-width: 450px;
 
-        margin: 0 auto;
+        width: 100% !important;
 
-        padding: 14px 12px;
-    }
+        max-width: 450px !important;
 
-    .card img {
-        width: 42px;
-        height: 42px;
-    }
-
-    .card h3 {
-        font-size: 14px;
+        margin: 0 auto !important;
     }
 }
 
@@ -1156,32 +1401,32 @@ body.saindo {
    CELULARES MUITO PEQUENOS
 ========================================================= */
 
-@media (max-width: 360px) {
+@media (max-width:360px){
 
-    .mobile-header {
-        padding: 0 14px;
+    .mobile-header{
+        padding:0 14px;
     }
 
-    .mobile-logo span {
-        font-size: 17px;
+    .mobile-logo span{
+        font-size:17px;
     }
 
-    .hero {
-        padding: 45px 14px 30px;
+    .hero{
+        padding:45px 14px 30px !important;
     }
 
-    .conteudoInicial h1 {
-        font-size: 25px;
+    .conteudoInicial h1{
+        font-size:25px !important;
     }
 
-    .conteudoInicial p {
-        font-size: 14px;
+    .conteudoInicial p{
+        font-size:14px !important;
     }
 
     .politicas,
-    .cards {
-        padding-left: 14px;
-        padding-right: 14px;
+    .cards{
+        padding-left:14px !important;
+        padding-right:14px !important;
     }
-}
 
+}

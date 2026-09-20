@@ -18,11 +18,12 @@ html {
 }
 
 body {
-    background: linear-gradient(
-        135deg,
-        var(--cor-fundo-1),
-        var(--cor-fundo-2),
-        var(--cor-fundo-3)
+    background:
+    linear-gradient(
+        180deg,
+        #04031D 0%,
+        #0B0E16 55%,
+        #04031D 100%
     );
 
     color: var(--cor-texto);
