@@ -392,7 +392,7 @@ button.modo-claro {
 
 .titulo h1,
 h1 {
-    color: var(--cor-texto);
+    color: var(--cor-01);
     font-family: "Montserrat", sans-serif;
     font-size: inherit;
     font-style: normal;
@@ -574,6 +574,7 @@ h1 {
     margin: 8rem auto 0;
 
     padding: 0 1rem;
+    color: var(--cor-01);
 }
 
 .informacao {
@@ -584,6 +585,7 @@ h1 {
     flex-direction: column;
 
     align-items: flex-start;
+     color: var(--cor-01);
 }
 
 
@@ -592,7 +594,7 @@ h1 {
 ========================================================= */
 
 h2 {
-    color: #CECECE;
+    color: var(--cor-01);
 
     font-family: "Montserrat", sans-serif;
 
@@ -619,7 +621,7 @@ h2 {
 
     margin-top: 0.5rem;
 
-    color: var(--cor-texto);
+    color: var(--cor-01);
 }
 
 
@@ -643,11 +645,11 @@ h2 {
 
     border: none;
 
-    border-bottom: 1px solid #CECECE;
+    border-bottom: 1px solid #000;
 
     outline: none;
 
-    color: #CECECE;
+    color: var(--color-01);
 
     padding: 0.5rem 0;
 
@@ -716,11 +718,12 @@ h2 {
     margin-bottom: 10rem;
 
     padding: 1.875rem 2rem;
+     color: var(--cor-01);
 }
 
 .info h3,
 h3 {
-    color: var(--cor-fundo-3);
+    color: var(--cor-01);
 
     font-family: "Montserrat", sans-serif;
 
@@ -759,7 +762,7 @@ h3 {
 
     padding: 0;
 
-    color: var(--cor-fundo-3);
+     color: var(--cor-01);
 }
 
 .item-info i:not(:first-child) {
@@ -769,7 +772,7 @@ h3 {
 .item-info p {
     margin: 0;
 
-    color: var(--cor-fundo-3);
+     color: var(--cor-01);
 
     font-family: "Montserrat", sans-serif;
 
@@ -826,6 +829,7 @@ h3 {
             6vw,
             2.8rem
         );
+        color: var(--cor-01);
     }
 
 
@@ -844,6 +848,7 @@ h3 {
         font-size: 0.95rem;
 
         line-height: 1.6;
+        color: var(--cor-01);
     }
 
 
@@ -897,6 +902,7 @@ h3 {
 
         padding-left: 2rem;
         padding-right: 2rem;
+         color: var(--cor-01);
     }
 
 
@@ -909,6 +915,7 @@ h3 {
         margin-top: 6rem;
 
         margin-bottom: 6rem;
+         color: var(--cor-01);
     }
 }
 
@@ -931,6 +938,8 @@ h3 {
         max-width: 100%;
 
         overflow-x: hidden;
+
+        color: var(--cor-01);
     }
 
 
@@ -1275,7 +1284,7 @@ h3 {
 
         text-decoration: none;
 
-        color: var(--cor-texto);
+        color: var(--cor-01);
 
         transition: background 0.25s ease;
 
@@ -2100,6 +2109,7 @@ h3 {
         align-items: stretch;
 
         text-align: left;
+         color: var(--cor-01);
     }
 
 
@@ -2131,6 +2141,7 @@ h3 {
         font-size: 0.9rem;
 
         text-align: left;
+         color: var(--cor-01);
     }
 
 
@@ -2152,12 +2163,14 @@ h3 {
         margin-top: 0.5rem;
 
         margin-bottom: 1.25rem;
+         color: var(--cor-01);
     }
 
 
     .informacao textarea {
 
         min-height: 5rem;
+         color: var(--cor-01);
     }
 
 
@@ -2179,6 +2192,7 @@ h3 {
             0;
 
         font-size: 1rem;
+         color: var(--cor-01);
     }
 
 

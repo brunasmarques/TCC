@@ -403,11 +403,63 @@ body.saindo {
    MOBILE
 ========================================================= */
 
-.mobile-header,
-.mobile-menu,
-.mobile-overlay {
+.mobile-header{
+    display:none;
+}
 
-    display: none;
+.mobile-menu{
+
+    position:fixed;
+    top:0;
+    right:-320px;
+
+    width:280px;
+    height:100vh;
+
+    background:var(--cor-menu);
+
+    padding:20px;
+
+    z-index:2000;
+
+    transition:right .35s ease;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.mobile-menu.ativo{
+    right:0;
+}
+
+.mobile-overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:1500;
+}
+
+.mobile-header{
+    display:flex;
+}
+
+.mobile-overlay.ativo{
+
+    opacity:1;
+    visibility:visible;
 }
 
 
@@ -496,6 +548,11 @@ body.saindo {
     line-height: 1.7;
 
     color: var(--cor-texto-secundario);
+    
+    padding: 0 35px;
+    
+    text-align: justify;
+    }
 }
 
 
@@ -797,6 +854,104 @@ body.saindo {
 ========================================================= */
 
 @media (max-width: 600px) {
+    /* =====================================================
+       ESCONDE MENU DESKTOP
+    ===================================================== */
+
+    .menu{
+        display:none;
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .mobile-header{
+
+        display:flex;
+
+        width:100%;
+        height:68px;
+
+        padding:0 18px;
+
+        align-items:center;
+        justify-content:space-between;
+
+        background:var(--cor-menu);
+
+        position:sticky;
+        top:0;
+
+        z-index:1000;
+
+    }
+
+    
+
+    /* =====================================================
+       LOGO
+    ===================================================== */
+
+    .mobile-logo{
+
+        display:flex;
+        align-items:center;
+        gap:10px;
+
+    }
+
+    .mobile-logo img{
+
+        width:36px;
+        height:36px;
+
+    }
+
+    .mobile-logo span{
+
+        color:var(--cor-texto);
+        font-size:20px;
+        font-weight:700;
+
+    }
+
+    /* =====================================================
+       HAMBÚRGUER
+    ===================================================== */
+
+    .mobile-menu-button{
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        gap:5px;
+
+        width:42px;
+        height:42px;
+
+        border:none;
+
+        background:transparent;
+
+        cursor:pointer;
+
+    }
+
+    .mobile-menu-button span{
+
+        width:24px;
+        height:2px;
+
+        background:var(--cor-texto);
+
+        border-radius:20px;
+
+    }
+    
 
     /*
        O menu mobile continua no topo.
@@ -810,6 +965,8 @@ body.saindo {
         padding: 0;
         overflow-x: hidden;
     }
+
+    
 
     /*
        HERO / CONTEÚDO INICIAL
@@ -848,7 +1005,7 @@ body.saindo {
 
         margin: 0;
 
-        font-size: 29px;
+        font-size: 20px;
         line-height: 1.2;
 
         text-align: left;
@@ -945,7 +1102,7 @@ body.saindo {
     .diferencial h2,
     .objetivo h2,
     .publico h2 {
-        font-size: 19px;
+        font-size: 15px;
         margin-bottom: 10px;
     }
 
