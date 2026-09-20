@@ -1575,6 +1575,10 @@ h3 {
 
         /* MENU */
 
+        .logoBugada{
+            opacity: 0;
+        }
+
         .mobile-menu {
 
             display: flex;

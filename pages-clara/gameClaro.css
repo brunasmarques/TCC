@@ -16,30 +16,38 @@ html {
 }
 
 body {
+
     background: linear-gradient(
-        180deg,
-        var(--cor-texto) 0%,
-        var(--cor-15) 56.25%,
-        var(--cor-texto) 100%
+        135deg,
+        var(--cor-texto),
+        var(--cor-15),
+        var(--cor-texto)
     );
 
-    color: var(--cor-elemento);
+    color: var(--cor-08);
 
     position: relative;
+
     min-height: 100vh;
-
-    opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
-body.entrando {
-    opacity: 1;
-}
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
 
-body.saindo {
-    opacity: 0;
-}
+@keyframes fadeInUp {
 
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
 
 /* =========================================================
    IMAGENS
@@ -50,12 +58,22 @@ img {
     display: block;
 }
 
+/* =========================================================
+   ESCONDE ELEMENTOS MOBILE NO DESKTOP
+========================================================= */
+
+.mobile-header,
+.mobile-menu,
+.mobile-overlay {
+    display: none;
+}
 
 /* =========================================================
    MENU LATERAL
 ========================================================= */
 
 .menu {
+
     position: fixed;
 
     top: 0;
@@ -73,7 +91,7 @@ img {
 
     overflow: hidden;
 
-    transition: width 0.35s ease;
+    transition: width .35s ease;
 
     border-radius: 0 1.25rem 1.25rem 0;
 
@@ -84,16 +102,16 @@ img {
     width: 16.25rem;
 }
 
-
 /* =========================================================
    LOGO
 ========================================================= */
 
 .logo {
+
     display: flex;
     align-items: center;
 
-    gap: 0.9375rem;
+    gap: .9375rem;
 
     margin-bottom: 2.5rem;
 
@@ -101,6 +119,7 @@ img {
 }
 
 .logo img {
+
     width: 2.5rem;
     height: 2.5rem;
 
@@ -110,38 +129,41 @@ img {
 }
 
 .logo span {
+
     font-size: 2rem;
     font-weight: 700;
+
+    color: var(--cor-01);
 
     white-space: nowrap;
 
     opacity: 0;
 
-    transition: opacity 0.3s ease;
+    transition: opacity .3s ease;
 }
 
 .menu:hover .logo span {
     opacity: 1;
 }
 
-
 /* =========================================================
    PESQUISA
 ========================================================= */
 
 .pesquisa {
+
     display: flex;
     align-items: center;
 
-    gap: 0.9375rem;
+    gap: .9375rem;
 
     width: 100%;
 
-    background: rgba(161, 220, 230, 0.70);
+    background: rgba(161,220,230,.70);
 
-    border-radius: 0.625rem;
+    border-radius: .625rem;
 
-    padding: 0.75rem;
+    padding: .75rem;
 
     margin-bottom: 1.5625rem;
 
@@ -149,6 +171,7 @@ img {
 }
 
 .pesquisa img {
+
     width: 1.625rem;
     height: 1.625rem;
 
@@ -158,23 +181,26 @@ img {
 }
 
 .pesquisa span {
+
+    color: var(--cor-08);
+
     white-space: nowrap;
 
     opacity: 0;
 
-    transition: opacity 0.3s ease;
+    transition: opacity .3s ease;
 }
 
 .menu:hover .pesquisa span {
     opacity: 1;
 }
 
-
 /* =========================================================
    ITENS DO MENU
 ========================================================= */
 
 .item-menu {
+
     display: flex;
     align-items: center;
 
@@ -182,19 +208,19 @@ img {
 
     width: 100%;
 
-    padding: 0.75rem;
+    padding: .75rem;
 
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
 
-    border-radius: 0.625rem;
+    border-radius: .625rem;
 
     cursor: pointer;
 
-    transition: background 0.3s ease;
+    transition: background .3s ease;
 
     text-decoration: none;
 
-    color: var(--cor-01);
+    color: var(--cor-08);
 
     flex-shrink: 0;
 }
@@ -204,6 +230,7 @@ img {
 }
 
 .item-menu img {
+
     width: 1.75rem;
     height: 1.75rem;
 
@@ -213,47 +240,52 @@ img {
 }
 
 .item-menu span {
+
+    color: var(--cor-08);
+
     white-space: nowrap;
 
     opacity: 0;
 
-    transition: opacity 0.3s ease;
+    transition: opacity .3s ease;
 
     font-size: 1rem;
     font-weight: 500;
-
-    color: var(--cor-01);
 }
 
 .menu:hover .item-menu span {
     opacity: 1;
 }
 
-
 /* =========================================================
    USUÁRIO
 ========================================================= */
 
 .usuario {
+
     margin-top: auto;
 
+    margin-bottom: 20px;
+
     display: flex;
+
     align-items: center;
 
-    gap: 0.9375rem;
+    gap: .9375rem;
 
     width: 100%;
 
-    background: rgba(161, 220, 230, 0.70);
+    background: var(--cor-06);
 
-    padding: 0.75rem;
+    padding: .75rem;
 
-    border-radius: 0.625rem;
+    border-radius: .625rem;
 
     flex-shrink: 0;
 }
 
 .usuario img {
+
     width: 2.1875rem;
     height: 2.1875rem;
 
@@ -263,6 +295,7 @@ img {
 }
 
 .dados-usuario {
+
     opacity: 0;
 
     max-width: 0;
@@ -272,274 +305,763 @@ img {
     white-space: nowrap;
 
     transition:
-        opacity 0.3s ease,
-        max-width 0.3s ease;
+        opacity .3s ease,
+        max-width .3s ease;
 }
 
 .menu:hover .dados-usuario {
+
     opacity: 1;
+
     max-width: 180px;
 }
 
 .dados-usuario h4 {
-    font-size: 0.9rem;
+
+    color: var(--cor-01);
+
+    font-size: .9rem;
 
     font-weight: 600;
 
     margin: 0;
-
-    color: var(--cor-01);
 }
 
 .dados-usuario p {
-    font-size: 0.7rem;
-
-    font-weight: 400;
 
     color: var(--cor-01);
 
-    opacity: 0.6;
+    opacity: .6;
 
-    margin: 0.25rem 0 0 0;
+    font-size: .7rem;
+
+    margin-top: .25rem;
 }
-
 
 /* =========================================================
    BOTÃO MODO ESCURO
 ========================================================= */
 
-button.modo-escuro {
+.modo-escuro {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.125rem;
+
+    width: 100%;
+
+    padding: .75rem;
+
     border: none;
 
     background: transparent;
 
-    font: inherit;
+    border-radius: .625rem;
 
-    color: inherit;
+    cursor: pointer;
 
-    text-align: left;
+    transition: background .3s ease;
 
-    appearance: none;
-
-    -webkit-appearance: none;
+    flex-shrink: 0;
 }
 
+.modo-escuro:hover {
 
-/* =========================================================
-   ANIMAÇÕES
-========================================================= */
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(2rem);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background: var(--cor-06);
 }
 
+.modo-escuro img {
 
-/* =========================================================
-   CONTEÚDO PRINCIPAL
-========================================================= */
+    width: 1.75rem;
 
-#page {
-    min-height: 100vh;
-
-    max-width: 1300px;
-
-    margin-inline: auto;
-
-    padding-left: 5rem;
-    padding-right: 2rem;
-
-    padding-top: 2rem;
-}
-
-
-/* =========================================================
-   CONTEÚDO DO GAME
-========================================================= */
-
-.conteudo-game {
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-}
-
-
-/* =========================================================
-   IMAGEM PRINCIPAL
-========================================================= */
-
-#img-simce {
-
-    width: auto;
-
-    max-width: 700px;
-
-    margin-top: 3rem;
+    height: 1.75rem;
 
     object-fit: contain;
 
-    animation: fadeInUp 0.6s ease both;
+    flex-shrink: 0;
 }
 
+.modo-escuro span {
 
-/* =========================================================
-   TÍTULO
-========================================================= */
+    color: var(--cor-08);
 
-.titulo {
-    margin-top: 5rem;
+    white-space: nowrap;
 
-    font-size: 2.5rem;
+    opacity: 0;
 
-    color: var(--cor-01);
-
-    font-weight: 700;
-
-    text-align: center;
-
-    animation: fadeInUp 0.6s 0.1s ease both;
-}
-
-
-/* =========================================================
-   DESCRIÇÃO
-========================================================= */
-
-#descricao,
-.descricao2 {
-    width: 54.5rem;
-
-    max-width: 90%;
-
-    color: var(--cor-1);
+    transition: opacity .3s ease;
 
     font-size: 1rem;
 
-    font-weight: 400;
-
-    line-height: 1.7;
-
-    text-align: center;
+    font-weight: 500;
 }
 
-#descricao {
-    margin-top: 2.5rem;
+.menu:hover .modo-escuro span {
 
-    animation: fadeInUp 0.6s 0.2s ease both;
+    opacity: 1;
 }
-
 
 /* =========================================================
-   SUBTÍTULO
+   CONTEÚDO
 ========================================================= */
 
-.subtitulo {
-    width: 54.5rem;
+#page {
 
-    max-width: 90%;
+    margin-left: 75px;
 
-    margin-top: 3.2rem;
+    min-height: 100vh;
 
-    color: var(--cor-01);
-
-    font-size: 1.6rem;
-
-    font-weight: 600;
-
-    text-align: left;
-
-    animation: fadeInUp 0.6s 0.3s ease both;
-}
-
-
-/* =========================================================
-   HISTÓRIA
-========================================================= */
-
-.descricao2 {
-    margin-top: 1.5rem;
-
-    text-align: left;
-
-    animation: fadeInUp 0.6s 0.4s ease both;
-}
-
-
-/* =========================================================
-   VÍDEO / GAMEPLAY
-========================================================= */
-
-#video-games {
-    display: block;
-
-    width: 62rem;
-    max-width: 90%;
-
-    height: 30rem;
-
-    margin: 8.4rem auto 4rem;
-
-    border-radius: 1.25rem;
-
-    object-fit: cover;
-
-    animation: fadeInUp 0.7s 0.5s ease both;
-}
-
-
-/* =========================================================
-   BOTÃO DO JOGO
-========================================================= */
-
-.botao-jogo {
     display: flex;
 
     justify-content: center;
 
     align-items: center;
 
-    width: 18rem;
+    padding: 60px 40px;
+}
 
-    height: 3.5rem;
+.conteudo-game {
 
-    margin: 0 auto 6.5rem;
+    width: 100%;
 
-    border: none;
+    max-width: 1200px;
 
-    border-radius: 1.25rem;
+    display: flex;
 
-    background: var(--cor-10);
+    flex-direction: column;
 
-    box-shadow:
-        5px 5px 7px 1px rgba(68, 215, 229, 0.50);
+    align-items: center;
 
-    color: var(--cor-fundo-1);
+    animation: fadeInUp .6s ease both;
+}
+
+/* =========================================================
+   IMAGEM
+========================================================= */
+
+#img-simce {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    height: auto;
+
+    margin-bottom: 40px;
+}
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.titulo {
+
+    color: var(--cor-01);
+
+    text-align: center;
+
+    font-size: 3.2rem;
 
     font-weight: 700;
 
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+
+    color: var(--cor-01);
+
+    width: 100%;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-top: 45px;
+
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   DESCRIÇÕES
+========================================================= */
+
+#descricao {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    text-align: center;
+
+    color: var(--cor-08);
+
     font-size: 1.25rem;
+
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+}
+
+.descricao2 {
+
+    width: 100%;
+
+    color: var(--cor-08);
+
+    font-size: 1.15rem;
+
+    font-weight: 400;
+
+    line-height: 1.9;
+
+    text-align: justify;
+
+    margin-bottom: 45px;
+}
+
+/* =========================================================
+   VÍDEO
+========================================================= */
+
+#video-games {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    border-radius: 18px;
+
+    border: 4px solid var(--cor-06);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+
+    margin-bottom: 45px;
+}
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.botao-jogo {
+
+    width: 280px;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background: var(--cor-06);
+
+    color: var(--cor-01);
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
 
     cursor: pointer;
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: .3s;
 }
 
 .botao-jogo:hover {
-    transform: translateY(-2px);
 
-    box-shadow:
-        5px 7px 10px 2px rgba(68, 215, 229, 0.50);
+    background: var(--cor-12);
+
+    transform: translateY(-3px);
 }
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =====================================================
+       ESCONDE MENU DESKTOP
+    ====================================================== */
+
+    .menu {
+        display: none;
+    }
+
+    /* =====================================================
+       CABEÇALHO
+    ====================================================== */
+
+    .mobile-header {
+
+        width: 100%;
+        height: 68px;
+
+        padding: 0 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        background: var(--cor-13);
+
+        border-bottom: 1px solid rgba(161,220,230,.40);
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+    }
+
+    .mobile-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .mobile-logo img {
+
+        width: 36px;
+
+        height: 36px;
+
+        object-fit: contain;
+    }
+
+    .mobile-logo span {
+
+        color: var(--cor-01);
+
+        font-size: 20px;
+
+        font-weight: 700;
+    }
+
+    /* =====================================================
+       BOTÃO HAMBÚRGUER
+    ====================================================== */
+
+    .mobile-menu-button {
+
+        width: 44px;
+
+        height: 44px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 5px;
+
+        background: transparent;
+
+        border: none;
+
+        cursor: pointer;
+    }
+
+    .mobile-menu-button span {
+
+        width: 25px;
+
+        height: 2px;
+
+        background: var(--cor-01);
+
+        border-radius: 20px;
+
+        transition: .3s;
+    }
+
+    /* =====================================================
+       OVERLAY
+    ====================================================== */
+
+    .mobile-overlay {
+
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0,0,0,.55);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition: .3s;
+
+        z-index: 1500;
+    }
+
+    .mobile-overlay.active {
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+        /* =====================================================
+           MENU MOBILE
+        ====================================================== */
+
+        .mobile-menu {
+
+            display: block;
+
+            position: fixed;
+
+            top: 0;
+
+            right: -100%;
+
+            width: 82%;
+
+            max-width: 330px;
+
+            height: 100vh;
+
+            padding: 20px;
+
+            background: var(--cor-13);
+
+            overflow-y: auto;
+
+            transition: right .35s ease;
+
+            z-index: 2000;
+
+            box-shadow: -10px 0 30px rgba(0,0,0,.25);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+        .mobile-menu-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .mobile-menu-logo img {
+
+            width: 36px;
+
+            height: 36px;
+        }
+
+        .mobile-menu-logo span {
+
+            color: var(--cor-01);
+
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+        .mobile-close {
+
+            background: transparent;
+
+            border: none;
+
+            color: var(--cor-01);
+
+            font-size: 34px;
+
+            cursor: pointer;
+        }
+
+        .mobile-search {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            width: 100%;
+
+            height: 46px;
+
+            padding: 0 14px;
+
+            margin-bottom: 22px;
+
+            background: rgba(161,220,230,.70);
+
+            border-radius: 10px;
+        }
+
+        .mobile-search img {
+
+            width: 22px;
+
+            height: 22px;
+        }
+
+        .mobile-search span {
+
+            color: var(--cor-08);
+
+            font-size: 14px;
+        }
+
+        .mobile-nav {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+        .mobile-nav-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            color: var(--cor-08);
+
+            text-decoration: none;
+        }
+
+        .mobile-nav-item.ativo {
+
+            background: var(--cor-06);
+        }
+
+        .mobile-nav-item img {
+
+            width: 25px;
+
+            height: 25px;
+        }
+
+        .mobile-nav-item span {
+
+            font-size: 15px;
+
+            font-weight: 500;
+        }
+
+        .mobile-user {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(161,220,230,.40);
+        }
+
+        .mobile-user img {
+
+            width: 45px;
+
+            height: 45px;
+        }
+
+        .mobile-user h4 {
+
+            color: var(--cor-01);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            margin-bottom: 4px;
+        }
+
+        .mobile-user p {
+
+            color: var(--cor-08);
+
+            opacity: .6;
+
+            font-size: 10px;
+        }
+
+        .mobile-theme {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            margin-top: 22px;
+
+            padding: 11px 13px;
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--cor-08);
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+        .mobile-theme img {
+
+            width: 25px;
+
+            height: 25px;
+        }
+
+        .mobile-theme span {
+
+            font-size: 15px;
+
+            font-weight: 500;
+        }
+
+        #page {
+
+            margin-left: 0;
+
+            padding: 30px 18px 50px;
+        }
+
+        #img-simce {
+
+            width: 100%;
+
+            margin-bottom: 30px;
+        }
+
+        .titulo {
+
+            font-size: 28px;
+
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        #descricao,
+        .descricao2 {
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            text-align: justify;
+        }
+
+        .subtitulo {
+
+            width: 100%;
+
+            font-size: 22px;
+
+            margin-top: 30px;
+        }
+
+        #video-games {
+
+            width: 100%;
+
+            margin: 30px 0;
+        }
+
+        .botao-jogo {
+
+            width: 100%;
+
+            max-width: 280px;
+
+            height: 52px;
+
+            font-size: 16px;
+        }
+
+        body {
+
+            overflow-x: hidden;
+        }
+
+    }
+
+    /* =========================================================
+       CELULARES MUITO PEQUENOS
+    ========================================================= */
+
+    @media (max-width: 360px) {
+
+        #page {
+
+            padding: 25px 12px 40px;
+        }
+
+        .titulo {
+
+            font-size: 24px;
+        }
+
+        .subtitulo {
+
+            font-size: 20px;
+        }
+
+        #descricao,
+        .descricao2 {
+
+            font-size: 14px;
+        }
+
+        .botao-jogo {
+
+            height: 48px;
+
+            font-size: 15px;
+        }
+
+    }

@@ -1,6 +1,4 @@
-/* =========================================================
-   RESET
-========================================================= */
+@import "../colors.css";
 
 * {
     margin: 0;
@@ -21,12 +19,11 @@ body {
 
     min-height: 100vh;
 
-    background:
-        linear-gradient(
+        background: linear-gradient(
             135deg,
-            #FFFFFF 0%,
-            #EFFFFF 50%,
-            #BDEBFD 100%
+            var(--cor-texto),
+            var(--cor-15),
+            var(--cor-texto)
         );
 
     color: #04031D;
@@ -848,7 +845,7 @@ body.saindo {
 
         padding: 20px;
 
-        background: #EFFFFF;
+        background: #D0EEFB;
 
         z-index: 2000;
 

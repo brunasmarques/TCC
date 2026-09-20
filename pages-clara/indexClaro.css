@@ -29,8 +29,8 @@ body {
 
 min-height: 100vh;
 
-background:
-    linear-gradient(
+    
+    background: linear-gradient(
         135deg,
         var(--cor-texto),
         var(--cor-15),
@@ -1296,7 +1296,7 @@ body {
     padding: 20px;
 
     background:
-        var(--cor-14);
+        var(--cor-13);
 
     z-index: 2000;
 

@@ -18,14 +18,13 @@ html {
 }
 
 body {
-    background:
-        linear-gradient(
+   
+        background: linear-gradient(
             135deg,
             var(--cor-texto),
             var(--cor-15),
             var(--cor-texto)
         );
-
     color: var(--cor-5);
 
     position: relative;
