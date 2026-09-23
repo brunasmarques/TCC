@@ -1,24 +1,35 @@
 @import "../colors.css";
 
 /* =========================================================
-   CONFIGURAÇÕES GERAIS
+RESET
 ========================================================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    font-family: "Montserrat", sans-serif;
-    color: (--cor-01);
-}
+  font-family: "Montserrat", sans-serif;
+
+  color: var(--cor-01);
+  }
 
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+
+
+scroll-behavior: smooth;
+
+overflow-x: hidden;
+
+
 }
 
 body {
+
+
+min-height: 100vh;
+
+
     background: linear-gradient(
         135deg,
         var(--cor-texto),
@@ -26,311 +37,510 @@ body {
         var(--cor-texto)
     );
 
-    color: var(--cor-01);
+color: var(--cor-01);
 
-    position: relative;
+position: relative;
 
-    min-height: 100vh;
+overflow-x: hidden;
 
-    overflow-x: hidden;
+transition: opacity 0.5s ease;
 
-    opacity: 0;
 
-    transition: opacity 0.5s ease;
 }
 
-body.entrando {
-    opacity: 1;
-}
+img {
 
-body.saindo {
-    opacity: 0;
-}
 
+display: block;
+
+max-width: 100%;
+
+
+}
 
 /* =========================================================
-   LARGURA DA PÁGINA
-========================================================= */
-
-#page {
-    width: 100%;
-
-    max-width: 1300px;
-
-    margin-inline: auto;
-
-    padding-left: 5rem;
-}
-
-
-/* =========================================================
-   ANIMAÇÕES
+ANIMAÇÕES
 ========================================================= */
 
 @keyframes fadeInUp {
 
-    from {
-        opacity: 0;
-        transform: translateY(2rem);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+from {
+
+    opacity: 0;
+
+    transform:
+        translateY(2rem);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
 }
 
 
-/* =========================================================
-   IMAGENS
-========================================================= */
+}
 
-img {
-    max-width: 100%;
+@keyframes fadeInRight {
 
-    display: block;
+
+from {
+
+    opacity: 0;
+
+    transform:
+        translateX(2rem);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform:
+        translateX(0);
+
 }
 
 
+}
+
+@keyframes fadeInLeft {
+
+
+from {
+
+    opacity: 0;
+
+    transform:
+        translateX(-2rem);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform:
+        translateX(0);
+
+}
+
+
+}
+
+body.entrando {
+
+
+animation:
+    fadeInUp
+    0.5s
+    ease
+    both;
+
+
+}
+
+body.saindo {
+
+
+opacity: 0;
+
+
+}
+
 /* =========================================================
-   MENU
+MENU DESKTOP
 ========================================================= */
 
 .menu {
-    position: fixed;
 
-    top: 0;
-    left: 0;
 
-    width: 4.6875rem;
+position: fixed;
 
-    height: 100vh;
+top: 0;
+left: 0;
 
-    background: var(--cor-menu);
+width: 75px;
+height: 100vh;
 
-    display: flex;
+background:
+    var(--cor-13);
 
-    flex-direction: column;
+padding:
+    20px
+    14px;
 
-    padding: 1.25rem 0.9375rem;
+display: flex;
 
-    overflow: hidden;
+flex-direction: column;
 
-    transition: 0.35s ease;
+overflow: hidden;
 
-    border-radius: 0 1.25rem 1.25rem 0;
+border-radius:
+    0
+    18px
+    18px
+    0;
 
-    z-index: 999;
+z-index: 1000;
+
+transition:
+    width 0.35s ease;
+
+
 }
 
 .menu:hover {
-    width: 16.25rem;
+
+
+width: 260px;
+
+
 }
 
-
 /* =========================================================
-   LOGO
+LOGO DESKTOP
 ========================================================= */
 
 .logo {
-    display: flex;
 
-    align-items: center;
 
-    gap: 0.9375rem;
+display: flex;
 
-    margin-bottom: 2.5rem;
+align-items: center;
+
+gap: 15px;
+
+margin-bottom: 35px;
+
+flex-shrink: 0;
+
+
 }
 
-.logo img {
-    width: 2.5rem;
+.logoIcon {
 
-    height: 2.5rem;
 
-    object-fit: contain;
+width: 42px;
+height: 42px;
 
-    flex-shrink: 0;
+object-fit: contain;
+
+flex-shrink: 0;
+
+
 }
 
 .logo span {
-    font-size: 2rem;
 
-    font-weight: 700;
 
-    white-space: nowrap;
+color:
+    var(--cor-01);
 
-    opacity: 0;
+font-size: 25px;
 
-    transition: 0.3s;
+font-weight: 700;
+
+letter-spacing: 1.5px;
+
+white-space: nowrap;
+
+opacity: 0;
+
+transition:
+    opacity 0.3s ease;
+
+
 }
 
 .menu:hover .logo span {
-    opacity: 1;
+
+
+opacity: 1;
+
+
 }
 
-
 /* =========================================================
-   PESQUISA
+PESQUISA DESKTOP
 ========================================================= */
 
 .pesquisa {
-    display: flex;
 
-    align-items: center;
 
-    gap: 0.9375rem;
+display: flex;
 
-    background: var(--cor-elemento);
+align-items: center;
 
-    border-radius: 0.625rem;
+gap: 15px;
 
-    padding: 0.75rem;
+width: 100%;
 
-    margin-bottom: 1.5625rem;
+padding: 11px;
+
+margin-bottom: 25px;
+
+background:
+    rgba(
+        161,
+        220,
+        230,
+        0.70
+    );
+
+border-radius: 10px;
+
+flex-shrink: 0;
+
+
 }
 
-.pesquisa img {
-    width: 1.625rem;
+.serchIcon {
 
-    height: 1.625rem;
 
-    object-fit: contain;
+width: 27px;
+height: 27px;
 
-    flex-shrink: 0;
+object-fit: contain;
+
+flex-shrink: 0;
+
+
 }
 
 .pesquisa span {
-    white-space: nowrap;
 
-    opacity: 0;
 
-    transition: 0.3s;
+color:
+    var(--cor-01);
+
+font-size: 14px;
+
+white-space: nowrap;
+
+opacity: 0;
+
+transition:
+    opacity 0.3s ease;
+
+
 }
 
 .menu:hover .pesquisa span {
-    opacity: 1;
+
+
+opacity: 1;
+
+
 }
 
-
 /* =========================================================
-   ITENS DO MENU
+LINKS DESKTOP
 ========================================================= */
 
 .item-menu {
-    display: flex;
 
-    align-items: center;
 
-    gap: 1.125rem;
+width: 100%;
 
-    width: 100%;
+display: flex;
 
-    padding: 0.75rem;
+align-items: center;
 
-    margin-bottom: 0.5rem;
+gap: 17px;
 
-    border-radius: 0.625rem;
+padding: 12px;
 
-    cursor: pointer;
+margin-bottom: 7px;
 
-    transition: 0.3s ease;
+border-radius: 10px;
 
-    text-decoration: none;
+text-decoration: none;
 
-    color: var(--cor-texto);
+color:
+    var(--cor-01);
 
-    flex-shrink: 0;
+transition:
+    background 0.25s ease;
+
+flex-shrink: 0;
+
+border: none;
+
+cursor: pointer;
+
+
 }
 
 .item-menu:hover {
-    background: var(--cor-elemento);
+
+
+background:
+    rgba(
+        161,
+        220,
+        230,
+        0.70
+    );
+
+
+}
+
+.item-menu.ativo {
+
+
+background:
+    rgba(
+        73,
+        198,
+        229,
+        0.25
+    );
+
+
 }
 
 .item-menu img {
-    width: 1.75rem;
 
-    height: 1.75rem;
 
-    object-fit: contain;
+width: 27px;
+height: 27px;
 
-    flex-shrink: 0;
+object-fit: contain;
+
+flex-shrink: 0;
+
+
 }
 
 .item-menu span {
-    white-space: nowrap;
 
-    opacity: 0;
 
-    transition: 0.3s ease;
+font-size: 15px;
 
-    font-size: 1rem;
+font-weight: 500;
 
-    font-weight: 500;
+white-space: nowrap;
+
+opacity: 0;
+
+transition:
+    opacity 0.3s ease;
+
+
 }
 
 .menu:hover .item-menu span {
-    opacity: 1;
+
+
+opacity: 1;
+
+
 }
 
-
 /* =========================================================
-   USUÁRIO
+USUÁRIO
 ========================================================= */
 
 .usuario {
-    margin-top: auto;
 
-    margin-bottom: 1.25rem;
 
-    display: flex;
+display: flex;
 
-    align-items: center;
+align-items: center;
 
-    gap: 0.9375rem;
+gap: 13px;
 
-    background: var(--cor-elemento);
+width: 100%;
 
-    padding: 0.75rem;
+padding: 11px;
 
-    border-radius: 0.625rem;
+margin-top: auto;
 
-    flex-shrink: 0;
+margin-bottom: 18px;
+
+background:
+    rgba(
+        161,
+        220,
+        230,
+        0.70
+    );
+
+border-radius: 10px;
+
+flex-shrink: 0;
+
+
 }
 
-.usuario img {
-    width: 2.1875rem;
+.userIcon {
 
-    height: 2.1875rem;
 
-    object-fit: contain;
+width: 37px;
+height: 37px;
+
+object-fit: contain;
+
+flex-shrink: 0;
+
+
 }
 
 .dados-usuario {
-    opacity: 0;
 
-    transition: 0.3s;
 
-    white-space: nowrap;
+overflow: hidden;
+
+white-space: nowrap;
+
+opacity: 0;
+
+transition:
+    opacity 0.3s ease;
+
+
 }
 
 .menu:hover .dados-usuario {
-    opacity: 1;
+
+
+opacity: 1;
+
+
 }
 
 .dados-usuario h4 {
-    font-size: 0.9rem;
 
-    margin: 0;
+
+color:
+    var(--cor-01);
+
+font-size: 13px;
+
+font-weight: 600;
+
+
 }
 
 .dados-usuario p {
-    font-size: 0.7rem;
 
-    color: var(--cor-texto-terciario);
 
-    margin: 0.25rem 0 0;
+color:
+    var(--cor-11);
+
+font-size: 10px;
+
+margin-top: 4px;
+
+
 }
-
 
 /* =========================================================
    BOTÃO MODO CLARO

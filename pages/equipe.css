@@ -1401,6 +1401,7 @@ h3 {
 
     .mobile-header,
     .mobile-menu,
+    .mobile-user,
     .mobile-overlay {
         display: none;
     }
@@ -1576,9 +1577,7 @@ h3 {
 
         /* MENU */
 
-        .logoBugada{
-            opacity: 0;
-        }
+      
 
         .mobile-menu {
 

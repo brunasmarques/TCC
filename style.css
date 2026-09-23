@@ -759,6 +759,12 @@ body.saindo {
         overflow-x: hidden !important;
     }
 
+    .mobile-header,
+    .mobile-menu,
+    .mobile-overlay {
+        display: none;
+    }
+
 
     /* =====================================================
        MENU DESKTOP
@@ -969,13 +975,12 @@ body.saindo {
         box-shadow:
             -10px 0 30px rgba(0, 0, 0, 0.25);
     }
-
     .mobile-menu.active {
 
         right: 0;
     }
-}
-    /* =====================================================
+
+  /* =====================================================
        TOPO DO MENU
     ====================================================== */
 
