@@ -19,12 +19,12 @@ body {
 
     min-height: 100vh;
 
-        background: linear-gradient(
-            135deg,
-            var(--cor-texto),
-            var(--cor-15),
-            var(--cor-texto)
-        );
+    background: linear-gradient(
+        135deg,
+        var(--cor-texto),
+        var(--cor-15),
+        var(--cor-texto)
+    );
 
     color: #04031D;
 
@@ -68,10 +68,34 @@ img {
 }
 
 
+/* =========================================================
+   ANIMAÇÃO DO BODY
+
+   NÃO USA TRANSFORM NO BODY PARA NÃO AFETAR
+   ELEMENTOS COM POSITION: FIXED
+========================================================= */
+
+@keyframes fadeInBody {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
 body.entrando {
 
     animation:
-        fadeInUp
+        fadeInBody
         0.5s
         ease
         both;
