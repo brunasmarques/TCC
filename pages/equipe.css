@@ -8,7 +8,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family: "Montserrat", sans-serif;
 }
 
@@ -18,24 +17,21 @@ html {
 }
 
 body {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+
     background:
-    linear-gradient(
-        180deg,
-        #04031D 0%,
-        #0B0E16 55%,
-        #04031D 100%
-    );
+        linear-gradient(
+            180deg,
+            #04031D 0%,
+            #0B0E16 55%,
+            #04031D 100%
+        );
 
     color: var(--cor-texto);
 
-    position: relative;
-
-    min-height: 100vh;
-
-    overflow-x: hidden;
-
     opacity: 0;
-
     transition: opacity 0.5s ease;
 }
 
@@ -47,6 +43,11 @@ body.saindo {
     opacity: 0;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 
 /* =========================================================
    LARGURA DA PÁGINA
@@ -54,7 +55,6 @@ body.saindo {
 
 #page {
     width: 100%;
-
     max-width: 1300px;
 
     margin-inline: auto;
@@ -64,7 +64,7 @@ body.saindo {
 
 
 /* =========================================================
-   ANIMAÇÕES
+   ANIMAÇÃO
 ========================================================= */
 
 @keyframes fadeInUp {
@@ -82,18 +82,7 @@ body.saindo {
 
 
 /* =========================================================
-   IMAGENS
-========================================================= */
-
-img {
-    max-width: 100%;
-
-    display: block;
-}
-
-
-/* =========================================================
-   MENU
+   MENU DESKTOP
 ========================================================= */
 
 .menu {
@@ -103,24 +92,22 @@ img {
     left: 0;
 
     width: 4.6875rem;
-
     height: 100vh;
 
     background: var(--cor-menu);
 
     display: flex;
-
     flex-direction: column;
 
     padding: 1.25rem 0.9375rem;
 
     overflow: hidden;
 
-    transition: 0.35s ease;
-
     border-radius: 0 1.25rem 1.25rem 0;
 
     z-index: 999;
+
+    transition: width 0.35s ease;
 }
 
 .menu:hover {
@@ -129,29 +116,38 @@ img {
 
 
 /* =========================================================
-   LOGO
+   LOGO DESKTOP
 ========================================================= */
 
 .logo {
     display: flex;
-
     align-items: center;
 
     gap: 0.9375rem;
 
     margin-bottom: 2.5rem;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 2.1875rem;
+    height: 2.1875rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
 }
 
 .logo span {
     font-size: 2rem;
-
     font-weight: 700;
 
     white-space: nowrap;
 
     opacity: 0;
 
-    transition: 0.3s;
+    transition: opacity 0.3s ease;
 }
 
 .menu:hover .logo span {
@@ -160,15 +156,16 @@ img {
 
 
 /* =========================================================
-   PESQUISA
+   PESQUISA DESKTOP
 ========================================================= */
 
 .pesquisa {
     display: flex;
-
     align-items: center;
 
     gap: 0.9375rem;
+
+    width: 100%;
 
     background: var(--cor-elemento);
 
@@ -177,11 +174,12 @@ img {
     padding: 0.75rem;
 
     margin-bottom: 1.5625rem;
+
+    flex-shrink: 0;
 }
 
 .pesquisa img {
     width: 1.625rem;
-
     height: 1.625rem;
 
     object-fit: contain;
@@ -194,7 +192,7 @@ img {
 
     opacity: 0;
 
-    transition: 0.3s;
+    transition: opacity 0.3s ease;
 }
 
 .menu:hover .pesquisa span {
@@ -203,12 +201,11 @@ img {
 
 
 /* =========================================================
-   ITENS DO MENU
+   ITENS DO MENU DESKTOP
 ========================================================= */
 
 .item-menu {
     display: flex;
-
     align-items: center;
 
     gap: 1.125rem;
@@ -223,11 +220,11 @@ img {
 
     cursor: pointer;
 
-    transition: 0.3s ease;
-
     text-decoration: none;
 
     color: var(--cor-texto);
+
+    transition: background 0.3s ease;
 
     flex-shrink: 0;
 }
@@ -236,9 +233,12 @@ img {
     background: var(--cor-elemento);
 }
 
+.item-menu.ativo {
+    background: rgba(77, 215, 229, 0.12);
+}
+
 .item-menu img {
     width: 1.75rem;
-
     height: 1.75rem;
 
     object-fit: contain;
@@ -251,10 +251,9 @@ img {
 
     opacity: 0;
 
-    transition: 0.3s ease;
+    transition: opacity 0.3s ease;
 
     font-size: 1rem;
-
     font-weight: 500;
 }
 
@@ -264,19 +263,19 @@ img {
 
 
 /* =========================================================
-   USUÁRIO
+   USUÁRIO DESKTOP
 ========================================================= */
 
 .usuario {
     margin-top: auto;
-
     margin-bottom: 1.25rem;
 
     display: flex;
-
     align-items: center;
 
     gap: 0.9375rem;
+
+    width: 100%;
 
     background: var(--cor-elemento);
 
@@ -287,20 +286,24 @@ img {
     flex-shrink: 0;
 }
 
-.usuario img {
+.usuario img,
+.usuario .userIcon {
     width: 2.1875rem;
-
     height: 2.1875rem;
 
     object-fit: contain;
+
+    flex-shrink: 0;
 }
 
 .dados-usuario {
     opacity: 0;
 
-    transition: 0.3s;
+    transition: opacity 0.3s ease;
 
     white-space: nowrap;
+
+    overflow: hidden;
 }
 
 .menu:hover .dados-usuario {
@@ -309,7 +312,6 @@ img {
 
 .dados-usuario h4 {
     font-size: 0.9rem;
-
     margin: 0;
 }
 
@@ -318,7 +320,7 @@ img {
 
     color: var(--cor-texto-terciario);
 
-    margin: 0.25rem 0 0;
+    margin-top: 0.25rem;
 }
 
 
@@ -328,17 +330,14 @@ img {
 
 button.modo-claro {
     border: none;
-
     background: transparent;
 
     font: inherit;
-
     color: inherit;
 
     text-align: left;
 
     appearance: none;
-
     -webkit-appearance: none;
 }
 
@@ -351,7 +350,6 @@ button.modo-claro {
     width: 100%;
 
     padding-top: 10rem;
-
     padding-right: 2rem;
 
     animation:
@@ -369,27 +367,35 @@ button.modo-claro {
 .titulo {
     width: 100%;
     max-width: 788px;
+
     height: auto;
-    margin: 0;
+
+    margin-top: 5rem;
+
     color: var(--cor-texto);
+
     font-family: "Montserrat", sans-serif;
+
     font-size: clamp(2rem, 4vw, 3rem);
-    font-style: normal;
+
     font-weight: 700;
+
     line-height: 1.2;
-     margin-top: 5rem;
 }
 
 .titulo h1,
 h1 {
     color: var(--cor-texto);
-    font-family: "Montserrat", sans-serif;
-    font-size: inherit;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-left: 10rem;
 
+    font-family: "Montserrat", sans-serif;
+
+    font-size: inherit;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    margin-left: 10rem;
 }
 
 
@@ -399,11 +405,9 @@ h1 {
 
 #descricao {
     width: 100%;
-
     max-width: 680px;
 
     margin-top: 1rem;
-
     margin-left: 9.5rem;
 
     color: var(--cor-texto);
@@ -411,9 +415,6 @@ h1 {
     font-family: "Montserrat", sans-serif;
 
     font-size: 1rem;
-
-    font-style: normal;
-
     font-weight: 300;
 
     line-height: 1.6;
@@ -421,7 +422,7 @@ h1 {
 
 
 /* =========================================================
-   IMAGENS DA EQUIPE
+   LINHAS DOS CARDS
 ========================================================= */
 
 .linha-meninas,
@@ -431,7 +432,6 @@ h1 {
     display: flex;
 
     justify-content: center;
-
     align-items: flex-start;
 
     flex-wrap: wrap;
@@ -439,7 +439,7 @@ h1 {
 
 
 /* =========================================================
-   LINHA DAS MENINAS
+   LINHA MENINAS
 ========================================================= */
 
 .linha-meninas {
@@ -450,7 +450,7 @@ h1 {
 
 
 /* =========================================================
-   LINHA DOS MENINOS
+   LINHA MENINOS
 ========================================================= */
 
 .linha-meninos {
@@ -463,7 +463,7 @@ h1 {
 
 
 /* =========================================================
-   CARD
+   CARDS
 ========================================================= */
 
 .card {
@@ -482,8 +482,6 @@ h1 {
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
-
-    display: block;
 
     border-radius: 1.25rem 1.25rem 0 0;
 }
@@ -507,21 +505,17 @@ h1 {
 
 .info-card p,
 .info-card h4 {
-    color: #000000;
+    color: #000;
 
     padding-left: 0.9375rem;
-
     padding-right: 0.9375rem;
 
     margin: 0;
-
-    background: none;
 }
 
 .info-card h4 {
-    font-weight: 600;
-
     font-size: 1rem;
+    font-weight: 600;
 
     line-height: 1.3;
 }
@@ -536,10 +530,7 @@ h1 {
 
 
 /* =========================================================
-   POSICIONAMENTO DOS CARDS
-
-   Os antigos margin-left/right foram removidos.
-   O flexbox controla automaticamente o posicionamento.
+   POSICIONAMENTO
 ========================================================= */
 
 #geo,
@@ -547,7 +538,6 @@ h1 {
 #guilherme,
 #enzo {
     margin-left: 0;
-
     margin-right: 0;
 }
 
@@ -558,7 +548,6 @@ h1 {
 
 .contate-nos {
     width: 100%;
-
     max-width: 946px;
 
     margin: 8rem auto 0;
@@ -570,7 +559,6 @@ h1 {
     width: 100%;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: flex-start;
@@ -587,8 +575,6 @@ h2 {
     font-family: "Montserrat", sans-serif;
 
     font-size: clamp(2.5rem, 5vw, 3.75rem);
-
-    font-style: normal;
 
     font-weight: 100;
 
@@ -614,7 +600,7 @@ h2 {
 
 
 /* =========================================================
-   CAMPOS
+   INPUTS
 ========================================================= */
 
 .informacao input,
@@ -622,24 +608,21 @@ h2 {
     display: block;
 
     width: 100%;
-
     max-width: 946px;
 
     margin-top: 0.5rem;
-
     margin-bottom: 1.25rem;
+
+    padding: 0.5rem 0;
 
     background: transparent;
 
     border: none;
-
     border-bottom: 1px solid #CECECE;
 
     outline: none;
 
     color: #CECECE;
-
-    padding: 0.5rem 0;
 
     font-family: "Montserrat", sans-serif;
 
@@ -662,6 +645,8 @@ h2 {
 
     min-height: 3.8125rem;
 
+    margin-top: 1.5rem;
+
     background: var(--cor-texto);
 
     border: none;
@@ -674,13 +659,11 @@ h2 {
 
     font-weight: 550;
 
-    line-height: normal;
-
-    margin-top: 1.5rem;
-
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
 .informacao button:hover {
@@ -702,7 +685,6 @@ h2 {
     background: #E3F1F3;
 
     margin-top: 9rem;
-
     margin-bottom: 10rem;
 
     padding: 1.875rem 2rem;
@@ -716,17 +698,13 @@ h3 {
 
     font-size: 2rem;
 
-    font-style: normal;
-
     font-weight: 500;
 
     line-height: 1.3;
 
     padding: 0;
 
-
     margin: 0;
-    margin-left: 26%;
 }
 
 
@@ -738,7 +716,6 @@ h3 {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     flex-wrap: wrap;
@@ -754,10 +731,6 @@ h3 {
     color: var(--cor-fundo-3);
 }
 
-.item-info i:not(:first-child) {
-    margin-left: 0;
-}
-
 .item-info p {
     margin: 0;
 
@@ -767,26 +740,29 @@ h3 {
 
     font-size: 1.1rem;
 
-    font-style: normal;
-
     font-weight: 400;
 
     line-height: 1.5;
 }
 
+.item-info i:not(:first-child) {
+    margin-left: 0;
+}
+
+
 /* =========================================================
-   MOBILE - ESCONDIDO NO DESKTOP
+   MOBILE ESCONDIDO NO DESKTOP
 ========================================================= */
 
 .mobile-header,
 .mobile-menu,
-.mobile-user,
 .mobile-overlay {
     display: none;
 }
 
+
 /* =========================================================
-   RESPONSIVIDADE — TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -798,13 +774,7 @@ h3 {
         padding-left: 4.6875rem;
     }
 
-
-    /* =====================================================
-       EQUIPE
-    ===================================================== */
-
     .equipe {
-
         width: 100%;
 
         padding-top: 8rem;
@@ -813,15 +783,8 @@ h3 {
         padding-right: 2rem;
     }
 
-
-    /* =====================================================
-       TÍTULO
-    ===================================================== */
-
     .titulo {
-
         width: 100%;
-
         max-width: 100%;
 
         font-size: clamp(
@@ -831,15 +794,13 @@ h3 {
         );
     }
 
-
-    /* =====================================================
-       DESCRIÇÃO
-    ===================================================== */
+    .titulo h1,
+    h1 {
+        margin-left: 0;
+    }
 
     #descricao {
-
         width: 100%;
-
         max-width: 100%;
 
         margin-left: 0;
@@ -849,51 +810,26 @@ h3 {
         line-height: 1.6;
     }
 
-
-    /* =====================================================
-       LINHA DAS MENINAS
-    ===================================================== */
-
     .linha-meninas {
-
         gap: 2.5rem;
 
         margin-top: 5rem;
     }
-
-
-    /* =====================================================
-       LINHA DOS MENINOS
-    ===================================================== */
 
     .linha-meninos {
-
         gap: 2.5rem;
 
         margin-top: 5rem;
     }
 
-
-    /* =====================================================
-       CARDS
-    ===================================================== */
-
     .card {
-
         width: 17rem;
 
         flex-basis: 17rem;
     }
 
-
-    /* =====================================================
-       CONTATE-NOS
-    ===================================================== */
-
     .contate-nos {
-
         width: 100%;
-
         max-width: 100%;
 
         margin-top: 6rem;
@@ -902,35 +838,26 @@ h3 {
         padding-right: 2rem;
     }
 
-
-    /* =====================================================
-       INFORMAÇÕES
-    ===================================================== */
-
     .info {
-
         margin-top: 6rem;
-
         margin-bottom: 6rem;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVIDADE — CELULAR
+   MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
 
     /* =====================================================
-       CONFIGURAÇÕES GERAIS
+       CONFIGURAÇÃO GERAL
     ===================================================== */
 
     html,
     body {
-
         width: 100%;
-
         max-width: 100%;
 
         overflow-x: hidden;
@@ -944,377 +871,431 @@ h3 {
     #page {
         width: 100%;
         max-width: 100%;
+
         margin: 0;
+
         padding: 0;
     }
 
 
     /* =====================================================
-       LOGO
-
-       MESMO PADRÃO DO SEU CÓDIGO BASE
-       CANTO SUPERIOR ESQUERDO
-    ===================================================== */
-
-
-    .logo span {
-
-        display: none !important;
-    }
-
-
-    /* =====================================================
-       MENU FECHADO
-
-       CANTO SUPERIOR DIREITO
+       MENU DESKTOP DESAPARECE
     ===================================================== */
 
     .menu {
-
-        position: absolute !important;
-
-        top: 0 !important;
-
-        right: 0 !important;
-
-        left: auto !important;
-
-        width: 4.5rem !important;
-
-        height: 4.5rem !important;
-
-        padding: 0 !important;
-
-        margin: 0 !important;
-
-        display: flex !important;
-
-        align-items: center !important;
-
-        justify-content: center !important;
-
-        background: transparent !important;
-
-        border-radius: 0 !important;
-
-        overflow: visible !important;
-
-        z-index: 10000 !important;
-
-        transition: none !important;
-    }
-
-
-    /* =====================================================
-       DESATIVAR HOVER DO DESKTOP
-    ===================================================== */
-
-    .menu:hover {
-
-        width: 4.5rem !important;
-    }
-
-
-    /* =====================================================
-       BOTÃO BURGER
-    ===================================================== */
-
-    .menuBurger {
-
-        display: flex !important;
-
-        align-items: center !important;
-
-        justify-content: center !important;
-
-        width: 3rem !important;
-
-        height: 3rem !important;
-
-        padding: 0 !important;
-
-        margin: 0 !important;
-
-        border: none !important;
-
-        background: transparent !important;
-
-        cursor: pointer !important;
-
-        position: relative !important;
-
-        z-index: 10002 !important;
-    }
-
-
-    .menuBurger img {
-
-        width: 2rem !important;
-
-        height: 2rem !important;
-
-        object-fit: contain !important;
-
-        display: block !important;
-
-        pointer-events: none !important;
-    }
-
-
-    /* =====================================================
-       MENU FECHADO
-
-       ESCONDE OS ITENS
-    ===================================================== */
-
-    .menu:not(.menu-aberto) .pesquisa,
-    .menu:not(.menu-aberto) .item-menu,
-    .menu:not(.menu-aberto) .usuario {
-
         display: none !important;
     }
 
 
     /* =====================================================
-       PESQUISA
-
-       NÃO APARECE NO MOBILE
+       HEADER MOBILE
     ===================================================== */
 
-    .menu .pesquisa {
-
-        display: none !important;
-    }
-
-
-    /* =====================================================
-       MENU ABERTO
-
-       ABRE PELA DIREITA
-    ===================================================== */
-
-    /* =========================================================
-       MENU DESKTOP
-    ========================================================= */
-
-    .menu {
+    .mobile-header {
+        display: flex;
 
         position: fixed;
 
         top: 0;
         left: 0;
 
-        width: 75px;
-        height: 100vh;
+        width: 100%;
+        height: 70px;
+
+        padding: 0 20px;
+
+        align-items: center;
+        justify-content: space-between;
 
         background: var(--cor-menu);
 
-        padding: 20px 14px;
-
-        display: flex;
-        flex-direction: column;
-
-        overflow: hidden;
-
-        border-radius: 0 18px 18px 0;
-
-        z-index: 1000;
-
-        transition: width 0.35s ease;
+        z-index: 1100;
     }
 
 
-    .menu:hover {
-        width: 260px;
-    }
+    /* =====================================================
+       LOGO MOBILE
+    ===================================================== */
 
-
-    /* LOGO */
-
-    .logo {
-
+    .mobile-logo {
         display: flex;
+
         align-items: center;
 
-        gap: 15px;
+        gap: 12px;
 
-        margin-bottom: 35px;
+        min-width: 0;
+    }
+
+    .mobile-logo img {
+        width: 38px;
+        height: 38px;
+
+        object-fit: contain;
 
         flex-shrink: 0;
     }
 
-
-    
-
-    .logo span {
-
+    .mobile-logo span {
         color: var(--cor-texto);
 
-        font-size: 25px;
+        font-size: 20px;
 
         font-weight: 700;
 
-        letter-spacing: 1.5px;
+        letter-spacing: 1px;
 
         white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       BOTÃO HAMBURGER
+    ===================================================== */
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px;
+
+        flex-shrink: 0;
+
+        background: transparent;
+
+        border: none;
+
+        cursor: pointer;
+
+        position: relative;
+
+        z-index: 1500;
+    }
+
+    .mobile-menu-button span {
+        display: block;
+
+        width: 25px;
+        height: 3px;
+
+        background: var(--cor-texto);
+
+        border-radius: 3px;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+
+    /* =====================================================
+       HAMBURGER → X
+    ===================================================== */
+
+    .mobile-menu-button.active span:nth-child(1) {
+        transform:
+            translateY(8px)
+            rotate(45deg);
+    }
+
+    .mobile-menu-button.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-button.active span:nth-child(3) {
+        transform:
+            translateY(-8px)
+            rotate(-45deg);
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+
+    .mobile-overlay {
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.55);
 
         opacity: 0;
 
-        transition: opacity 0.3s ease;
+        visibility: hidden;
+
+        pointer-events: none;
+
+        z-index: 1200;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
     }
 
-
-    .menu:hover .logo span {
+    .mobile-overlay.active {
         opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
     }
 
 
-    /* PESQUISA */
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
 
-    .pesquisa {
-
+    .mobile-menu {
         display: flex;
+
+        flex-direction: column;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: 82%;
+        max-width: 350px;
+
+        height: 100vh;
+
+        padding: 20px;
+
+        background: var(--cor-menu);
+
+        z-index: 1300;
+
+        transform: translateX(100%);
+
+        transition:
+            transform 0.35s ease;
+
+        overflow-y: auto;
+
+        visibility: hidden;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+
+        visibility: visible;
+    }
+
+
+    /* =====================================================
+       TOPO DO MENU
+    ===================================================== */
+
+    .mobile-menu-top {
+        display: flex;
+
         align-items: center;
 
-        gap: 15px;
+        justify-content: space-between;
 
         width: 100%;
 
-        padding: 11px;
-
-        margin-bottom: 25px;
-
-        background: var(--cor-elemento);
-
-        border-radius: 10px;
-
-        flex-shrink: 0;
+        margin-bottom: 30px;
     }
 
-
-    .pesquisa img {
-
-        width: 27px;
-        height: 27px;
-
-        object-fit: contain;
-
-        flex-shrink: 0;
-    }
-
-
-    .pesquisa span {
-
-        color: var(--cor-texto);
-
-        font-size: 14px;
-
-        white-space: nowrap;
-
-        opacity: 0;
-
-        transition: opacity 0.3s ease;
-    }
-
-
-    .menu:hover .pesquisa span {
-        opacity: 1;
-    }
-
-
-    /* LINKS */
-
-    .item-menu {
-
-        width: 100%;
-
+    .mobile-menu-logo {
         display: flex;
+
         align-items: center;
 
-        gap: 17px;
+        gap: 10px;
 
-        padding: 12px;
+        min-width: 0;
+    }
 
-        margin-bottom: 7px;
+    .mobile-menu-logo img {
+        width: 38px;
+        height: 38px;
 
-        border-radius: 10px;
+        object-fit: contain;
+    }
 
-        text-decoration: none;
+    .mobile-menu-logo span {
+        color: var(--cor-texto);
+
+        font-size: 20px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* =====================================================
+       BOTÃO FECHAR
+    ===================================================== */
+
+    .mobile-close {
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+
+        background: transparent;
 
         color: var(--cor-texto);
 
-        transition: background 0.25s ease;
+        font-size: 32px;
+
+        line-height: 1;
+
+        cursor: pointer;
 
         flex-shrink: 0;
     }
 
 
-    .item-menu:hover {
-        background: var(--cor-elemento);
-    }
+    /* =====================================================
+       PESQUISA MOBILE
+    ===================================================== */
 
-
-    .item-menu.ativo {
-        background: rgba(77, 215, 229, 0.12);
-    }
-
-
-    .item-menu img {
-
-        width: 27px;
-        height: 27px;
-
-        object-fit: contain;
-
-        flex-shrink: 0;
-    }
-
-
-    .item-menu span {
-
-        font-size: 15px;
-
-        font-weight: 500;
-
-        white-space: nowrap;
-
-        opacity: 0;
-
-        transition: opacity 0.3s ease;
-    }
-
-
-    .menu:hover .item-menu span {
-        opacity: 1;
-    }
-
-
-    /* USUÁRIO */
-
-    .usuario {
-
+    .mobile-search {
         display: flex;
+
         align-items: center;
 
         gap: 13px;
 
         width: 100%;
 
-        padding: 11px;
+        padding: 12px;
 
-        margin-top: auto;
-        margin-bottom: 18px;
+        margin-bottom: 25px;
 
         background: var(--cor-elemento);
 
         border-radius: 10px;
+    }
+
+    .mobile-search img {
+        width: 25px;
+        height: 25px;
+
+        object-fit: contain;
 
         flex-shrink: 0;
     }
 
+    .mobile-search span {
+        color: var(--cor-texto);
 
-    .userIcon {
+        font-size: 14px;
+    }
 
+
+    /* =====================================================
+       NAVEGAÇÃO MOBILE
+    ===================================================== */
+
+    .mobile-nav {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 7px;
+
+        width: 100%;
+    }
+
+    .mobile-nav-item {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        width: 100%;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
+
+        transition:
+            background 0.25s ease;
+    }
+
+    .mobile-nav-item:hover {
+        background: var(--cor-elemento);
+    }
+
+    .mobile-nav-item.ativo {
+        background: rgba(77, 215, 229, 0.12);
+    }
+
+    .mobile-nav-item img {
+        width: 27px;
+        height: 27px;
+
+        object-fit: contain;
+
+        flex-shrink: 0;
+    }
+
+    .mobile-nav-item span {
+        font-size: 15px;
+
+        font-weight: 500;
+    }
+
+
+    /* =====================================================
+       USUÁRIO MOBILE
+    ===================================================== */
+
+    .mobile-user {
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        width: 100%;
+
+        margin-top: auto;
+
+        margin-bottom: 18px;
+
+        padding: 11px;
+
+        background: var(--cor-elemento);
+
+        border-radius: 10px;
+    }
+
+    .mobile-user img {
         width: 37px;
         height: 37px;
 
@@ -1323,26 +1304,7 @@ h3 {
         flex-shrink: 0;
     }
 
-
-    .dados-usuario {
-
-        overflow: hidden;
-
-        white-space: nowrap;
-
-        opacity: 0;
-
-        transition: opacity 0.3s ease;
-    }
-
-
-    .menu:hover .dados-usuario {
-        opacity: 1;
-    }
-
-
-    .dados-usuario h4 {
-
+    .mobile-user h4 {
         color: var(--cor-texto);
 
         font-size: 13px;
@@ -1350,9 +1312,7 @@ h3 {
         font-weight: 600;
     }
 
-
-    .dados-usuario p {
-
+    .mobile-user p {
         color: var(--cor-texto-terciario);
 
         font-size: 10px;
@@ -1361,506 +1321,56 @@ h3 {
     }
 
 
-    /* =========================================================
-       MOBILE ESCONDIDO NO DESKTOP
-    ========================================================= */
+    /* =====================================================
+       MODO CLARO MOBILE
+    ===================================================== */
 
-    .mobile-header,
-    .mobile-menu,
-    .mobile-user,
-    .mobile-overlay {
-        display: none;
+    .mobile-theme {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        width: 100%;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
     }
 
+    .mobile-theme:hover {
+        background: var(--cor-elemento);
+    }
 
-    /* =========================================================
-       MOBILE
-    ========================================================= */
+    .mobile-theme img {
+        width: 27px;
+        height: 27px;
 
-    @media (max-width: 600px) {
+        object-fit: contain;
+    }
 
-        /* DESKTOP SOME */
+    .mobile-theme span {
+        font-size: 15px;
 
-        .menu {
-            display: none;
-        }
-
-
-        /* HEADER */
-
-        .mobile-header{
-            display:flex;
-            position:fixed;
-            top:0;
-            left:0;
-
-            width:100%;
-            height:70px;
-
-            padding:0 24px;
-
-            align-items:center;
-            justify-content:space-between;
-
-            background:var(--cor-menu);
-
-            z-index:1100;
-        }
-
-        /* LOGO */
-
-        .mobile-logo{
-            display:flex;
-            align-items:center;
-            gap:12px;
-
-            padding-right:20px;
-        }
-
-
-        .mobile-logo img {
-
-            width: 38px;
-            height: 38px;
-
-            object-fit: contain;
-        }
-
-
-        .mobile-logo span {
-
-            color: var(--cor-texto);
-
-            font-size: 20px;
-
-            font-weight: 700;
-
-            letter-spacing: 1px;
-        }
-
-
-        /* HAMBURGER */
-
-        .mobile-menu-button {
-
-            width: 42px;
-            height: 42px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            align-items: center;
-
-            gap: 5px;
-
-            margin-left:20px;
-            
-            flex-shrink:0;
-
-            background: transparent;
-
-            border: none;
-
-            cursor: pointer;
-
-            
-        }
-
-
-        .mobile-menu-button span {
-
-            display: block;
-
-            width: 25px;
-            height: 3px;
-
-            background: var(--cor-texto);
-
-            border-radius: 3px;
-
-            transition:
-                transform 0.3s ease,
-                opacity 0.3s ease;
-        }
-
-
-        /* HAMBURGER → X */
-
-        .mobile-menu-button.active span:nth-child(1) {
-
-            transform:
-                translateY(8px)
-                rotate(45deg);
-        }
-
-
-        .mobile-menu-button.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-
-        .mobile-menu-button.active span:nth-child(3) {
-
-            transform:
-                translateY(-8px)
-                rotate(-45deg);
-        }
-
-
-        /* OVERLAY */
-
-        .mobile-overlay {
-
-            display: block;
-
-            position: fixed;
-
-            inset: 0;
-
-            background: rgba(0, 0, 0, 0.55);
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            z-index: 1200;
-
-            transition:
-                opacity 0.3s ease,
-                visibility 0.3s ease;
-        }
-
-
-        .mobile-overlay.active {
-
-            opacity: 1;
-
-            visibility: visible;
-        }
-
-
-        /* MENU */
-
-      
-
-        .mobile-menu {
-
-            display: flex;
-
-            flex-direction: column;
-
-            position: fixed;
-
-            top: 0;
-            right: 0;
-
-            width: 82%;
-
-            max-width: 350px;
-
-            height: 100vh;
-
-            padding: 20px;
-
-            background: var(--cor-menu);
-
-            z-index: 1300;
-
-            transform: translateX(100%);
-
-            transition:
-                transform 0.35s ease;
-
-            overflow-y: auto;
-        }
-
-
-        .mobile-menu.active {
-
-            transform: translateX(0);
-        }
-
-
-        /* TOPO */
-
-        .mobile-menu-top {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            margin-bottom: 30px;
-        }
-
-
-        .mobile-menu-logo {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-        }
-
-
-        .mobile-menu-logo img {
-
-            width: 38px;
-            height: 38px;
-
-            object-fit: contain;
-        }
-
-
-        .mobile-menu-logo span {
-
-            color: var(--cor-texto);
-
-            font-size: 20px;
-
-            font-weight: 700;
-
-            letter-spacing: 1px;
-        }
-
-
-        /* X */
-
-        .mobile-close {
-
-            width: 40px;
-            height: 40px;
-
-            border: none;
-
-            background: transparent;
-
-            color: var(--cor-texto);
-
-            font-size: 32px;
-
-            line-height: 1;
-
-            cursor: pointer;
-        }
-
-
-        /* PESQUISA */
-
-        .mobile-search {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 13px;
-
-            padding: 12px;
-
-            margin-bottom: 25px;
-
-            background: var(--cor-elemento);
-
-            border-radius: 10px;
-        }
-
-
-        .mobile-search img {
-
-            width: 25px;
-            height: 25px;
-
-            object-fit: contain;
-        }
-
-
-        .mobile-search span {
-
-            color: var(--cor-texto);
-
-            font-size: 14px;
-        }
-
-
-        /* LINKS */
-
-        .mobile-nav {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 7px;
-        }
-
-
-        .mobile-nav-item {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            padding: 12px;
-
-            border-radius: 10px;
-
-            color: var(--cor-texto);
-
-            text-decoration: none;
-
-            transition:
-                background 0.25s ease;
-        }
-
-
-        .mobile-nav-item:hover {
-
-            background:
-                var(--cor-elemento);
-        }
-
-
-        .mobile-nav-item.ativo {
-
-            background:
-                rgba(77, 215, 229, 0.12);
-        }
-
-
-        .mobile-nav-item img {
-
-            width: 27px;
-            height: 27px;
-
-            object-fit: contain;
-        }
-
-
-        .mobile-nav-item span {
-
-            font-size: 15px;
-
-            font-weight: 500;
-        }
-
-
-        /* USUÁRIO */
-
-        .mobile-user {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 13px;
-
-            margin-top: auto;
-
-            margin-bottom: 18px;
-
-            padding: 11px;
-
-            background: var(--cor-elemento);
-
-            border-radius: 10px;
-        }
-
-
-        .mobile-user img {
-
-            width: 37px;
-            height: 37px;
-
-            object-fit: contain;
-        }
-
-
-        .mobile-user h4 {
-
-            color: var(--cor-texto);
-
-            font-size: 13px;
-
-            font-weight: 600;
-        }
-
-
-        .mobile-user p {
-
-            color: var(--cor-texto-terciario);
-
-            font-size: 10px;
-
-            margin-top: 4px;
-        }
-
-
-        /* MODO CLARO */
-
-        .mobile-theme {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            padding: 12px;
-
-            border-radius: 10px;
-
-            color: var(--cor-texto);
-
-            text-decoration: none;
-        }
-
-
-        .mobile-theme:hover {
-
-            background:
-                var(--cor-elemento);
-        }
-
-
-        .mobile-theme img {
-
-            width: 27px;
-            height: 27px;
-
-            object-fit: contain;
-        }
-
-
-        .mobile-theme span {
-
-            font-size: 15px;
-
-            font-weight: 500;
-        }
+        font-weight: 500;
     }
 
 
     /* =====================================================
-       CONTEÚDO DA EQUIPE
+       CONTEÚDO
     ===================================================== */
 
     .equipe {
-
         width: 100%;
 
         padding-top: 5.5rem;
-
         padding-left: 1.25rem;
-
         padding-right: 1.25rem;
-
         padding-bottom: 3rem;
 
         text-align: left;
@@ -1874,27 +1384,30 @@ h3 {
     .titulo {
         width: 100%;
         max-width: 100%;
+
         margin: 0;
+
         font-size: 1.9rem;
+
         line-height: 1.2;
+
         text-align: left;
     }
 
-
     .titulo h1,
     h1 {
+        width: 100%;
 
-        width:100%;
+        margin: 0;
 
-        margin-top:5rem;
+        padding:
+            5rem
+            0.3rem
+            0.3rem;
 
-        padding-left:.3rem;
-        padding-right:.3rem;
+        font-size: inherit;
 
-        font-size:inherit;
-
-        text-align:left;
-
+        text-align: left;
     }
 
 
@@ -1903,15 +1416,10 @@ h3 {
     ===================================================== */
 
     #descricao {
-
         width: 100%;
-
         max-width: 100%;
 
-        margin:
-            1rem
-            0
-            0;
+        margin: 1rem 0 0;
 
         padding: 0;
 
@@ -1924,11 +1432,10 @@ h3 {
 
 
     /* =====================================================
-       LINHA DAS MENINAS
+       LINHA MENINAS
     ===================================================== */
 
     .linha-meninas {
-
         width: 100%;
 
         display: grid;
@@ -1944,11 +1451,10 @@ h3 {
 
 
     /* =====================================================
-       LINHA DOS MENINOS
+       LINHA MENINOS
     ===================================================== */
 
     .linha-meninos {
-
         width: 100%;
 
         display: grid;
@@ -1970,9 +1476,7 @@ h3 {
     ===================================================== */
 
     .card {
-
         width: 100%;
-
         max-width: 20rem;
 
         height: auto;
@@ -1982,9 +1486,7 @@ h3 {
         margin: 0 !important;
     }
 
-
     .card img {
-
         width: 100%;
 
         height: auto;
@@ -2006,7 +1508,6 @@ h3 {
     ===================================================== */
 
     .info-card {
-
         width: 100%;
 
         min-height: 5rem;
@@ -2020,17 +1521,13 @@ h3 {
             1.25rem;
     }
 
-
     .info-card h4 {
-
         font-size: 0.95rem;
 
         line-height: 1.3;
     }
 
-
     .info-card p {
-
         font-size: 0.7rem;
 
         line-height: 1.4;
@@ -2042,9 +1539,7 @@ h3 {
     ===================================================== */
 
     .contate-nos {
-
         width: 100%;
-
         max-width: 100%;
 
         margin:
@@ -2057,9 +1552,7 @@ h3 {
             1.25rem;
     }
 
-
     .informacao {
-
         width: 100%;
 
         display: flex;
@@ -2077,7 +1570,6 @@ h3 {
     ===================================================== */
 
     h2 {
-
         font-size: 2.5rem;
 
         line-height: 1.2;
@@ -2094,7 +1586,6 @@ h3 {
     ===================================================== */
 
     .informacao label {
-
         width: 100%;
 
         font-size: 0.9rem;
@@ -2109,9 +1600,7 @@ h3 {
 
     .informacao input,
     .informacao textarea {
-
         width: 100%;
-
         max-width: 100%;
 
         font-size: 0.9rem;
@@ -2119,25 +1608,20 @@ h3 {
         padding: 0.5rem 0;
 
         margin-top: 0.5rem;
-
         margin-bottom: 1.25rem;
     }
 
-
     .informacao textarea {
-
         min-height: 5rem;
     }
 
 
     /* =====================================================
-       BOTÃO ENVIAR
+       BOTÃO
     ===================================================== */
 
     .informacao button {
-
         width: 100%;
-
         max-width: 20rem;
 
         min-height: 3.5rem;
@@ -2152,11 +1636,10 @@ h3 {
 
 
     /* =====================================================
-       INFORMAÇÕES / RODAPÉ
+       RODAPÉ
     ===================================================== */
 
     .info {
-
         width: 100%;
 
         min-height: auto;
@@ -2172,26 +1655,23 @@ h3 {
             6rem;
     }
 
-
     .info h3,
     h3 {
-
         font-size: 1.5rem;
 
         line-height: 1.3;
 
         text-align: center;
 
-
+        margin: 0;
     }
 
 
     /* =====================================================
-       ITENS DAS INFORMAÇÕES
+       ITENS DO RODAPÉ
     ===================================================== */
 
     .item-info {
-
         width: 100%;
 
         display: flex;
@@ -2199,7 +1679,6 @@ h3 {
         flex-direction: column;
 
         align-items: center;
-
         justify-content: center;
 
         gap: 1rem;
@@ -2209,9 +1688,7 @@ h3 {
         text-align: center;
     }
 
-
     .item-info p {
-
         font-size: 0.9rem;
 
         line-height: 1.5;
@@ -2219,9 +1696,7 @@ h3 {
         text-align: center;
     }
 
-
     .item-info i:not(:first-child) {
-
         margin-left: 0;
     }
 }
@@ -2233,68 +1708,48 @@ h3 {
 
 @media (max-width: 380px) {
 
+    .mobile-header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .mobile-logo span {
+        font-size: 18px;
+    }
+
+    .mobile-menu {
+        width: 86%;
+    }
+
     .equipe {
-
         padding-left: 1rem;
-
         padding-right: 1rem;
     }
 
-
     .titulo {
-
         font-size: 1.65rem;
     }
 
-
     #descricao {
-
         font-size: 0.88rem;
     }
 
-
     .card {
-
         max-width: 17.5rem;
     }
 
-
     .contate-nos {
-
         padding-left: 1rem;
-
         padding-right: 1rem;
     }
 
-
     h2 {
-
         font-size: 2.1rem;
     }
 
-
     .info {
-
         padding-left: 1rem;
-
         padding-right: 1rem;
-
         padding-bottom: 5rem;
-    }
-
-
-    /* =====================================================
-       MENU ABERTO EM TELAS PEQUENAS
-    ===================================================== */
-
-    .menu.menu-aberto {
-
-        width: 16.5rem !important;
-    }
-
-
-    .menu.menu-aberto:hover {
-
-        width: 16.5rem !important;
     }
 }
