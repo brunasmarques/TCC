@@ -1402,7 +1402,7 @@ h3 {
 
         padding:
             5rem
-            0.3rem
+            0.1rem
             0.3rem;
 
         font-size: inherit;
@@ -1672,20 +1672,21 @@ h3 {
     ===================================================== */
 
     .item-info {
-        width: 100%;
-
         display: flex;
 
-        flex-direction: column;
+        flex-wrap: wrap;
 
         align-items: center;
+
         justify-content: center;
 
-        gap: 1rem;
+        gap: 10px;
 
-        margin-top: 1.5rem;
+        margin-top: 15px;
 
-        text-align: center;
+        margin-left: 0;
+
+        padding-top: 10px;
     }
 
     .item-info p {
@@ -1699,6 +1700,7 @@ h3 {
     .item-info i:not(:first-child) {
         margin-left: 0;
     }
+
 }
 
 
