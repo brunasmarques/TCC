@@ -529,18 +529,12 @@ img {
 ========================================================= */
 
 #video-games {
-
-    width: 100%;
-
-    max-width: 900px;
-
-    border-radius: 18px;
-
-    border: 4px solid var(--cor-06);
-
-    box-shadow: 0 15px 35px rgba(0,0,0,.15);
-
-    margin-bottom: 45px;
+    display: block;
+    width: 62rem;
+    height: 30rem;
+    margin: 8.4rem auto 4rem;
+    border-radius: 1.25rem;
+    object-fit: cover;
 }
 
 /* =========================================================
