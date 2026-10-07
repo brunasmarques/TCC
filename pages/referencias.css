@@ -222,6 +222,10 @@ img {
     background: var(--cor-elemento);
 }
 
+.item-menu.ativo {
+    background: var(--cor-elemento);
+}
+
 .item-menu img {
     width: 2rem;
     height: 1.75rem;
@@ -832,9 +836,12 @@ h1 {
         text-decoration: none;
     }
 
-    .mobile-nav-item.ativo {
+    .mobile-nav-item:hover {
+        background: var(--cor-elemento);
+    }
 
-        background: rgba(77,215,229,.12);
+    .mobile-nav-item ativo {
+        background: var(--cor-elemento);
     }
 
     .mobile-nav-item img {
@@ -1050,78 +1057,80 @@ h1 {
 
     }
 
-    /* =====================================================
+    /* =========================================================
        INFORMAÇÕES
-    ====================================================== */
+    ========================================================= */
 
     .info {
-
         width: 100%;
 
-        height: auto;
+        height: 200px;
 
-        margin-top: 70px;
+        margin-top: 150px;
 
-        margin-bottom: 0;
+        margin-bottom: 300px;
 
-        padding: 35px 20px;
-
+        background: var(--cor-texto-secundario);
     }
+
+
+    /* TÍTULO DAS INFORMAÇÕES */
 
     .info h3 {
+        color: var(--cor-fundo-3);
 
-        margin: 0;
+        font-family: 'Montserrat', sans-serif;
 
-        padding: 0;
+        font-size: 32px;
 
-        font-size: 14px;
+        font-weight: 500;
 
-        text-align: center;
+        margin-left: 230px;
 
+        padding-top: 30px;
     }
 
+
+    /* =========================================================
+       INFORMAÇÕES DE CONTATO
+    ========================================================= */
+
     .item-info {
-
         display: flex;
-
-        flex-wrap: wrap;
 
         align-items: center;
 
-        justify-content: center;
+        gap: 15px;
 
-        gap: 10px;
+        margin-left: 350px;
 
-        margin-top: 15px;
+        margin-top: 20px;
 
-        margin-left: 0;
+        padding-top: 30px;
 
-        padding-top: 10px;
-
+        color: var(--cor-fundo-3);
     }
 
     .item-info i {
-
-        font-size: 10px;
-
-        margin-left: 0 !important;
-
+        color: var(--cor-fundo-3);
     }
 
     .item-info i:not(:first-child) {
-
-        margin-left: 12px;
-
+        margin-left: 50px;
     }
 
     .item-info p {
-
-        font-size: 9px;
-
         margin: 0;
 
-        white-space: nowrap;
+        color: var(--cor-fundo-3);
 
+        font-family: 'Montserrat', sans-serif;
+
+        font-size: 20px;
+
+        font-weight: 400;
+
+        line-height: normal;
     }
 
         /* =====================================================

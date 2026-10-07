@@ -234,7 +234,7 @@ img {
 }
 
 .item-menu.ativo {
-    background: rgba(77, 215, 229, 0.12);
+    background: var(--cor-elemento);
 }
 
 .item-menu img {
@@ -687,7 +687,7 @@ h2 {
     margin-top: 9rem;
     margin-bottom: 10rem;
 
-    padding: 1.875rem 2rem;
+    padding: 1.875rem 2rem 1.875rem 14.3rem;
 }
 
 .info h3,
@@ -1252,7 +1252,7 @@ h3 {
     }
 
     .mobile-nav-item.ativo {
-        background: rgba(77, 215, 229, 0.12);
+        background: var(--cor-elemento);
     }
 
     .mobile-nav-item img {
