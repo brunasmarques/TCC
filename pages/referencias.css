@@ -222,6 +222,10 @@ img {
     background: var(--cor-elemento);
 }
 
+.item-menu.ativo {
+    background: var(--cor-elemento);
+}
+
 .item-menu img {
     width: 2rem;
     height: 1.75rem;
@@ -1058,13 +1062,11 @@ h1 {
 
         width: 100%;
 
-        height: auto;
+        min-height: auto;
 
-        margin-top: 70px;
+        margin: 5rem 0;
 
-        margin-bottom: 0;
-
-        padding: 35px 20px;
+        padding: 2rem 1.25rem 6rem;
 
     }
 
@@ -1074,7 +1076,9 @@ h1 {
 
         padding: 0;
 
-        font-size: 14px;
+        font-size: 1.5rem;
+
+        line-height: 1.3;
 
         text-align: center;
 
@@ -1096,7 +1100,7 @@ h1 {
 
         margin-left: 0;
 
-        padding-top: 10px;
+        padding: 10px 0 0;
 
     }
 
@@ -1116,11 +1120,13 @@ h1 {
 
     .item-info p {
 
-        font-size: 9px;
+        font-size: 0.9rem;
+
+        line-height: 1.5;
 
         margin: 0;
 
-        white-space: nowrap;
+        text-align: center;
 
     }
 
@@ -1184,32 +1190,6 @@ h1 {
         .referencias-img button {
 
             font-size: 10px;
-
-        }
-
-        .info {
-
-            padding: 28px 15px;
-
-            margin-top: 50px;
-
-        }
-
-        .info h3 {
-
-            font-size: 20px;
-
-        }
-
-        .item-info {
-
-            gap: 15px;
-
-        }
-
-        .item-info p {
-
-            font-size: 15px;
 
         }
 
