@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="/pages/equipe.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+            <title>Home - SIMCE</title>
+        </head>
+
+
+        <body>
+
+            <!-- =====================================================
+                 MENU DESKTOP
+            ====================================================== -->
+            <!-- MENU DESKTOP -->
+            <aside class="menu">
+
+                <div class="logo">
+                    <img
+                        class="logoIcon"
+                        src="/images/LOGO (1).png"
+                        alt="Logo Invicta">
+                    <span>INVICTA</span>
+                </div>
+
+                <div class="pesquisa">
+
+                    <img
+                        class="serchIcon"
+                        src="../images/SERCH.png"
+                        alt="Pesquisar"
+                    >
+
+                    <span>Pesquisar</span>
+
+                </div>
+
+
+                <a href="index.html" class="item-menu ">
+
+                    <img
+                        src="../images/HOME.png"
+                        alt="Home"
+                    >
+
+                    <span>Home</span>
+
+                </a>
+
+
+                <a href="manual.html" class="item-menu">
+
+                    <img
+                        src="../images/LISTA.png"
+                        alt="Manual"
+                    >
+
+                    <span>Manual</span>
+
+                </a>
+
+
+                <a href="produto.html" class="item-menu">
+
+                    <img
+                        src="../images/MANUAL.png"
+                        alt="Produto"
+                    >
+
+                    <span>Produto</span>
+
+                </a>
+
+
+                <a href="equipe.html" class="item-menu ativo">
+
+                    <img
+                        src="../images/EQUIPE.png"
+                        alt="Equipe"
+                    >
+
+                    <span>Equipe</span>
+
+                </a>
+
+
+                <a href="referencias.html" class="item-menu">
+
+                    <img
+                        src="../images/REFERENCIAS.png"
+                        alt="Referências"
+                    >
+
+                    <span>Referências</span>
+
+                </a>
+
+
+                <a href="game.html" class="item-menu">
+
+                    <img
+                        src="../images/GAME.png"
+                        alt="Game"
+                    >
+
+                    <span>Game</span>
+
+                </a>
+
+
+                <div class="usuario">
+
+                    <img
+                        class="userIcon"
+                        src="../images/USUÁRIO.png"
+                        alt="Usuário"
+                    >
+
+                    <div class="dados-usuario">
+
+                        <h4>Geovanna Oliveira</h4>
+
+                        <p>geovanna@email.com</p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../pages-clara/indexClaro.html"
+                    class="item-menu modo-claro"
+                >
+
+                    <img
+                        src="../images/Tema.png"
+                        alt="Modo Claro"
+                    >
+
+                    <span>Modo Claro</span>
+
+                </a>
+
+            </aside>
+
+
+            <!-- HEADER MOBILE -->
+            <header class="mobile-header">
+
+                <div class="mobile-logo">
+
+                    <img
+                        src="../images/LOGO (1).png"
+                        alt="Logo Invicta"
+                    >
+
+                    <span>INVICTA</span>
+
+                </div>
+
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </header>
+
+
+            <!-- OVERLAY -->
+            <div
+                class="mobile-overlay"
+                id="mobileOverlay"
+            ></div>
+
+
+            <!-- MENU MOBILE -->
+            <aside class="mobile-menu" id="mobileMenu">
+
+                <div class="mobile-menu-top">
+
+                    <div class="mobile-menu-logo">
+                        <img
+                            src="../images/LOGO (1).png"
+                            alt="Logo Invicta">
+
+                        <span>INVICTA</span>
+
+                    </div>
+
+
+                    <button
+                        class="mobile-close"
+                        id="mobileClose"
+                        type="button"
+                        aria-label="Fechar menu"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div class="mobile-search">
+
+                    <img
+                        src="../images/SERCH.png"
+                        alt="Pesquisar"
+                    >
+
+                    <span>Pesquisar</span>
+
+                </div>
+
+
+                <nav class="mobile-nav">
+
+                    <a href="index.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/HOME.png"
+                            alt="Home"
+                        >
+
+                        <span>Home</span>
+
+                    </a>
+
+
+                    <a href="manual.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/LISTA.png"
+                            alt="Manual"
+                        >
+
+                        <span>Manual</span>
+
+                    </a>
+
+
+                    <a href="produto.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/MANUAL.png"
+                            alt="Produto"
+                        >
+
+                        <span>Produto</span>
+
+                    </a>
+
+
+                    <a href="equipe.html" class="mobile-nav-item ativo">
+
+                        <img
+                            src="../images/EQUIPE.png"
+                            alt="Equipe"
+                        >
+
+                        <span>Equipe</span>
+
+                    </a>
+
+
+                    <a href="referencias.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/REFERENCIAS.png"
+                            alt="Referências"
+                        >
+
+                        <span>Referências</span>
+
+                    </a>
+
+
+                    <a href="game.html" class="mobile-nav-item">
+
+                        <img
+                            src="../images/GAME.png"
+                            alt="Game"
+                        >
+
+                        <span>Game</span>
+
+                    </a>
+
+                </nav>
+
+
+                <div class="mobile-user">
+
+                    <img
+                        src="../images/USUÁRIO.png"
+                        alt="Usuário"
+                    >
+
+                    <div>
+
+                        <h4>Geovanna Oliveira</h4>
+
+                        <p>geovanna@email.com</p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="../pages-clara/equipeClaro.html"
+                    class="mobile-theme"
+                >
+
+                    <img
+                        src="../images/Tema.png"
+                        alt="Modo Claro"
+                    >
+
+                    <span>Modo Claro</span>
+
+                </a>
+
+            </aside>
+            <!-- =====================================================
+                 TÍTULO
+            ====================================================== -->
+
+            <div class="titulo">
+                <h1>NOSSA EQUIPE</h1>
+            </div>
+
+            <!-- =====================================================
+                 DESCRIÇÃO
+            ====================================================== -->
+
+            <div>
+                <p id="descricao">
+                    A equipe INVICTA desenvolveu o SIMCE com criatividade e
+                    inovação, unindo tecnologia para criar uma solução moderna
+                    de prevenção a alagamentos. Nosso objetivo é promover mais
+                    segurança, monitoramento e conscientização para a sociedade.
+                </p>
+            </div>
+
+            <!-- =====================================================
+                 EQUIPE
+            ====================================================== -->
+
+            <div class="equipe">
+                <!-- ---------------- MENINAS ---------------- -->
+
+                <div class="linha-meninas">
+                    <!-- GEOVANNA -->
+                    <div class="card" id="geo">
+                        <img src="/images/Geovanna.png" alt="Imagem Geovanna" />
+
+                        <div class="info-card">
+                            <p>Líder do Projeto | @geolicosta_</p>
+
+                            <h4 class="nome">Geovanna de Oliveira</h4>
+                        </div>
+                    </div>
+
+                    <!-- BRUNA -->
+                    <div class="card">
+                        <img src="/images/Bruna.png" alt="Imagem Bruna" />
+
+                        <div class="info-card">
+                            <p>Designer UX/UI | @brunasmqs</p>
+
+                            <h4 class="nome">Bruna Marques</h4>
+                        </div>
+                    </div>
+
+                    <!-- GIULIA -->
+                    <div class="card" id="lia">
+                        <img src="/images/Giulia.png" alt="Imagem Giulia" />
+
+                        <div class="info-card">
+                            <p>Montagem do Protótipo | @_giulia.freitass</p>
+
+                            <h4 class="nome">Giulia Freitas</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ---------------- MENINOS ---------------- -->
+
+                <div class="linha-meninos">
+                    <!-- GUILHERME -->
+                    <div class="card" id="guilherme">
+                        <img
+                            src="/images/Guilherme.png"
+                            alt="Imagem Guilherme"
+                        />
+
+                        <div class="info-card">
+                            <p>Gestor do Projeto | @sampaiowqz</p>
+
+                            <h4 class="nome">Guilherme Sampaio</h4>
+                        </div>
+                    </div>
+
+                    <!-- ENZO -->
+                    <div class="card" id="enzo">
+                        <img src="/images/Enzo.png" alt="Imagem Enzo" />
+
+                        <div class="info-card">
+                            <p>Gestor do Projeto | @_enzo.araujo</p>
+
+                            <h4 class="nome">Enzo Araújo</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                 CONTATE-NOS
+            ====================================================== -->
+
+            <div class="contate-nos">
+                <h2>Contate-nos</h2>
+
+                <div class="informacao">
+                    <label for="nome"> Nome: </label>
+
+                    <input type="text" id="nome" name="nome" />
+
+                    <label for="email"> Email: </label>
+
+                    <input type="email" id="email" name="email" />
+
+                    <label for="mensagem"> Mensagem: </label>
+
+                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             INFORMAÇÕES
+        ====================================================== -->
+
+        <div class="info">
+            <h3>INFORMAÇÕES:</h3>
+
+            <div class="item-info">
+                <i class="fa-solid fa-location-dot"></i>
+
+                <p>UNASP - SP</p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                <p>+55 (11) 94799-6812</p>
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <p>invicta@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- =====================================================
+             JAVASCRIPT
+        ====================================================== -->
+
+        <script src="equipe.js"></script>
+    </body>
+</html>

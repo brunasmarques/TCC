@@ -1,0 +1,49 @@
+:root {
+  /* ---------- CORES PRINCIPAIS ---------- */
+  --cor-fundo-1: #030044;
+  --cor-fundo-2: #0B0E16;
+  --cor-fundo-3: #04031D;
+  
+
+  --cor-menu: #05032A;
+  --cor-elemento: #1C1A46;
+
+  /* ---------- CORES DE TEXTO ---------- */
+  --cor-texto: #fff;
+  --cor-texto-secundario: #d9d9d9;
+  --cor-texto-terciario: #bdbdbd;
+
+  /* ---------- COR DE DESTAQUE ---------- */
+  --cor-destaque: #49C6E5;
+  --cor-destaque-hover: #61d3ef;
+
+  /* ---------- BORDAS ---------- */
+  --cor-borda: rgba(255, 255, 255, 0.6);
+  --cor-borda-hover: rgba(73, 198, 229, 0.8);
+
+  /* ---------- EFEITOS ---------- */
+  --sombra-destaque: rgba(73, 198, 229, 0.5);
+  --sombra-card: rgba(73, 198, 229, 0.25);
+  --fundo-hover: rgba(255, 255, 255, 0.08);
+
+  /* ---------- NOVA PALETA (SEM ALTERAR O SITE) ---------- */
+  --cor-01: #04031D;
+  --cor-02: #4F616C;
+  --cor-03: #1D1F37;
+  --cor-04: #303038;
+  --cor-05: #121131;
+  --cor-06: #A1DCE6;
+  --cor-07: #E4F7FF;
+  --cor-08: #000000;
+  --cor-09: #101726;
+  --cor-10: #4DD7E5;
+  --cor-11: #546169;
+  --cor-12: #BADDE3;
+  --cor-13: #D0EEFB;
+  --cor-14: #EFFFFF;
+  --cor-15: #BDEBFD;
+}
+
+
+ 
+}

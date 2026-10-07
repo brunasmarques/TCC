@@ -1,0 +1,76 @@
+
+
+ /*---- HTML DO MENU ------*/
+ <div>
+ <div class="menu">
+     <div class="logo">
+         <img
+             class="logoIcon"
+             src="/images/LOGO (1).png"
+             alt="LOGO"
+         />
+         <span>INVICTA</span>
+     </div>
+
+     <div class="pesquisa">
+         <img
+             class="serchIcon"
+             src="/images/SERCH.png"
+             alt="Pesquisar"
+         />
+         <span>Pesquisar</span>
+     </div>
+
+     <a href="../index.html" class="item-menu">
+         <img src="/images/HOME.png" alt="Home" />
+         <span>Home</span>
+     </a>
+
+     <a href="manual.html" class="item-menu">
+         <img src="/images/LISTA.png" alt="Lista" />
+         <span>Manual</span>
+     </a>
+
+     <a href="produto.html" class="item-menu">
+         <img src="/images/MANUAL.png" alt="Manual" />
+         <span>Produto</span>
+     </a>
+
+     <a href="equipe.html" class="item-menu">
+         <img src="/images/EQUIPE.png" alt="Equipe" />
+         <span>Equipe</span>
+     </a>
+
+     <a href="referencias.html" class="item-menu">
+         <img src="/images/REFERENCIAS.png" alt="Referências" />
+         <span>Referências</span>
+     </a>
+     <a href="game.html" class="item-menu">
+         <img src="/images/GAME.png" alt="Game" />
+         <span>Game</span>
+     </a>
+
+     <div class="usuario">
+         <img
+             class="userIcon"
+             src="/images/USUÁRIO.png"
+             alt="Usuário"
+         />
+
+         <div class="dados-usuario">
+             <h4>Geovanna Oliveira</h4>
+             <p>geovanna@email.com</p>
+         </div>
+     </div>
+     <div class="item-menu">
+             <img class="tema-iconify" src="/images/Tema.png" alt="Icone de lua e sol" />
+             <span>Modo Claro</span>
+        </div>
+ </div>
+
+ --- CSS DO PAGE -----
+ #page {
+   /* border: 1px solid red; */
+   max-width: 1300px;
+   margin-inline: auto;
+ }

@@ -1,0 +1,319 @@
+/* ---------- CSS DO MENU ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #030044, #0B0E16, #04031D);
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ---------- ANIMAÇÕES ---------- */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(2rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- IMAGENS ---------- */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- MENU ---------- */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4.6875rem;
+  height: 100vh;
+  text-decoration: none;
+
+  background: #05032A;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.25rem 0.9375rem;
+
+  overflow: hidden;
+  transition: .35s ease;
+
+  border-radius: 0 1.25rem 1.25rem 0;
+  z-index: 999;
+}
+
+.menu:hover {
+  width: 16.25rem;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  margin-bottom: 2.5rem;
+}
+
+.logo img {
+  width: 2.5rem;
+}
+
+.logo span {
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+
+  opacity: 0;
+  transition: .3s;
+}
+
+.menu:hover .logo span {
+  opacity: 1;
+}
+
+/* ---------- PESQUISA ---------- */
+
+.pesquisa {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+
+  background: #1C1A46;
+  border-radius: 0.625rem;
+
+  padding: 0.75rem;
+  margin-bottom: 1.5625rem;
+}
+
+.pesquisa img {
+  width: 1.625rem;
+}
+
+.pesquisa span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: .3s;
+}
+
+.menu:hover .pesquisa span {
+  opacity: 1;
+}
+
+/* ---------- ITENS ---------- */
+/* ---------- ITENS ---------- */
+
+.item-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+
+  width: 100%;
+
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+
+  border-radius: 0.625rem;
+
+  cursor: pointer;
+  transition: .3s ease;
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.item-menu:hover {
+  background: #1C1A46;
+}
+
+.item-menu img {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.item-menu span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: .3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.menu:hover .item-menu span {
+  opacity: 1;
+}
+
+/* ---------- USUÁRIO ---------- */
+
+.usuario {
+  margin-top: auto;
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+
+  background: #1C1A46;
+  padding: 0.75rem;
+  border-radius: 0.625rem;
+}
+
+.usuario img {
+  width: 2.1875rem;
+}
+
+.dados-usuario {
+  opacity: 0;
+  transition: .3s;
+  white-space: nowrap;
+}
+
+.menu:hover .dados-usuario {
+  opacity: 1;
+}
+
+.dados-usuario h4 {
+  font-size: .9rem;
+  margin: 0;
+}
+
+.dados-usuario p {
+  font-size: .7rem;
+  color: #bdbdbd;
+  margin: 0.25rem 0 0 0;
+}
+
+/* ---------- TEMA ---------- */
+
+.menu:hover .item-menu {
+  opacity: 1;
+}
+
+.item-menu{ 
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+
+  width: 100%;
+
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+
+  border-radius: 0.625rem;
+
+  cursor: pointer;
+  transition: .3s ease;
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.item-menu:hover {
+  background: #1C1A46;
+}
+
+.item-menu img {
+  width: 2rem;
+  height: 1.75rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.item-menu span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: .3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+ /*---- HTML DO MENU ------*/
+ <div>
+ <div class="menu">
+     <div class="logo">
+         <img
+             class="logoIcon"
+             src="/images/LOGO (1).png"
+             alt="LOGO"
+         />
+         <span>INVICTA</span>
+     </div>
+
+     <div class="pesquisa">
+         <img
+             class="serchIcon"
+             src="/images/SERCH.png"
+             alt="Pesquisar"
+         />
+         <span>Pesquisar</span>
+     </div>
+
+     <a href="../index.html" class="item-menu">
+         <img src="/images/HOME.png" alt="Home" />
+         <span>Home</span>
+     </a>
+
+     <a href="manual.html" class="item-menu">
+         <img src="/images/LISTA.png" alt="Lista" />
+         <span>Manual</span>
+     </a>
+
+     <a href="produto.html" class="item-menu">
+         <img src="/images/MANUAL.png" alt="Manual" />
+         <span>Produto</span>
+     </a>
+
+     <a href="equipe.html" class="item-menu">
+         <img src="/images/EQUIPE.png" alt="Equipe" />
+         <span>Equipe</span>
+     </a>
+
+     <a href="referencias.html" class="item-menu">
+         <img src="/images/REFERENCIAS.png" alt="Referências" />
+         <span>Referências</span>
+     </a>
+     <a href="game.html" class="item-menu">
+         <img src="/images/GAME.png" alt="Game" />
+         <span>Game</span>
+     </a>
+
+     <div class="usuario">
+         <img
+             class="userIcon"
+             src="/images/USUÁRIO.png"
+             alt="Usuário"
+         />
+
+         <div class="dados-usuario">
+             <h4>Geovanna Oliveira</h4>
+             <p>geovanna@email.com</p>
+         </div>
+     </div>
+     <div class="item-menu">
+             <img class="tema-iconify" src="/images/Tema.png" alt="Icone de lua e sol" />
+             <span>Modo Claro</span>
+        </div>
+ </div>
+
+ --- CSS DO PAGE -----
+ #page {
+   /* border: 1px solid red; */
+   max-width: 1300px;
+   margin-inline: auto;
+ }

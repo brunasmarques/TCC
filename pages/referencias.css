@@ -1,0 +1,1216 @@
+@import "../colors.css";
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+    linear-gradient(
+        180deg,
+        #04031D 0%,
+        #0B0E16 55%,
+        #04031D 100%
+    );
+
+    color: var(--cor-texto);
+
+    position: relative;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   MENU LATERAL
+========================================================= */
+
+.menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 4.6875rem;
+    height: 100vh;
+
+    background: var(--cor-menu);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.25rem 0.9375rem;
+
+    overflow: hidden;
+
+    transition: width 0.35s ease;
+
+    border-radius: 0 1.25rem 1.25rem 0;
+
+    z-index: 999;
+}
+
+
+/* MENU ABERTO */
+
+.menu:hover {
+    width: 16.25rem;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    margin-bottom: 2.5rem;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.logo span {
+    font-size: 2rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    color: var(--cor-texto);
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.menu:hover .logo span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    width: 100%;
+
+    background: var(--cor-elemento);
+
+    border-radius: 0.625rem;
+
+    padding: 0.75rem;
+
+    margin-bottom: 1.5625rem;
+
+    flex-shrink: 0;
+}
+
+.pesquisa img {
+    width: 1.625rem;
+    height: 1.625rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.pesquisa span {
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    color: var(--cor-texto);
+}
+
+.menu:hover .pesquisa span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ITENS DO MENU
+========================================================= */
+
+.item-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 1.125rem;
+
+    width: 100%;
+
+    padding: 0.75rem;
+
+    margin-bottom: 0.5rem;
+
+    border-radius: 0.625rem;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+
+    text-decoration: none;
+
+    color: var(--cor-texto);
+
+    flex-shrink: 0;
+}
+
+.item-menu:hover {
+    background: var(--cor-elemento);
+}
+
+.item-menu img {
+    width: 2rem;
+    height: 1.75rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.item-menu span {
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.menu:hover .item-menu span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   USUÁRIO
+========================================================= */
+
+.usuario {
+    margin-top: auto;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    width: 100%;
+
+    background: var(--cor-elemento);
+
+    padding: 0.75rem;
+
+    border-radius: 0.625rem;
+
+    flex-shrink: 0;
+}
+
+.usuario img {
+    width: 2.1875rem;
+    height: 2.1875rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.dados-usuario {
+    opacity: 0;
+
+    max-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    transition:
+        opacity 0.3s ease,
+        max-width 0.3s ease;
+}
+
+.menu:hover .dados-usuario {
+    opacity: 1;
+
+    max-width: 180px;
+}
+
+.dados-usuario h4 {
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    color: var(--cor-texto);
+}
+
+.dados-usuario p {
+    font-size: 0.7rem;
+
+    font-weight: 400;
+
+    color: var(--cor-texto-terciario);
+
+    margin-top: 0.25rem;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+main {
+    animation: fadeInUp 0.6s ease both;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+h1 {
+    text-align: center;
+
+    margin-top: 114px;
+
+    margin-bottom: 0;
+
+    color: var(--cor-texto);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 54px;
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    line-height: normal;
+}
+
+
+/* =========================================================
+   ÁREA DAS REFERÊNCIAS
+========================================================= */
+
+.referencias-img {
+    position: relative;
+
+    width: fit-content;
+
+    margin: 65px auto 0;
+}
+
+#img-ref {
+    display: block;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   BOTÕES "VER MAIS"
+========================================================= */
+
+.referencias-img button {
+    position: absolute;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--cor-destaque-hover);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.referencias-img button:hover {
+    transform: scale(1.05);
+
+    color: var(--cor-destaque);
+}
+
+
+/* BOTÃO 1 */
+
+#botao-1 {
+    top: 174px;
+
+    right: 145px;
+}
+
+
+/* BOTÃO 2 */
+
+#botao-2 {
+    top: 475px;
+
+    right: 145px;
+}
+
+
+/* BOTÃO 3 */
+
+#botao-3 {
+    top: 776px;
+
+    right: 145px;
+}
+
+
+/* BOTÃO 4 */
+
+#botao-4 {
+    top: 1077px;
+
+    right: 145px;
+}
+
+
+/* BOTÃO 5 */
+
+#botao-5 {
+    top: 1408px;
+
+    right: 145px;
+}
+
+
+/* BOTÃO 6 */
+
+#botao-6 {
+    top: 1739px;
+
+    right: 145px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.info {
+    width: 100%;
+
+    height: 200px;
+
+    margin-top: 150px;
+
+    margin-bottom: 300px;
+
+    background: var(--cor-texto-secundario);
+}
+
+
+/* TÍTULO DAS INFORMAÇÕES */
+
+.info h3 {
+    color: var(--cor-fundo-3);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    margin-left: 230px;
+
+    padding-top: 30px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DE CONTATO
+========================================================= */
+
+.item-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-left: 350px;
+
+    margin-top: 20px;
+
+    padding-top: 30px;
+
+    color: var(--cor-fundo-3);
+}
+
+.item-info i {
+    color: var(--cor-fundo-3);
+}
+
+.item-info i:not(:first-child) {
+    margin-left: 50px;
+}
+
+.item-info p {
+    margin: 0;
+
+    color: var(--cor-fundo-3);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    line-height: normal;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+/* ESCONDE ELEMENTOS MOBILE NO DESKTOP */
+
+.mobile-header,
+.mobile-menu,
+.mobile-overlay {
+    display: none;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =====================================================
+       ESCONDE MENU DESKTOP
+    ====================================================== */
+
+    .menu {
+        display: none;
+    }
+
+    /* =====================================================
+       CABEÇALHO
+    ====================================================== */
+
+    .mobile-header {
+        width: 100%;
+        height: 68px;
+
+        padding: 0 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: var(--cor-menu);
+
+        position: sticky;
+        top: 0;
+
+        z-index: 1000;
+    }
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mobile-logo img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+    }
+
+    .mobile-logo span {
+        color: var(--cor-texto);
+
+        font-size: 20px;
+
+        font-weight: 700;
+    }
+
+    /* =====================================================
+       BOTÃO HAMBÚRGUER
+    ====================================================== */
+
+    .mobile-menu-button {
+
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 5px;
+
+        background: transparent;
+
+        border: none;
+
+        cursor: pointer;
+    }
+
+    .mobile-menu-button span {
+
+        width: 25px;
+
+        height: 2px;
+
+        background: var(--cor-texto);
+
+        border-radius: 20px;
+
+        transition: .3s;
+    }
+
+    /* =====================================================
+       OVERLAY
+    ====================================================== */
+
+    .mobile-overlay {
+
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0,0,0,.65);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition: .3s;
+
+        z-index: 1500;
+    }
+
+    .mobile-overlay.active {
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+    /* =====================================================
+       MENU MOBILE
+    ====================================================== */
+
+    .mobile-menu {
+
+        display: block;
+
+        position: fixed;
+
+        top: 0;
+
+        right: -100%;
+
+        width: 82%;
+
+        max-width: 330px;
+
+        height: 100vh;
+
+        padding: 20px;
+
+        background: var(--cor-menu);
+
+        overflow-y: auto;
+
+        transition: right .35s ease;
+
+        z-index: 2000;
+
+        box-shadow: -10px 0 30px rgba(0,0,0,.35);
+    }
+
+    .mobile-menu.active {
+        right: 0;
+    }
+
+    /* =====================================================
+       TOPO
+    ====================================================== */
+
+    .mobile-menu-top {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-bottom: 25px;
+    }
+
+    .mobile-menu-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .mobile-menu-logo img {
+
+        width: 36px;
+
+        height: 36px;
+    }
+
+    .mobile-menu-logo span {
+
+        color: var(--cor-texto);
+
+        font-size: 18px;
+
+        font-weight: 700;
+    }
+
+    .mobile-close {
+
+        background: transparent;
+
+        border: none;
+
+        color: var(--cor-destaque);
+
+        font-size: 34px;
+
+        cursor: pointer;
+    }
+
+    /* =====================================================
+       PESQUISA
+    ====================================================== */
+
+    .mobile-search {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        width: 100%;
+
+        height: 46px;
+
+        padding: 0 14px;
+
+        margin-bottom: 22px;
+
+        background: var(--cor-elemento);
+
+        border-radius: 10px;
+    }
+
+    .mobile-search img {
+
+        width: 22px;
+
+        height: 22px;
+    }
+
+    .mobile-search span {
+
+        color: var(--cor-texto-terciario);
+
+        font-size: 14px;
+    }
+
+    /* =====================================================
+       LINKS
+    ====================================================== */
+
+    .mobile-nav {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .mobile-nav-item {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
+    }
+
+    .mobile-nav-item.ativo {
+
+        background: rgba(77,215,229,.12);
+    }
+
+    .mobile-nav-item img {
+
+        width: 25px;
+
+        height: 25px;
+    }
+
+    .mobile-nav-item span {
+
+        font-size: 15px;
+
+        font-weight: 500;
+    }
+
+    /* =====================================================
+       USUÁRIO MOBILE
+    ====================================================== */
+
+    .mobile-user {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-top: 30px;
+
+        padding-top: 20px;
+
+        border-top: 1px solid rgba(255,255,255,.10);
+
+    }
+
+    .mobile-user img {
+
+        width: 45px;
+
+        height: 45px;
+
+        object-fit: contain;
+
+    }
+
+    .mobile-user h4 {
+
+        color: var(--cor-texto);
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        margin-bottom: 4px;
+
+    }
+
+    .mobile-user p {
+
+        color: var(--cor-texto-terciario);
+
+        font-size: 10px;
+
+    }
+
+    /* =====================================================
+       MODO CLARO
+    ====================================================== */
+
+    .mobile-theme {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        margin-top: 22px;
+
+        padding: 11px 13px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
+
+        border-radius: 10px;
+
+    }
+
+    .mobile-theme img {
+
+        width: 25px;
+
+        height: 25px;
+
+    }
+
+    .mobile-theme span {
+
+        font-size: 15px;
+
+        font-weight: 500;
+
+    }
+
+    /* =====================================================
+       CONTEÚDO
+    ====================================================== */
+
+    #page,
+    main {
+
+        width: 100%;
+
+        padding: 25px 15px 50px;
+
+    }
+
+    /* =====================================================
+       TÍTULO
+    ====================================================== */
+
+    h1 {
+
+        margin-top: 0;
+
+        margin-bottom: 30px;
+
+        font-size: 20px;
+
+        line-height: 1.2;
+
+        text-align: center;
+
+    }
+
+    /* =====================================================
+       IMAGEM DAS REFERÊNCIAS
+    ====================================================== */
+
+    .referencias-img {
+
+        width: 100%;
+
+        margin: 0 auto;
+
+    }
+
+    #img-ref {
+
+        width: 100%;
+
+        height: auto;
+
+    }
+
+    /* =====================================================
+       BOTÕES
+    ====================================================== */
+
+    .referencias-img button {
+
+        font-size: 12px;
+
+    }
+
+    #botao-1 {
+
+        top: 9%;
+
+        right: 13%;
+
+    }
+
+    #botao-2 {
+
+        top: 25%;
+
+        right: 13%;
+
+    }
+
+    #botao-3 {
+
+        top: 42%;
+
+        right: 13%;
+
+    }
+
+    #botao-4 {
+
+        top: 58%;
+
+        right: 13%;
+
+    }
+
+    #botao-5 {
+
+        top: 76%;
+
+        right: 11%;
+
+    }
+
+    #botao-6 {
+
+        top: 95%;
+
+        right: 8%;
+
+    }
+
+    /* =====================================================
+       INFORMAÇÕES
+    ====================================================== */
+
+    .info {
+
+        width: 100%;
+
+        height: auto;
+
+        margin-top: 70px;
+
+        margin-bottom: 0;
+
+        padding: 35px 20px;
+
+    }
+
+    .info h3 {
+
+        margin: 0;
+
+        padding: 0;
+
+        font-size: 14px;
+
+        text-align: center;
+
+    }
+
+    .item-info {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        margin-top: 15px;
+
+        margin-left: 0;
+
+        padding-top: 10px;
+
+    }
+
+    .item-info i {
+
+        font-size: 10px;
+
+        margin-left: 0 !important;
+
+    }
+
+    .item-info i:not(:first-child) {
+
+        margin-left: 12px;
+
+    }
+
+    .item-info p {
+
+        font-size: 9px;
+
+        margin: 0;
+
+        white-space: nowrap;
+
+    }
+
+        /* =====================================================
+           AJUSTES EXTRAS
+        ====================================================== */
+
+        body {
+
+            overflow-x: hidden;
+
+        }
+
+    }
+
+    /* =========================================================
+       CELULARES MUITO PEQUENOS
+    ========================================================= */
+
+    @media (max-width: 360px) {
+
+        .mobile-header {
+
+            padding: 0 14px;
+
+        }
+
+        .mobile-logo span {
+
+            font-size: 17px;
+
+        }
+
+        main,
+        #page {
+
+            padding: 20px 12px 40px;
+
+        }
+
+        h1 {
+
+            font-size: 24px;
+
+            margin-bottom: 25px;
+
+        }
+
+        .referencias-img {
+
+            width: 100%;
+
+        }
+
+        #img-ref {
+
+            width: 100%;
+
+        }
+
+        .referencias-img button {
+
+            font-size: 10px;
+
+        }
+
+        .info {
+
+            padding: 28px 15px;
+
+            margin-top: 50px;
+
+        }
+
+        .info h3 {
+
+            font-size: 20px;
+
+        }
+
+        .item-info {
+
+            gap: 15px;
+
+        }
+
+        .item-info p {
+
+            font-size: 15px;
+
+        }
+
+    }

@@ -1,0 +1,1349 @@
+@import "../colors.css";
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background:
+    linear-gradient(
+        180deg,
+        #04031D 0%,
+        #0B0E16 55%,
+        #04031D 100%
+    );
+
+    color: var(--cor-texto);
+
+    position: relative;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   MENU LATERAL
+========================================================= */
+
+.menu {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 4.6875rem;
+    height: 100vh;
+
+    background: var(--cor-menu);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.25rem 0.9375rem;
+
+    overflow: hidden;
+
+    transition: width 0.35s ease;
+
+    border-radius: 0 1.25rem 1.25rem 0;
+
+    z-index: 999;
+}
+
+
+.menu:hover {
+    width: 16.25rem;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    margin-bottom: 2.5rem;
+
+    flex-shrink: 0;
+}
+
+
+.logo img {
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.logo span {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.menu:hover .logo span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.pesquisa {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    width: 100%;
+
+    background: var(--cor-elemento);
+
+    border-radius: 0.625rem;
+
+    padding: 0.75rem;
+
+    margin-bottom: 1.5625rem;
+
+    flex-shrink: 0;
+}
+
+
+.pesquisa img {
+
+    width: 1.625rem;
+    height: 1.625rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.pesquisa span {
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.menu:hover .pesquisa span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ITENS DO MENU
+========================================================= */
+
+.item-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.125rem;
+
+    width: 100%;
+
+    padding: 0.75rem;
+
+    margin-bottom: 0.5rem;
+
+    border-radius: 0.625rem;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+
+    text-decoration: none;
+
+    color: var(--cor-texto);
+
+    flex-shrink: 0;
+}
+
+
+.item-menu:hover {
+    background: var(--cor-elemento);
+}
+
+
+.item-menu img {
+
+    width: 1.75rem;
+    height: 1.75rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.item-menu span {
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+}
+
+
+.menu:hover .item-menu span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   USUÁRIO
+========================================================= */
+
+.usuario {
+
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    width: 100%;
+
+    background: var(--cor-elemento);
+
+    padding: 0.75rem;
+
+    border-radius: 0.625rem;
+
+    flex-shrink: 0;
+}
+
+
+.usuario img {
+
+    width: 2.1875rem;
+    height: 2.1875rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.dados-usuario {
+
+    opacity: 0;
+
+    max-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    transition:
+        opacity 0.3s ease,
+        max-width 0.3s ease;
+}
+
+
+.menu:hover .dados-usuario {
+
+    opacity: 1;
+
+    max-width: 180px;
+}
+
+
+.dados-usuario h4 {
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    margin: 0;
+
+    color: var(--cor-texto);
+}
+
+
+.dados-usuario p {
+
+    font-size: 0.7rem;
+
+    font-weight: 400;
+
+    color: var(--cor-texto-terciario);
+
+    margin: 0.25rem 0 0 0;
+}
+
+
+/* =========================================================
+   TEMA
+========================================================= */
+
+.modo-claro {
+
+    margin-top: 0.5rem;
+}
+
+
+.modo-claro img {
+
+    width: 2rem;
+
+    height: 1.75rem;
+}
+
+
+/* =========================================================
+   PÁGINA
+========================================================= */
+
+#page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    max-width: 1300px;
+
+    margin-inline: auto;
+
+    margin-top: 2rem;
+
+    padding-bottom: 5rem;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.conteudo-game {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   IMAGEM PRINCIPAL
+========================================================= */
+
+#img-simce {
+
+    width: auto;
+
+    max-width: 800px;
+
+    margin-top: 4rem;
+
+    animation: fadeInUp 0.6s ease both;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.titulo {
+
+    margin-top: 10rem;
+
+    font-size: 2.5rem;
+
+    color: var(--cor-texto);
+
+    font-weight: 700;
+
+    animation: fadeInUp 0.6s ease both;
+}
+
+
+/* =========================================================
+   DESCRIÇÕES
+========================================================= */
+
+#descricao {
+
+    margin-top: 2.5rem;
+
+    width: 54.5rem;
+
+    color: var(--cor-texto);
+
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 1.6;
+
+    text-align: left;
+}
+
+
+.descricao2 {
+
+    margin-top: 1.5rem;
+
+    width: 54.5rem;
+
+    color: var(--cor-texto);
+
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 1.6;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.subtititulo {
+
+    width: 54.5rem;
+
+    margin-top: 3.2rem;
+
+    color: var ;
+
+    font-size: 1.6rem;
+
+    font-weight: 600;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   VÍDEO
+========================================================= */
+
+#video-games {
+
+    display: block;
+
+    width: 62rem;
+
+    height: 30rem;
+
+    margin: 8.4rem auto 4rem;
+
+    border-radius: 1.25rem;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.botao-jogo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 18rem;
+
+    height: 3.5rem;
+
+    margin: 0 auto 6.5rem;
+
+    border: none;
+
+    border-radius: 1.25rem;
+
+    background: var(--cor-destaque);
+
+    box-shadow:
+        5px 5px 7px 1px var(--sombra-destaque);
+
+    color: var(--cor-fundo-1);
+
+    font-weight: 700;
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.botao-jogo:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        5px 7px 10px 2px var(--sombra-destaque);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    #descricao,
+    .descricao2,
+    .subtititulo {
+
+        width: 80%;
+
+    }
+
+
+    #video-games {
+
+        width: 80%;
+
+        height: auto;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .menu {
+
+        width: 3.8rem;
+
+    }
+
+
+    .menu:hover {
+
+        width: 14rem;
+
+    }
+
+
+    #img-simce {
+
+        width: 80%;
+
+    }
+
+
+    .titulo {
+
+        font-size: 2rem;
+
+        text-align: center;
+
+    }
+
+
+    #descricao,
+    .descricao2,
+    .subtititulo {
+
+        width: 80%;
+
+    }
+
+
+    #video-games {
+
+        width: 85%;
+
+        height: auto;
+
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #page {
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 4.6875rem;
+    }
+
+
+    /* =====================================================
+       EQUIPE
+    ===================================================== */
+
+    .equipe {
+
+        width: 100%;
+
+        padding-top: 8rem;
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+
+    /* =====================================================
+       TÍTULO
+    ===================================================== */
+
+    .titulo {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: clamp(
+            2rem,
+            6vw,
+            2.8rem
+        );
+    }
+
+
+    /* =====================================================
+       DESCRIÇÃO
+    ===================================================== */
+
+    #descricao {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-left: 0;
+
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       LINHA DAS MENINAS
+    ===================================================== */
+
+    .linha-meninas {
+
+        gap: 2.5rem;
+
+        margin-top: 5rem;
+    }
+
+
+    /* =====================================================
+       LINHA DOS MENINOS
+    ===================================================== */
+
+    .linha-meninos {
+
+        gap: 2.5rem;
+
+        margin-top: 5rem;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .card {
+
+        width: 17rem;
+
+        flex-basis: 17rem;
+    }
+
+
+    /* =====================================================
+       CONTATE-NOS
+    ===================================================== */
+
+    .contate-nos {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 6rem;
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+
+    /* =====================================================
+       INFORMAÇÕES
+    ===================================================== */
+
+    .info {
+
+        margin-top: 6rem;
+
+        margin-bottom: 6rem;
+    }
+}
+
+/* =========================================================
+   MOBILE - MENU
+========================================================= */
+
+.mobile-header,
+.mobile-menu,
+.mobile-overlay {
+    display: none;
+}
+
+.ativo {
+    background: var(--cor-elemento);
+}
+
+@media (max-width: 768px) {
+
+    .menu {
+        display: none;
+    }
+
+    .mobile-header {
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 70px;
+
+        background: var(--cor-menu);
+
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 20px;
+
+        z-index: 1000;
+
+        box-shadow: 0 2px 10px rgba(0,0,0,.15);
+
+    }
+
+    .mobile-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+    .mobile-logo img,
+    .mobile-menu-logo img {
+
+        width: 32px;
+        height: 32px;
+
+        object-fit: contain;
+
+    }
+
+    
+    .mobile-logo span {
+
+        color: var(--cor-texto);
+
+        font-size: 1.5rem;
+
+        font-weight: 700;
+
+    }
+
+    .mobile-menu-button {
+
+        background: transparent;
+
+        border: none;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 5px;
+
+        cursor: pointer;
+
+    }
+
+    .mobile-menu-button span {
+
+        width: 26px;
+
+        height: 3px;
+
+        background: var( --cor-texto);
+
+        border-radius: 10px;
+
+    }
+
+    .mobile-overlay {
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0,0,0,.45);
+
+        z-index: 998;
+
+    }
+
+    .mobile-overlay.active {
+
+        display: block;
+
+    }
+
+    .mobile-menu {
+
+        position: fixed;
+
+        top: 0;
+
+        right: -300px;
+
+        left: auto;
+
+        width: 270px;
+
+        height: 100vh;
+
+        background: var(--cor-menu);
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        transition: .35s;
+
+        z-index: 999;
+
+    }
+
+    .mobile-menu.active {
+
+        right: 0;
+
+    }
+
+    .mobile-menu-top {
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        margin-bottom: 30px;
+
+    }
+
+    .mobile-menu-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+    .mobile-menu-logo img {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+    .mobile-menu-logo span {
+
+        font-size: 1.5rem;
+
+        font-weight: 700;
+
+    }
+
+    .mobile-close {
+
+        border: none;
+
+        background: transparent;
+
+        color: var(--cor-texto);
+
+        font-size: 32px;
+
+        cursor: pointer;
+
+    }
+
+    .mobile-search,
+    .mobile-nav-item,
+    .mobile-theme {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        text-decoration: none;
+
+        color: var(--cor-texto);
+
+        margin-bottom: 8px;
+
+    }
+
+    .mobile-search {
+
+        background: var(--cor-elemento);
+
+        margin-bottom: 20px;
+
+    }
+
+    .mobile-search img,
+    .mobile-nav-item img,
+    .mobile-theme img {
+
+        width: 24px;
+
+        height: 24px;
+
+    }
+
+    .mobile-nav {
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+    .mobile-nav-item:hover,
+    .mobile-theme:hover {
+
+        background: var(--cor-elemento);
+
+    }
+
+    .mobile-user {
+
+        margin-top: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        background: var(--cor-elemento);
+
+        border-radius: 10px;
+
+        padding: 12px;
+
+        margin-bottom: 15px;
+
+    }
+
+    .mobile-user img {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+    .mobile-user h4 {
+
+        font-size: .9rem;
+
+    }
+
+    .mobile-user p {
+
+        font-size: .75rem;
+
+        color: var(--cor-texto-terciario);
+
+    }
+
+}
+
+/* =========================================================
+   MOBILE - CONTEÚDO
+========================================================= */
+
+@media (max-width: 768px) {
+
+    #page {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 95px 18px 40px;
+
+        min-height: auto;
+
+        display: block;
+
+    }
+
+    .conteudo-game {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    /* IMAGEM */
+
+    #img-simce {
+
+
+        width: 100%;
+
+        max-width: 430px;
+
+        height: auto;
+
+        margin-top: 0;
+
+    }
+
+    /* TÍTULO */
+
+    .titulo {
+
+        margin-top: 35px;
+
+        font-size: 1.6rem;
+
+        text-align: center;
+
+        line-height: 1.3;
+
+    }
+
+    /* DESCRIÇÃO */
+
+    #descricao {
+
+        width: 100%;
+
+        margin-top: 25px;
+
+        padding: 0 20px;
+
+        font-size: .95rem;
+
+        line-height: 1.7;
+
+        text-align: justify;
+
+    }
+
+    /* SUBTÍTULO */
+
+    .subtititulo {
+
+        width: 100%;
+
+        margin-top: 40px;
+
+        font-size: 1.4rem;
+
+        text-align: center;
+
+
+
+    }
+
+    /* HISTÓRIA */
+
+    .descricao2 {
+
+        width: 100%;
+
+        margin-top: 25px;
+
+        padding: 0 20px;
+
+        font-size: .95rem;
+
+        line-height: 1.7;
+
+        text-align: justify;
+    }
+
+    /* VÍDEO */
+
+    #video-games {
+
+        width: 60%;
+
+        height: auto;
+
+        margin: 40px 0;
+
+        border-radius: 16px;
+
+    }
+
+    /* BOTÃO */
+
+    .botao-jogo {
+
+        width: 100%;
+
+        max-width: 180px;
+
+        height: 40px;
+
+        font-size: .85rem;
+
+    }
+
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #page {
+
+        padding: 90px 15px 30px;
+
+    }
+
+    #img-simce {
+
+        max-width: 350px;
+
+    }
+
+    .titulo {
+
+        font-size: 1.6rem;
+
+        margin-top: 25px;
+
+    }
+
+    #descricao {
+
+        font-size: .85rem;
+
+        line-height: 1.6;
+
+        
+
+    }
+
+    .subtititulo {
+
+        font-size: 1.2rem;
+
+        margin-top: 30px;
+
+    }
+
+    .descricao2 {
+
+        font-size: .85rem;
+
+        line-height: 1.6;
+
+    }
+
+    #video-games {
+
+        margin: 30px 0;
+
+        border-radius: 12px;
+
+    }
+
+    .botao-jogo {
+
+        width: 100%;
+
+        max-width: 260px;
+
+        height: 48px;
+
+        font-size: .95rem;
+
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .mobile-logo span,
+    .mobile-menu-logo span {
+
+        font-size: 1.2rem;
+
+    }
+
+    .titulo {
+
+        font-size: 1.4rem;
+
+    }
+
+    #descricao,
+    .descricao2 {
+
+        font-size: .8rem;
+
+    }
+
+    .subtititulo {
+
+        font-size: 1rem;
+
+    }
+
+    .botao-jogo {
+
+        max-width: 220px;
+
+        height: 44px;
+
+        font-size: .9rem;
+
+    }
+
+}

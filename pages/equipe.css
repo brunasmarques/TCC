@@ -1,0 +1,1760 @@
+@import "../colors.css";
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #04031D 0%,
+            #0B0E16 55%,
+            #04031D 100%
+        );
+
+    color: var(--cor-texto);
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.entrando {
+    opacity: 1;
+}
+
+body.saindo {
+    opacity: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   LARGURA DA PÁGINA
+========================================================= */
+
+#page {
+    width: 100%;
+    max-width: 1300px;
+
+    margin-inline: auto;
+
+    padding-left: 5rem;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MENU DESKTOP
+========================================================= */
+
+.menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 4.6875rem;
+    height: 100vh;
+
+    background: var(--cor-menu);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.25rem 0.9375rem;
+
+    overflow: hidden;
+
+    border-radius: 0 1.25rem 1.25rem 0;
+
+    z-index: 999;
+
+    transition: width 0.35s ease;
+}
+
+.menu:hover {
+    width: 16.25rem;
+}
+
+
+/* =========================================================
+   LOGO DESKTOP
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    margin-bottom: 2.5rem;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 2.1875rem;
+    height: 2.1875rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.logo span {
+    font-size: 2rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.menu:hover .logo span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PESQUISA DESKTOP
+========================================================= */
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    width: 100%;
+
+    background: var(--cor-elemento);
+
+    border-radius: 0.625rem;
+
+    padding: 0.75rem;
+
+    margin-bottom: 1.5625rem;
+
+    flex-shrink: 0;
+}
+
+.pesquisa img {
+    width: 1.625rem;
+    height: 1.625rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.pesquisa span {
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.menu:hover .pesquisa span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ITENS DO MENU DESKTOP
+========================================================= */
+
+.item-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 1.125rem;
+
+    width: 100%;
+
+    padding: 0.75rem;
+
+    margin-bottom: 0.5rem;
+
+    border-radius: 0.625rem;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    color: var(--cor-texto);
+
+    transition: background 0.3s ease;
+
+    flex-shrink: 0;
+}
+
+.item-menu:hover {
+    background: var(--cor-elemento);
+}
+
+.item-menu.ativo {
+    background: var(--cor-elemento);
+}
+
+.item-menu img {
+    width: 1.75rem;
+    height: 1.75rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.item-menu span {
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.menu:hover .item-menu span {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   USUÁRIO DESKTOP
+========================================================= */
+
+.usuario {
+    margin-top: auto;
+    margin-bottom: 1.25rem;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.9375rem;
+
+    width: 100%;
+
+    background: var(--cor-elemento);
+
+    padding: 0.75rem;
+
+    border-radius: 0.625rem;
+
+    flex-shrink: 0;
+}
+
+.usuario img,
+.usuario .userIcon {
+    width: 2.1875rem;
+    height: 2.1875rem;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.dados-usuario {
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+
+.menu:hover .dados-usuario {
+    opacity: 1;
+}
+
+.dados-usuario h4 {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.dados-usuario p {
+    font-size: 0.7rem;
+
+    color: var(--cor-texto-terciario);
+
+    margin-top: 0.25rem;
+}
+
+
+/* =========================================================
+   BOTÃO MODO CLARO
+========================================================= */
+
+button.modo-claro {
+    border: none;
+    background: transparent;
+
+    font: inherit;
+    color: inherit;
+
+    text-align: left;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+/* =========================================================
+   CONTEÚDO DA EQUIPE
+========================================================= */
+
+.equipe {
+    width: 100%;
+
+    padding-top: 10rem;
+    padding-right: 2rem;
+
+    animation:
+        fadeInUp
+        0.7s
+        ease
+        both;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.titulo {
+    width: 100%;
+    max-width: 788px;
+
+    height: auto;
+
+    margin-top: 5rem;
+
+    color: var(--cor-texto);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.titulo h1,
+h1 {
+    color: var(--cor-texto);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: inherit;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    margin-left: 10rem;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+#descricao {
+    width: 100%;
+    max-width: 680px;
+
+    margin-top: 1rem;
+    margin-left: 9.5rem;
+
+    color: var(--cor-texto);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+    font-weight: 300;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LINHAS DOS CARDS
+========================================================= */
+
+.linha-meninas,
+.linha-meninos {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   LINHA MENINAS
+========================================================= */
+
+.linha-meninas {
+    gap: 5rem;
+
+    margin-top: 7.5rem;
+}
+
+
+/* =========================================================
+   LINHA MENINOS
+========================================================= */
+
+.linha-meninos {
+    gap: 7.5rem;
+
+    margin-top: 9rem;
+
+    padding-bottom: 5rem;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+    width: 18.75rem;
+
+    height: auto;
+
+    flex: 0 1 18.75rem;
+}
+
+.card img {
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 1.25rem 1.25rem 0 0;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DOS CARDS
+========================================================= */
+
+.info-card {
+    width: 100%;
+
+    min-height: 5.5rem;
+
+    background: #E3F1F3;
+
+    border-radius: 0 0 1.25rem 1.25rem;
+
+    padding: 0.9375rem 0;
+}
+
+.info-card p,
+.info-card h4 {
+    color: #000;
+
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+
+    margin: 0;
+}
+
+.info-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+.info-card p {
+    font-size: 0.75rem;
+
+    margin-top: 0.35rem;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   POSICIONAMENTO
+========================================================= */
+
+#geo,
+#lia,
+#guilherme,
+#enzo {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   CONTATE-NOS
+========================================================= */
+
+.contate-nos {
+    width: 100%;
+    max-width: 946px;
+
+    margin: 8rem auto 0;
+
+    padding: 0 1rem;
+}
+
+.informacao {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   TÍTULO CONTATE-NOS
+========================================================= */
+
+h2 {
+    color: #CECECE;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+
+    font-weight: 100;
+
+    line-height: 1.2;
+
+    margin: 0 0 2rem;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.informacao label {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 0.5rem;
+
+    color: var(--cor-texto);
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.informacao input,
+.informacao textarea {
+    display: block;
+
+    width: 100%;
+    max-width: 946px;
+
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+
+    padding: 0.5rem 0;
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid #CECECE;
+
+    outline: none;
+
+    color: #CECECE;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+}
+
+.informacao textarea {
+    min-height: 5rem;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   BOTÃO ENVIAR
+========================================================= */
+
+.informacao button {
+    width: 14.5rem;
+
+    min-height: 3.8125rem;
+
+    margin-top: 1.5rem;
+
+    background: var(--cor-texto);
+
+    border: none;
+
+    color: #000;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.25rem;
+
+    font-weight: 550;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.informacao button:hover {
+    transform: translateY(-0.25rem);
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES / RODAPÉ
+========================================================= */
+
+.info {
+    width: 100%;
+
+    min-height: 12.5rem;
+
+    background: #E3F1F3;
+
+    margin-top: 9rem;
+    margin-bottom: 10rem;
+
+    padding: 1.875rem 2rem 1.875rem 14.3rem;
+}
+
+.info h3,
+h3 {
+    color: var(--cor-fundo-3);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+
+
+/* =========================================================
+   ITENS DAS INFORMAÇÕES
+========================================================= */
+
+.item-info {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 1rem 2rem;
+
+    width: 100%;
+
+    margin: 1.25rem 0 0;
+
+    padding: 0;
+
+    color: var(--cor-fundo-3);
+}
+
+.item-info p {
+    margin: 0;
+
+    color: var(--cor-fundo-3);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+.item-info i:not(:first-child) {
+    margin-left: 0;
+}
+
+
+/* =========================================================
+   MOBILE ESCONDIDO NO DESKTOP
+========================================================= */
+
+.mobile-header,
+.mobile-menu,
+.mobile-overlay {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #page {
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 4.6875rem;
+    }
+
+    .equipe {
+        width: 100%;
+
+        padding-top: 8rem;
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .titulo {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(
+            2rem,
+            6vw,
+            2.8rem
+        );
+    }
+
+    .titulo h1,
+    h1 {
+        margin-left: 0;
+    }
+
+    #descricao {
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: 0;
+
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+    }
+
+    .linha-meninas {
+        gap: 2.5rem;
+
+        margin-top: 5rem;
+    }
+
+    .linha-meninos {
+        gap: 2.5rem;
+
+        margin-top: 5rem;
+    }
+
+    .card {
+        width: 17rem;
+
+        flex-basis: 17rem;
+    }
+
+    .contate-nos {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 6rem;
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .info {
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =====================================================
+       CONFIGURAÇÃO GERAL
+    ===================================================== */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       PÁGINA
+    ===================================================== */
+
+    #page {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 0;
+    }
+
+
+    /* =====================================================
+       MENU DESKTOP DESAPARECE
+    ===================================================== */
+
+    .menu {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       HEADER MOBILE
+    ===================================================== */
+
+    .mobile-header {
+        display: flex;
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 70px;
+
+        padding: 0 20px;
+
+        align-items: center;
+        justify-content: space-between;
+
+        background: var(--cor-menu);
+
+        z-index: 1100;
+    }
+
+
+    /* =====================================================
+       LOGO MOBILE
+    ===================================================== */
+
+    .mobile-logo {
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        min-width: 0;
+    }
+
+    .mobile-logo img {
+        width: 38px;
+        height: 38px;
+
+        object-fit: contain;
+
+        flex-shrink: 0;
+    }
+
+    .mobile-logo span {
+        color: var(--cor-texto);
+
+        font-size: 20px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       BOTÃO HAMBURGER
+    ===================================================== */
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px;
+
+        flex-shrink: 0;
+
+        background: transparent;
+
+        border: none;
+
+        cursor: pointer;
+
+        position: relative;
+
+        z-index: 1500;
+    }
+
+    .mobile-menu-button span {
+        display: block;
+
+        width: 25px;
+        height: 3px;
+
+        background: var(--cor-texto);
+
+        border-radius: 3px;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+
+    /* =====================================================
+       HAMBURGER → X
+    ===================================================== */
+
+    .mobile-menu-button.active span:nth-child(1) {
+        transform:
+            translateY(8px)
+            rotate(45deg);
+    }
+
+    .mobile-menu-button.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-button.active span:nth-child(3) {
+        transform:
+            translateY(-8px)
+            rotate(-45deg);
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+
+    .mobile-overlay {
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.55);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        z-index: 1200;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .mobile-overlay.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
+
+    .mobile-menu {
+        display: flex;
+
+        flex-direction: column;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: 82%;
+        max-width: 350px;
+
+        height: 100vh;
+
+        padding: 20px;
+
+        background: var(--cor-menu);
+
+        z-index: 1300;
+
+        transform: translateX(100%);
+
+        transition:
+            transform 0.35s ease;
+
+        overflow-y: auto;
+
+        visibility: hidden;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+
+        visibility: visible;
+    }
+
+
+    /* =====================================================
+       TOPO DO MENU
+    ===================================================== */
+
+    .mobile-menu-top {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        width: 100%;
+
+        margin-bottom: 30px;
+    }
+
+    .mobile-menu-logo {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        min-width: 0;
+    }
+
+    .mobile-menu-logo img {
+        width: 38px;
+        height: 38px;
+
+        object-fit: contain;
+    }
+
+    .mobile-menu-logo span {
+        color: var(--cor-texto);
+
+        font-size: 20px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* =====================================================
+       BOTÃO FECHAR
+    ===================================================== */
+
+    .mobile-close {
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+
+        background: transparent;
+
+        color: var(--cor-texto);
+
+        font-size: 32px;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       PESQUISA MOBILE
+    ===================================================== */
+
+    .mobile-search {
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        width: 100%;
+
+        padding: 12px;
+
+        margin-bottom: 25px;
+
+        background: var(--cor-elemento);
+
+        border-radius: 10px;
+    }
+
+    .mobile-search img {
+        width: 25px;
+        height: 25px;
+
+        object-fit: contain;
+
+        flex-shrink: 0;
+    }
+
+    .mobile-search span {
+        color: var(--cor-texto);
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       NAVEGAÇÃO MOBILE
+    ===================================================== */
+
+    .mobile-nav {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 7px;
+
+        width: 100%;
+    }
+
+    .mobile-nav-item {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        width: 100%;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
+
+        transition:
+            background 0.25s ease;
+    }
+
+    .mobile-nav-item:hover {
+        background: var(--cor-elemento);
+    }
+
+    .mobile-nav-item.ativo {
+        background: var(--cor-elemento);
+    }
+
+    .mobile-nav-item img {
+        width: 27px;
+        height: 27px;
+
+        object-fit: contain;
+
+        flex-shrink: 0;
+    }
+
+    .mobile-nav-item span {
+        font-size: 15px;
+
+        font-weight: 500;
+    }
+
+
+    /* =====================================================
+       USUÁRIO MOBILE
+    ===================================================== */
+
+    .mobile-user {
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        width: 100%;
+
+        margin-top: auto;
+
+        margin-bottom: 18px;
+
+        padding: 11px;
+
+        background: var(--cor-elemento);
+
+        border-radius: 10px;
+    }
+
+    .mobile-user img {
+        width: 37px;
+        height: 37px;
+
+        object-fit: contain;
+
+        flex-shrink: 0;
+    }
+
+    .mobile-user h4 {
+        color: var(--cor-texto);
+
+        font-size: 13px;
+
+        font-weight: 600;
+    }
+
+    .mobile-user p {
+        color: var(--cor-texto-terciario);
+
+        font-size: 10px;
+
+        margin-top: 4px;
+    }
+
+
+    /* =====================================================
+       MODO CLARO MOBILE
+    ===================================================== */
+
+    .mobile-theme {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        width: 100%;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        color: var(--cor-texto);
+
+        text-decoration: none;
+    }
+
+    .mobile-theme:hover {
+        background: var(--cor-elemento);
+    }
+
+    .mobile-theme img {
+        width: 27px;
+        height: 27px;
+
+        object-fit: contain;
+    }
+
+    .mobile-theme span {
+        font-size: 15px;
+
+        font-weight: 500;
+    }
+
+
+    /* =====================================================
+       CONTEÚDO
+    ===================================================== */
+
+    .equipe {
+        width: 100%;
+
+        padding-top: 5.5rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-bottom: 3rem;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       TÍTULO
+    ===================================================== */
+
+    .titulo {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: 1.9rem;
+
+        line-height: 1.2;
+
+        text-align: left;
+    }
+
+    .titulo h1,
+    h1 {
+        width: 100%;
+
+        margin: 0;
+
+        padding:
+            5rem
+            0.1rem
+            0.3rem;
+
+        font-size: inherit;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       DESCRIÇÃO
+    ===================================================== */
+
+    #descricao {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 1rem 0 0;
+
+        padding: 0;
+
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       LINHA MENINAS
+    ===================================================== */
+
+    .linha-meninas {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        justify-items: center;
+
+        gap: 2rem;
+
+        margin-top: 3.5rem;
+    }
+
+
+    /* =====================================================
+       LINHA MENINOS
+    ===================================================== */
+
+    .linha-meninos {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        justify-items: center;
+
+        gap: 2rem;
+
+        margin-top: 2rem;
+
+        padding-bottom: 1rem;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .card {
+        width: 100%;
+        max-width: 20rem;
+
+        height: auto;
+
+        flex: none;
+
+        margin: 0 !important;
+    }
+
+    .card img {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 1 / 1;
+
+        object-fit: cover;
+
+        border-radius:
+            1.25rem
+            1.25rem
+            0
+            0;
+    }
+
+
+    /* =====================================================
+       INFORMAÇÕES DOS CARDS
+    ===================================================== */
+
+    .info-card {
+        width: 100%;
+
+        min-height: 5rem;
+
+        padding: 0.9rem 0;
+
+        border-radius:
+            0
+            0
+            1.25rem
+            1.25rem;
+    }
+
+
+    .info-card h4 {
+        font-size: 0.95rem;
+
+        line-height: 1.3;
+    }
+
+    .info-card p {
+        font-size: 0.7rem;
+
+        line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       CONTATE-NOS
+    ===================================================== */
+
+    .contate-nos {
+        width: 100%;
+        max-width: 100%;
+
+        margin:
+            4rem
+            auto
+            0;
+
+        padding:
+            0
+            1.25rem;
+    }
+
+    .informacao {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       TÍTULO CONTATE-NOS
+    ===================================================== */
+
+    h2 {
+        font-size: 2.5rem;
+
+        line-height: 1.2;
+
+        margin:
+            0
+            0
+            1.5rem;
+    }
+
+
+    /* =====================================================
+       LABELS
+    ===================================================== */
+
+    .informacao label {
+        width: 100%;
+
+        font-size: 0.9rem;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       INPUTS
+    ===================================================== */
+
+    .informacao input,
+    .informacao textarea {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 0.9rem;
+
+        padding: 0.5rem 0;
+
+        margin-top: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .informacao textarea {
+        min-height: 5rem;
+    }
+
+
+    /* =====================================================
+       BOTÃO
+    ===================================================== */
+
+    .informacao button {
+        width: 100%;
+        max-width: 20rem;
+
+        min-height: 3.5rem;
+
+        margin:
+            1rem
+            auto
+            0;
+
+        font-size: 1rem;
+    }
+
+
+    /* =====================================================
+       RODAPÉ
+    ===================================================== */
+
+    .info {
+        width: 100%;
+
+        min-height: auto;
+
+        margin:
+            5rem
+            0
+            5rem;
+
+        padding:
+            2rem
+            1.25rem
+            6rem;
+    }
+
+    .info h3,
+    h3 {
+        font-size: 1.5rem;
+
+        line-height: 1.3;
+
+        text-align: center;
+
+        margin: 0;
+    }
+
+
+    /* =====================================================
+       ITENS DO RODAPÉ
+    ===================================================== */
+
+    .item-info {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        margin-top: 15px;
+
+        margin-left: 0;
+
+        padding-top: 10px;
+    }
+
+    .item-info p {
+        font-size: 0.9rem;
+
+        line-height: 1.5;
+
+        text-align: center;
+    }
+
+    .item-info i:not(:first-child) {
+        margin-left: 0;
+    }
+
+}
+
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .mobile-header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .mobile-logo span {
+        font-size: 18px;
+    }
+
+    .mobile-menu {
+        width: 86%;
+    }
+
+    .equipe {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .titulo {
+        font-size: 1.65rem;
+    }
+
+    #descricao {
+        font-size: 0.88rem;
+    }
+
+    .card {
+        max-width: 17.5rem;
+    }
+
+    .contate-nos {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    h2 {
+        font-size: 2.1rem;
+    }
+
+    .info {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 5rem;
+    }
+}
