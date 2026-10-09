@@ -2260,3 +2260,25 @@ TELAS MUITO PEQUENAS
     width: 16.5rem !important;
   }
 }
+
+/* Hover consistente para o item ativo nas páginas claras */
+.item-menu.ativo,
+.item-menu.ativo:hover,
+.mobile-nav-item.ativo,
+.mobile-nav-item.ativo:hover {
+    background: rgba(161, 220, 230, 0.70);
+}
+
+.item-menu:not(.modo-claro):hover,
+.mobile-nav-item:hover {
+    background: rgba(161, 220, 230, 0.70);
+}
+
+
+/* Hover visível no item ativo da navegação */
+.item-menu.ativo:hover,
+.mobile-nav-item.ativo:hover {
+    background: rgba(73, 198, 229, 0.28);
+    box-shadow: 0 0 0.75rem rgba(73, 198, 229, 0.35);
+    transform: translateX(0.2rem);
+}

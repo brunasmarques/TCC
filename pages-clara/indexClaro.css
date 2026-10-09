@@ -2039,3 +2039,18 @@ TELAS MUITO PEQUENAS
 
 
 }
+
+
+/* Hover consistente para o item ativo nas páginas claras */
+.item-menu.ativo,
+.item-menu.ativo:hover,
+.mobile-nav-item.ativo,
+.mobile-nav-item.ativo:hover {
+    background: rgba(161, 220, 230, 0.70);
+}
+
+.item-menu:not(.modo-claro):hover,
+.mobile-nav-item:hover {
+    background: rgba(161, 220, 230, 0.70);
+}
+
